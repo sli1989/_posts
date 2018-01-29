@@ -71,7 +71,7 @@ $ commit & push
 ```bash
 # 2. pull latest of all git submodules
 $ cd blog
-$ git submodule update --recursive --remote
+$ git submodule update --recursive --remote  # 这个命令会造成HEAD detached
 $ git pull --recurse-submodules
 # reference https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules
 

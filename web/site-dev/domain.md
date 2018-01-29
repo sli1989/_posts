@@ -1,7 +1,7 @@
 ---
 title: 关于域名
 date: 2018-01-25 03:08:53
-tags: ["domain","域名"]
+tags: ["domain","域名","web"]
 categories: "web"
 ---
 
@@ -21,27 +21,34 @@ categories: "web"
 - [网站备案域名核验](https://help.aliyun.com/knowledge_detail/64289.html)
 
 ## 认可度，信任程度，稳定性，正式度，流行度排名。
-**第一梯队**
-1. .edu教育机构  .gov 政府部门 .int国际组织 .mil 美国军事部门  需提供相关证件资料
-1. .org：得名于非盈利组织，现可用于其他目的。任何人都可以注册
-1. .com 得名于商业机构，应用最广。任何人都可以注册。一般价格55，几乎平价续费。
-1. .net 资历老，且便宜
-1. .io  “Indian Ocean”的缩写。为英属印度洋领地在互联网域名系统中拥有的国家及地区顶级域（ccTLD）。
-IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为“Internet Organization”（互联网组织）的缩写，因此该顶级域十分受初创公司和**IT公司**欢迎（比如提供在线应用程序接口服务，或是开源软件项目）。特别贵
-1. .co co是与com最接近的域名，让人感觉似曾相识，同时短小精悍、便于记忆。友情提示：使用此后缀域名的网站客户在北京地区将无法取得备案资格，请您了解。
+### 第一梯队
+1. `.edu`教育机构  .gov 政府部门 .int国际组织 .mil 美国军事部门  需提供相关证件资料
+1. `.com`: 得名于商业机构，**应用最广**。任何人都可以注册。一般价格55，几乎平价续费。
+1. `.org`：得名于非盈利组织，现可用于其他目的。任何人都可以注册
+1. `.net`: 资历老，且便宜
+1. `.io`:  后起之秀。“Indian Ocean”的缩写。为英属印度洋领地在互联网域名系统中拥有的国家及地区顶级域（ccTLD）。
+IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为“Internet Organization”（互联网组织）的缩写，因此该顶级域十分受初创公司和**IT公司**欢迎（比如提供在线应用程序接口服务，或是开源软件项目）。有点**贵**
+1. `.co`: co是与com最接近的域名，让人感觉似曾相识，同时短小精悍、便于记忆。友情提示：使用此后缀域名的网站客户在北京地区将无法取得备案资格，请您了解。
 
 
-**第二梯队**
-1. .top  便宜，lap.top
-1. .xyz  便宜，注册量很高(费解)  
-1. .club 适用于娱乐场所  便宜
-1. .me 是前南斯拉夫地区西南部的国家黑山共和国的国家域名。于2008年7月16日正式对外开放注册。me域名适合个人、家庭、履历、博客、微博等彰显自我形象。 find.me love.me ele.me about.me fuck.me.   便宜
-1. .info 首年便宜，续费贵
-1. .vip 于2016年5月18日开放注册, 便宜
-1. .it  find.it love.it
-1. .link
-1. .tech
+### 第二梯队
+1. `.top`:  便宜，lap.top
+1. `.xyz`  便宜，注册量很高(费解)  
+1. `.club` 适用于娱乐场所  便宜
+1. `.me` 是前南斯拉夫地区西南部的国家黑山共和国的国家域名。于2008年7月16日正式对外开放注册。me域名适合个人、家庭、履历、博客、微博等彰显自我形象。 find.me love.me ele.me about.me fuck.me.   便宜
+1. `.info` 首年便宜，续费贵
+1. `.vip` 于2016年5月18日开放注册, 便宜
+1. `.it`  find.it love.it
+1. `.link`
+1. `.tech`
 
+
+
+### 其他
+1. .song 神奇的亚马逊还有这个域名
+1. 特殊功能域名  .shoes .map .data .game .xxx 等
+1. last.fm del.icio.us flic.kr
+...
 
 ## 收费&续费
 
@@ -50,23 +57,19 @@ IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为�
 
 
 
-
-**其他**
-1. .song 神奇的亚马逊还有这个域名
-1. 特殊功能域名  .shoes .map .data .game .xxx 等
-1. last.fm del.icio.us flic.kr
-...
-
 ## 注册量排名
 
+### 总排名
 **全球十大域名后缀，.cn仅次于.com**
 <img src="http://img2.ctoutiao.com/uploads/2017/07/20/1500537225490956.jpg">
 
 
+### 国别域名排名
 **.cn域名总量达2140万，国别域名中位居全球第一**
 <img src="http://img2.ctoutiao.com/uploads/2017/07/20/1500537225451161.jpg">
 截至2017年3月31日，国别域名的注册总量为1.431亿个，环比增长03.%，同比增长1.7%。其中排名前十的分别是.cn（中国）、.tk（托克劳）、.de（德国）、.uk（英国）、.ru（俄罗斯）、.nl（荷兰）、.br（巴西）、.eu（欧盟）、.au（澳大利亚）和.it（意大利）。
 
+### 新域名排名
 **新顶级域名总量达2540万，.xyz、.top、.loan位居前三**
 
 
@@ -87,7 +90,6 @@ IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为�
 - [百度说]()
 - [google说](https://www.searchenginejournal.com/google-all-domain-extensions-are-weighted-the-same/137139/)
 
-但是，有些域名普遍低质量，
 ## reference
 - wikipedia
 - https://www.quora.com/What-is-a-better-alternative-for-a-startup-when-the-com-is-taken-co-io-net-or-org
