@@ -110,7 +110,7 @@ DEBUG Database saved
 hexo s --debug
 
 
-## hexo的模板引擎
+## hexo的模板引擎,Rendering HTML
 
 模板引擎的作用，就是将界面与数据分离。最简单的原理是将模板内容中指定的地方替换成数据，实现业务代码与逻辑代码分离。
 

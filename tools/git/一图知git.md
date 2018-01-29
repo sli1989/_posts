@@ -69,6 +69,6 @@ soft mixed hard三个参数的区别也一目了然
 ## reference
 - https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch/292359
 - https://git-scm.com/docs
-
+- [图解git]http://marklodato.github.io/visual-git-guide/index-zh-cn.html
 
 ## 待续
