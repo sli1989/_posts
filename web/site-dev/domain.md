@@ -1,5 +1,8 @@
 ---
 title: 关于域名
+date: 2018-01-25 03:08:53
+tags: ["domain","域名"]
+categories: "web"
 ---
 
 
