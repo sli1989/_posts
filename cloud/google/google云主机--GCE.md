@@ -15,7 +15,7 @@ categories: "cloud"
 
 
 只要绑定信用卡就送300刀，能免费用一年
-<image src="https://user-images.githubusercontent.com/13825126/35471148-9fda0c4c-0390-11e8-8167-6484aac58ab5.PNG" style="width:10%; height:10%"/>
+<image src="https://user-images.githubusercontent.com/13825126/35471148-9fda0c4c-0390-11e8-8167-6484aac58ab5.PNG" />
 
 [GCP控制台](https://console.cloud.google.com/?hl=zh-cn)
 
