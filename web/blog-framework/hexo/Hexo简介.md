@@ -1,6 +1,6 @@
 ---
-title: Hexo剖析
-tag: ["fdf", "tag2"]
+title: Hexo简介
+tag: ["hexo"]
 ---
 
 ## Hexo剖析

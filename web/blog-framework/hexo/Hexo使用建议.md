@@ -1,3 +1,6 @@
+---
+title: hexo使用建议
+---
 
 
 ## 先提问题
@@ -38,6 +41,7 @@ git push -u origin master
 # add other submodule
 
 git submodule add git@github.com:xsung/2048.git
+git submodule add git@github.com:xsung/_posts.git
 
 
 ```
