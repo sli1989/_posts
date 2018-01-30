@@ -7,7 +7,7 @@ tag: ["hexo"]
 ## 核心思想
 
 - 利用submodule管理blog  
-> 模块化，解耦合，易整合。hexo本身就是模块化很好的例子。cli server分离，主hexo与theme分离。
+> 模块化，解耦合，易整合。hexo本身就是模块化很好的例子。cli server分离，主hexo与theme分离。generator deployer render分离。
 - 先fork再add submodule
 
 
@@ -48,7 +48,7 @@ git push -u origin master
 github主账号只放deploy版本。
 
 实例：
-- [x] [Dev Repository](https://github.com/xsung/blog-dev/)
+- [x] [Dev Repository](https://github.com/xsung/blog-dev/#submodule) Main project for all submodules
 - [x] [Deployed Repository](https://github.com/xu-song/xu-song.github.io/) is deployed by Hexo from `Dev Repository`
 - [x] [Demo Site](http://xusong.vip) hosts the `Deployed Repository`
 
@@ -76,6 +76,7 @@ $ git pull --recurse-submodules
 # reference https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules
 
 ```
+貌似不work啊，submodule的pull不work
 
 ## clone & deploy
 ```bash

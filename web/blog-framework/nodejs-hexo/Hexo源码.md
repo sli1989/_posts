@@ -3,7 +3,7 @@ title: Hexo源码浅析
 tag: ["hexo","源码"]
 ---
 
-## 简介
+# 简介
 
 
 最好带着问题往下看。
@@ -11,7 +11,7 @@ tag: ["hexo","源码"]
 
 
 
-## Hexo官方文档
+# Hexo官方文档
 
 []官方文档](https://github.com/hexojs/hexo/blob/master/README.md)
 
@@ -34,16 +34,16 @@ $ hexo generate
 ```
 
 
-## 详解
+# 详解
 
-### 1. npm install
+## 1. npm install
 
 npm是nodejs的包管理器，管理javascript lib
 hexo-cli是nodejs的一个包，用于运行hexo命令。(有cli难道还有server？)
 
 npm list -g 能够看到安装路径。一般在/usr/lib/node_modules/ 或者/usr/local/lib/node_modules/
 
-### 2. hexo init
+## 2. hexo init
 hexo init命令做了什么？
 直接放**答案**。
 ```bash
@@ -110,13 +110,14 @@ spawn(npmCommand, ['install', '--production']);
 另外，不建议把.git删掉。因为删掉后就不能对比自己改动了哪。保保留可以通过git diff命令查看自己的改动，错误的改动，方便还原。
 
 个人建议采用以下命令代替`hexo init`：
+
 ```bash
 git clone --recursive https://github.com/hexojs/hexo-starter.git blog
 npm install --production
 ```
 
 
-### 3. hexo server
+## 3. hexo server
 
 这个不属于hexo-cli了。
 [hexo server命令源码](https://github.com/hexojs/hexo-server/blob/master/lib/server.js)
@@ -127,14 +128,19 @@ npm install --production
 
 
 
-### 4. hexo new
+## hexo new
 
 
 
-### 5. hexo generate
+## hexo generate
 
 这里比较重要
 
+
+### hexo deploy
+hexo deploy 所做的事情：删除现有的master分支，并建立新的master分支，把hexo目录下的.deploy_git目录push到master分支上
+
+这里太不仁道了吧。
 
 ## reference
 http://cherryblog.site/hexo-4.html

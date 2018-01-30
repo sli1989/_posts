@@ -2,7 +2,7 @@
 title: 为Github Pages设置独立域名
 date: 2018-01-26 03:08:53
 tags: git
-categories: ["git","github","domain","dns"]
+categories: ["git","github","domain","dns","web"]
 ---
 
 #
@@ -14,7 +14,7 @@ categories: ["git","github","domain","dns"]
 ## 2. 域名解析 (xusong.vip --> xu-song.github.io)
 **配置DNS解析**
 
-进入你的[阿里云DNS解析](https://dc.console.aliyun.com/dns/)，选择你想要解析的域名，点击后面的解析。如下图所示：
+进入你的[阿里云DNS解析](https://home.console.aliyun.com)，选择你想要解析的域名，点击后面的解析。如下图所示：
 ![dns](https://user-images.githubusercontent.com/13825126/35460092-a97a685a-031d-11e8-9cc6-1ce1b730a917.PNG)
 
 

@@ -72,5 +72,8 @@ categories: ["git","github","gist"]
 **gist不提供Pull Request功能？**
 
 
+## 类似组件
+bitbucket的Snippets。 不提供`embed`嵌入方式
+
 ## reference
 - http://www.worldhello.net/gotgithub/06-side-projects/gist.html
