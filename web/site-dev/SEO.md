@@ -44,8 +44,25 @@ github 禁止了百度的爬虫，你可以在 国内的 coding.net 上放一份
 
 一定要这样做：实现301重定向把次域名重定向到主域名去，避免权重分散，甚至被K，或者影响SEO排名。
 
-- 301 redirect:：301代表永久性转移
-- 302 redirect:：302代表暂时性转移
+- 301 redirect:：301代表永久性转移。301重定向是网页更改地址后对搜索引擎最友好的方法，只要不是暂时搬移的情况，都建议使用301来做转址。
+- 302 redirect:：302代表暂时性转移。在前些年，不少Black Hat SEO曾广泛应用这项技术作弊。各大主要搜索引擎均加强了打击力度。(怎么作弊？)
+
+当网页A用301重定向转到网页B时，搜索引擎可以肯定网页A永久的改变位置，或者说实际上不存在了，搜索引擎就会把网页B当作唯一有效目标。好处是，第一，没有网址规范化问题，第二，也很重要的，网页A的PR网页级别会传到网页B。
+
+
+## 怎样判断网站有网址规范化问题？
+1) 查一下这些URL是否都有差不多的PR值和网页快照：
+
+http://domainname.com
+http://www.domainname.com/index.html
+http://domainname.com/index.html
+http://www.domainname.com
+
+2)搜一下site:domain.com看是否结果中有多个主页版本。
+
+3)你的网站是否在Google有大量网页被标为“ 补充材料”(Supplemental Result)。一般认为被归为“ 补充材料”是网址规范化问题的征兆。
+
+reference： https://www.seozac.com/seo/301-redirect/
 
 site:.top
 ## tips

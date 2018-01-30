@@ -1,6 +1,9 @@
+---
+title: "blog framework比较""
+---
 
 
-## 对比
+## nodejs
 
 jekyll 更活跃，github官方指定。
 
@@ -12,5 +15,10 @@ jekyll 更活跃，github官方指定。
 
 
 
+
 搜索 hexo 迁移 jekll，搜到的都是
 从Jekyll迁移到Hexo， why？
+
+## php
+
+wordpress

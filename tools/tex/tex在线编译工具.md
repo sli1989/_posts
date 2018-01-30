@@ -1,11 +1,9 @@
+---
+title: tex 在线编译工具
+tags: tex
+categories: ["tex","格式化文档"]
+---
 
-
-
-## 编译器
-PdfLaTex
-LaTex
-XeLaTex   我的简历在sharelatex上要用这个编译器
-XuaLaTex
 
 
 ## 工具
