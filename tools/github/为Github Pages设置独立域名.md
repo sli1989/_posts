@@ -81,16 +81,17 @@ mail：将域名解析为mail.aliyun.com，通常用于解析邮箱服务器。
 
 这里是对github.io做了重定向，会重定向到所配置的站点。也可以随便填写一个站点，比如www.baidu.com，也会重定向过去
 
+## 4. 问题来了
 
+**重新`hexo deploy`的时候，步骤3的设置又会自动改回去。肿么办？**
 
+在source目录下新建CNAME文件，内容是`xusong.vip`。这样每次deploy会自动完成`步骤3`。
 
-## 4. 疑问  & TODO list
-- [ ] demo with deeplearning4j. 模型文件太大，就找个后台吧。参考stanford nlp的demo，等
-- [ ] SEO
+## 5. 疑问  & TODO list
 - [ ] 每个账号的gitpage都是独立的IP吗？github怎么这么多独立外网IP？还是不同账号共用IP？
-- [ ]  配置github pages的custom domain。作用不仅仅是`xu-song.github.io --> xu-song.top (重定向)`，貌似对步骤2也起作用
-- [x] 重新`hexo deploy`的时候，步骤3的设置又会自动改回去。肿么办？
-  - 在source目录下新建CNAME文件，内容是`xu-song.top`。这样每次deploy会自动完成`步骤3`
+  - 有次我看到俩账号的gitpage竟然是同一ip，怪异
+- [x]  配置github pages的custom domain。作用不仅仅是`xu-song.github.io --> xu-song.top (重定向)`，貌似对步骤2也起作用
+  - github.com会根据配置，查dns解析是否通过，查是否
 - [ ] 如何解决md同步问题？
   - git-repo源，gist源，git issue源，gitpage源。最优的方式就是同源 + 自动deploy。
   - 方式一：以issue作源，要自己利用github api，读取issue，然后写到source目录(貌似也挺简单)。
@@ -98,8 +99,5 @@ mail：将域名解析为mail.aliyun.com，通常用于解析邮箱服务器。
   - 方式三：以gist作源：易集成(一行js即可)，但不易管理(不支持directory，文档多了很麻烦)
 - [ ] 如何实现在线写blog，像wordpress那样
   - 用js调用github api，或者其他后台api即可
-  - 后台
-- [ ] 如何实现private space。密码登录
-  - 都放前端，
 ## 5. reference
 - [github pages+阿里云域名绑定搭建个人博客](https://github.com/HuYuee/blog/issues/13)

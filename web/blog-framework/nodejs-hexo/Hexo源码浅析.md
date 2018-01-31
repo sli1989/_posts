@@ -169,7 +169,7 @@ git('push', '-u', repo.url, 'HEAD:' + repo.branch, '--force');
 ```bash
 $ git add -A
 $ git commit -m "Site updated: 2018-01-30 *:*:*" #某时间
-$ git push -u origin HEAD:master
+$ git push -u origin HEAD:master --force
 ```
 
 
