@@ -1,6 +1,11 @@
 ---
 title: Hexo源码浅析
+date: 2018-01-25 03:08:53
 tag: ["hexo","源码"]
+categories:
+- web
+- framework
+- hexo
 ---
 
 # 首先
@@ -171,6 +176,15 @@ $ git add -A
 $ git commit -m "Site updated: 2018-01-30 *:*:*" #某时间
 $ git push -u origin HEAD:master --force
 ```
+
+上面命令使用--force选项，强制push到远程主机，会使远程主机更新的版本被覆盖。所以不要在deploy之后的仓库做提交，要在dev仓库提交。
+
+实例：
+- [x] [Dev Repository](https://github.com/xsung/blog-dev/#submodule) Main project for all submodules
+- [x] [Deployed Repository](https://github.com/xu-song/xu-song.github.io/) is deployed by Hexo from `Dev Repository`
+- [x] [Demo Site](http://xusong.vip) hosts the `Deployed Repository`
+
+
 
 
 **参考**

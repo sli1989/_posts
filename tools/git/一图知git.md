@@ -2,7 +2,9 @@
 title: 一图知git
 date: 2018-01-26 03:08:53
 tags: git
-categories: "git"
+categories:
+- tools
+- git
 ---
 
 
@@ -20,12 +22,21 @@ categories: "git"
 
 ## 术语
 
+**存储位置**
 - 工作区：working_directory，working_tree，workspace
-- 暂存区：staged, index
-- 本地仓库： local_repository, local_commit_history
+- 暂存区：stage, index  (加入到暂存区的更改：staged/indexed changes, add changes to stage/index)
+- 本地仓库： local_repository, local_commit_history，history
 - 远程仓库：remote_repository
 
 - 快照：snapshot
+
+**指针**
+指针指向实体
+- HEAD
+- master
+
+**实体**
+hash
 
 
 
@@ -53,6 +64,28 @@ categories: "git"
 soft mixed hard三个参数的区别也一目了然
 ...
 
+## 正逆向操作，对比
+
+stage操作：git add
+undo stage：git reset –mixed
+
+git reset −p
+git add −p
+
+
+commit操作：git commit
+undo commit：git reset –soft
+
+push操作：
+undo push:
+
+force push操作：git push –force
+undo force push:
+
+rm操作：
+undo rm：
+
+
 
 ## 关于该图的改进
 
@@ -66,9 +99,9 @@ soft mixed hard三个参数的区别也一目了然
 
 
 
-## reference
+## 参考
 - https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch/292359
-- https://git-scm.com/docs
-- [图解git]http://marklodato.github.io/visual-git-guide/index-zh-cn.html
+- [官方doc](https://git-scm.com/docs)
+- [图解git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
 ## 待续

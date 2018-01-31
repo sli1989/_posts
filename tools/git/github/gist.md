@@ -2,7 +2,9 @@
 title: 关于gist
 date: 2018-01-26 03:08:53
 tags: git
-categories: ["git","github","gist"]
+categories:
+- tools
+- git
 ---
 
 ## gist简介

@@ -2,7 +2,9 @@
 title: 关于域名
 date: 2018-01-25 03:08:53
 tags: ["domain","域名","web"]
-categories: "web"
+categories:
+- web
+- site-dev
 ---
 
 
@@ -28,8 +30,8 @@ categories: "web"
 1. `.net`: 资历老，且便宜
 1. `.io`:  后起之秀。“Indian Ocean”的缩写。为英属印度洋领地在互联网域名系统中拥有的国家及地区顶级域（ccTLD）。
 IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为“Internet Organization”（互联网组织）的缩写，因此该顶级域十分受初创公司和**IT公司**欢迎（比如提供在线应用程序接口服务，或是开源软件项目）。有点**贵**
-1. `.co`: co是与com最接近的域名，让人感觉似曾相识，同时短小精悍、便于记忆。友情提示：使用此后缀域名的网站客户在北京地区将无法取得备案资格，请您了解。
-
+1. `.co`: co是与com最接近的域名，让人感觉似曾相识，同时短小精悍、便于记忆。友情提示：使用此后缀域名的网站客户在北京地区将无法取得备案资格，请您了解。 首年便宜，续费贵
+1. `.ai`： 这个新秀不能不提。为英国海外属地安圭拉国家及地区顶级域（ccTLD）的域名。管理者是安圭拉政府。由于近来人工智能的大热，.ai域名热度极度攀升，众多知名人工智能创业公司都采用了.ai后缀。deeplearning.ai landing.ai drive.ai。From September 15, 2009, second level registrations within .ai are available to everyone worldwide.[from wiki](https://en.wikipedia.org/wiki/.ai). 成本高
 
 ### 第二梯队
 1. `.top`:  便宜，lap.top
@@ -41,14 +43,35 @@ IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为�
 1. `.it`  find.it love.it
 1. `.link`
 1. `.tech`
+1. `.blog` 贵
 
 
-
+## 国内域名
+1. `.cn`  要使用您的域名，您必须提供政府颁发的有效身份证件。
+1. `.com.cn` 要使用您的域名，您必须提供政府颁发的有效身份证件。
+1. .org.cn
 ### 其他
 1. .song 神奇的亚马逊还有这个域名
 1. 特殊功能域名  .shoes .map .data .game .xxx 等
 1. last.fm del.icio.us flic.kr
+.blog
 ...
+
+适宜个人：.me .name .blog .site（换个说法就是不适宜商用，）
+
+
+锤子花高价买t.tt
+所以不流行的域名里，配合好的二级域名也是有投资价值的
+
+### 预测
+- 无商业投资价值的域名不会火，
+规律，商人、组织、企业们看中哪个域名，哪个域名就火。像个人主义的域名，再名字再好，在商业投资价值下，也变得逊色。比如.me
+
+ar
+cv
+gg
+
+
 
 ## 收费&续费
 
@@ -94,6 +117,24 @@ IO既有“I/O”（输入/输出；Input/Output）的含义，也可以作为�
 - wikipedia
 - https://www.quora.com/What-is-a-better-alternative-for-a-startup-when-the-com-is-taken-co-io-net-or-org
 - http://www.ctoutiao.com/239698.html
+
+
+## 域名注册机构变化
+### 注册商
+
+### [whois](https://zh.wikipedia.org/wiki/WHOIS)
+是用来查询互联网中域名的IP以及所有者等信息的传输协议。早期的WHOIS查询多以命令行接口（Command Line）存在，但是现在出现了一些基于网页接口的简化在线查询工具，甚至可以一次向不同的数据库查询。网页接口的查询工具仍然依赖WHOIS协议向服务器发送查询请求，命令行接口的工具仍然被系统管理员广泛使用。
+WHOIS通常使用TCP协议43端口。每个域名或IP的WHOIS信息由对应的管理机构保存，例如，以.com结尾的域名的WHOIS信息由.com域名运营商VeriSign管理，中国国家顶级域名.cn域名由CNNIC管理。
+
+通常情况下，域名或IP的信息可以由公众自由查询获得，具体的查询方法是登陆由管理机构提供的WHOIS服务器，输入待查询的域名进行查询。
+
+### whois.ai的变化
+ai-domain也在这次升级中变为注册商，代号ai-domain。可惜的是，新用户已经无法在whois.ai创建账户，这意味着，新用户只能通过注册商进行注册了。而且注册局的用户的域名只出不进，即只提供转出功能，不提供转入功能。whois.ai已经变成一个遗留系统，趋势上会慢慢退出历史的舞台。前后模式的变化如下图：
+
+
+![ss](https://pic2.zhimg.com/80/v2-75760893eb5c084d8629a762d521a943_hd.jpg)
+
+参考：https://www.zhihu.com/question/57642499/answer/154856435
 
 ## 域名发展史
 

@@ -1,6 +1,10 @@
 ---
 title: hexo使用建议
+date: 2018-01-25 03:08:53
 tag: ["hexo"]
+categories:
+- web
+- framework
 ---
 
 
@@ -85,3 +89,11 @@ $ npm install hexo --save  # install node_modules dependency
 $ hexo s
 $ hexo d
 ```
+
+## 其他操作建议
+- 每个post都加
+
+
+## 非法操作
+- 在`Deployed Repository`人工提交。(除非你不用hexo d命令，或不用hexo)
+-

@@ -2,7 +2,9 @@
 title: 为Github Pages设置独立域名
 date: 2018-01-26 03:08:53
 tags: git
-categories: ["git","github","domain","dns","web"]
+categories:
+- tools
+- git
 ---
 
 #

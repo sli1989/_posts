@@ -1,7 +1,10 @@
 ---
 title: tex 简介与编译流程
+date: 2018-01-26 03:08:53
 tags: tex
-categories: ["tex","格式化文档"]
+categories:
+- tools
+- formatting
 ---
 
 
