@@ -25,7 +25,7 @@ categories:
 
 **怎么办呢？**
 
-那就让github认识一下`xusong.vip`，也就是在github page里设置一下custom domain，或者添加CNAME文件，详见[用Github Pages搭建独立域名的个人博客](./利用Github Pages搭建独立域名的个人博客.html)
+那就让github认识一下`xusong.vip`，也就是在github page里设置一下custom domain，或者添加CNAME文件，详见[用Github Pages搭建独立域名的个人博客](../利用Github Pages搭建独立域名的个人博客/)
 
 
 - [ ] 如果DNS设置CNAME记录，是不是github page不用设置就能work？
