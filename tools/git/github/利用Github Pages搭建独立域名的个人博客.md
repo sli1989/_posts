@@ -1,7 +1,7 @@
 ---
-title: 为Github Pages设置独立域名
+title: 利用Github Pages搭建独立域名的个人博客
 date: 2018-01-26 03:08:53
-tags: git
+tags: ["git","blog"]
 categories:
 - tools
 - git
@@ -83,23 +83,16 @@ mail：将域名解析为mail.aliyun.com，通常用于解析邮箱服务器。
 
 这里是对github.io做了重定向，会重定向到所配置的站点。也可以随便填写一个站点，比如www.baidu.com，也会重定向过去
 
-## 4. 问题来了
-
-**重新`hexo deploy`的时候，步骤3的设置又会自动改回去。肿么办？**
+### 重新deploy，你会发现github page的domain设置又被改回去了，肿么办？
 
 在source目录下新建CNAME文件，内容是`xusong.vip`。这样每次deploy会自动完成`步骤3`。
 
-## 5. 疑问  & TODO list
-- [ ] 每个账号的gitpage都是独立的IP吗？github怎么这么多独立外网IP？还是不同账号共用IP？
-  - 有次我看到俩账号的gitpage竟然是同一ip，怪异
-- [x]  配置github pages的custom domain。作用不仅仅是`xu-song.github.io --> xu-song.top (重定向)`，貌似对步骤2也起作用
-  - github.com会根据配置，查dns解析是否通过，查是否
-- [ ] 如何解决md同步问题？
-  - git-repo源，gist源，git issue源，gitpage源。最优的方式就是同源 + 自动deploy。
-  - 方式一：以issue作源，要自己利用github api，读取issue，然后写到source目录(貌似也挺简单)。
-  - 方式二：以git-repo作源，貌似不错哎。单独把source目录单独作为repo
-  - 方式三：以gist作源：易集成(一行js即可)，但不易管理(不支持directory，文档多了很麻烦)
-- [ ] 如何实现在线写blog，像wordpress那样
-  - 用js调用github api，或者其他后台api即可
-## 5. reference
-- [github pages+阿里云域名绑定搭建个人博客](https://github.com/HuYuee/blog/issues/13)
+
+
+## 5. 疑点重重
+- [x] 为什么还要再github仓库中设置？dns解析不是已经做了重定向了吗。指向ip:80端口还不够吗？
+- [x] 每个账号的gitpage都是独立的IP吗？github怎么这么多独立外网IP？还是不同账号共用IP？
+- [x] 不同github page共享ip 正因为如此，才需要`步骤3`的设置。
+- [x]  配置github pages的custom domain，其作用仅仅是`xu-song.github.io --> xusong.vip (重定向)`吗？
+
+[ss](./github pages原理.md)

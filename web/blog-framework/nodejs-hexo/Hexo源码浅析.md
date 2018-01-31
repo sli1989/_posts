@@ -5,7 +5,6 @@ tag: ["hexo","源码"]
 categories:
 - web
 - framework
-- hexo
 ---
 
 # 首先
