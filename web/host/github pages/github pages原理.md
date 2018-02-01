@@ -3,8 +3,8 @@ title: Github Pages托管静态博客-原理浅析
 date: 2018-01-26 03:08:53
 tags: ["git","blog"]
 categories:
-- tools
-- git
+- web
+- host
 ---
 
 ## 关于github提供的http server

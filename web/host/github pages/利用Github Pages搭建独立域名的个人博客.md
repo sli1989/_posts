@@ -3,8 +3,8 @@ title: 利用Github Pages搭建独立域名的个人博客
 date: 2018-01-26 03:08:53
 tags: ["git","blog"]
 categories:
-- tools
-- git
+- web
+- host
 ---
 
 #
@@ -28,7 +28,7 @@ CNAME - 将域名指向另外一个域名
 ...
 
 ```
-> (1) github建议采用[CNAME记录](https://help.github.com/articles/setting-up-a-custom-subdomain/) (因为IP有可能会变动)
+> (1) github建议采用[CNAME记录](https://help.github.com/articles/setting-up-a-custom-subdomain/) (因为IP有可能会变动？不是，因为多账号共用ip，github后台是根据host定位www目录的)
 We recommend you change this to a CNAME record pointing at [YOUR USERNAME].github.io.
 (2) 阿里云建议采用A记录(因为A记录限制最少，最灵活)
 
