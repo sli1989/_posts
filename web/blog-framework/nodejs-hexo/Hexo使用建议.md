@@ -1,5 +1,5 @@
 ---
-title: hexo使用建议
+title: hexo的推荐使用方式
 date: 2018-01-25 03:08:53
 tag: ["hexo"]
 categories:
@@ -8,7 +8,12 @@ categories:
 ---
 
 
+
+
+
 ## 核心思想
+
+
 
 - 利用submodule管理blog  
 > 模块化，解耦合，易整合。hexo本身就是模块化很好的例子。cli server分离，主hexo与theme分离。generator deployer render分离。
@@ -17,8 +22,8 @@ categories:
 
 **细节**
 主仓库
-- `themes/` 每个theme是一个子仓库
-- `source/post/`设置为一个子仓库
+- `themes/` 每个theme是一个子仓库  (经常update一下主题，有很多新功能。不用为了增加某些功能而自己改模板源文件，比如busuanzi，disqus的lazy_load)
+- `source/post/`设置为一个子仓库  (可多终端同步文章)
 - `source/demos/`下包含多个子仓库
 - `source/games`下包含多个子仓库
 
@@ -90,8 +95,33 @@ $ hexo s
 $ hexo d
 ```
 
+## 从官方更新模块（操作较少）
+
+比如，theme-next有些新功能，那么需要更新到自己的blog中。
+
+### 方式一：
+```bash
+$ git remote add upstream https://github.com/theme-next/hexo-theme-next.git
+$ git fetch upstream
+$ git checkout master
+$ git rebase upstream/master  # 或merge,推荐merge
+$ git merge upstream/master
+```
+
+### 方式二(推荐用法)：
+在[theme的github界面](https://github.com/xsung/hexo-theme-next)pull & merge
+
+
+
+### 参考:
+[stackoverflow](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
+
+
+
+
 ## 其他操作建议
-- 每个post都加
+- 每个post都加date，不然每次编辑文档，时间都会变动
+- draft 可以放在_draft目录下，当然我更习惯放在_post中，文件名_开头即可
 
 
 ## 非法操作

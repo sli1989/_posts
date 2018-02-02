@@ -30,9 +30,18 @@ categories:
 
 - 快照：snapshot
 
+文件状态
+- Untrack file：新文件，从未被add的文件。下一步操作往往是`git add`或者加入`.gitignore`中
+-
+
+**changes**
+- Changes to be committed
+- Changes not staged for commit
+
 **指针**
 指针指向实体
 - HEAD
+  - Detached HEAD：指anonymous branch，即只要不指向named branch都算detached
 - master
 
 **实体**
