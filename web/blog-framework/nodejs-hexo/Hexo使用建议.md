@@ -121,7 +121,8 @@ $ git merge upstream/master
 
 ## 其他操作建议
 - 每个post都加date，不然每次编辑文档，时间都会变动
-- draft 可以放在_draft目录下，当然我更习惯放在_post中，文件名_开头即可
+- draft 可以放在`_draft`目录下，当然我更习惯放在`_post/`中，文件名`_`开头即可，或者整个目录`_`开头。
+- 文件名不要经常变动(因为会改变url)，title和path可以随时改动
 
 
 ## 非法操作

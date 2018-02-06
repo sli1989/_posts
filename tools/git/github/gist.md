@@ -1,5 +1,5 @@
 ---
-title: 关于gist
+title: Gist: 从入门到精通到放弃
 date: 2018-01-26 03:08:53
 tags: git
 categories:
@@ -69,7 +69,7 @@ categories:
 
 
 **为什么gist不开放directory？**
-阉割了这个功能，图片的放置就稍微复杂点了。
+阉割了这个功能，图片等raw文件就不适宜放在gist了
 
 **gist不提供Pull Request功能？**
 

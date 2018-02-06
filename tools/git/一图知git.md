@@ -29,28 +29,39 @@ categories:
 - 远程仓库：remote_repository
 
 - 快照：snapshot
+- Blobs:   即files
 
-文件状态
+**文件状态**
 - Untrack file：新文件，从未被add的文件。下一步操作往往是`git add`或者加入`.gitignore`中
 -
 
-**changes**
+**changes **
 - Changes to be committed
 - Changes not staged for commit
 
+**操作**
+stage操作：git add
+commit操作：git commit
+
 **指针**
 指针指向实体
-- HEAD
-  - Detached HEAD：指anonymous branch，即只要不指向named branch都算detached
+- HEAD指针
+  - 正常状态: 指向一个<branch> (确切说是named branch)
+  - Detached HEAD: 指向了anonymous branch，即<commit>
+  - null: 不可能出现这个状态
 - master
+
+**HEAD指针状态**
+
 
 **实体**
 hash
+<commit>、<branch>、<tree-ish>、<start point>什么区别？
+能写master~吗？能写 jkjdka~吗？
 
+参考 https://stackoverflow.com/questions/23303549/what-are-commit-ish-and-tree-ish-in-git
 
-
-
-## 直接上图吧
+## 上图
 
 
 <img src="https://raw.githubusercontent.com/xsung/doc/master/git-graph-mid.svg?sanitize=true" height="110%" width="110%">
@@ -73,26 +84,62 @@ hash
 soft mixed hard三个参数的区别也一目了然
 ...
 
-## 正逆向操作，对比
+## [所有涉及更改index区域的操作](https://git-scm.com/docs/git-commit)
+- git add
+- git rm
+- by listing files as arguments to the commit command (without --interactive or --patch switch), in which case the commit will ignore changes staged in the index, and instead record the current content of the listed files (which must already be known to Git);
 
-stage操作：git add
-undo stage：git reset –mixed
+- by using the -a switch with the commit command to automatically "add" changes from all known files (i.e. all files that are already listed in the index) and to automatically "rm" files in the index that have been removed from the working tree, and then perform the actual commit;
 
-git reset −p
+- by using the --interactive or --patch switches with the commit command to decide one by one which files or hunks should be part of the commit in addition to contents in the index, before finalizing the operation. See the “Interactive Mode” section of git-add[1] to learn how to operate these modes.
+
+
+## 逆向操作(undo)
+
+```
+git add                 # 加入index
+git reset –mixed HEAD   # 撤销index  对不，是checkout吗？
+
+git commit              #
+git reset –soft HEAD~   # 撤销尚未push的commit
+
+git add + git commit    #
+
+
+git push    
+push不支持撤销操作       # 如何撤销已经push的commit？
+
+git push –force         # 覆盖远程仓库提交历史(太狠)
+                        # 参考 https://www.borfast.com/blog/2014/10/19/how-to-undo-a-git-push---force-and-undelete-things/
+git rm file             # 删除文件和index
+git checkout HEAD file  # 恢复文件和index (index中已经没有该文件的信息，只能从仓库的HEAD中恢复文件)
+
+git rm -r dir           # 删除整个目录及相应index
+git checkout HEAD dir   # 恢复
+
 git add −p
+git reset −p
+
+git stash
+git stash pop
 
 
-commit操作：git commit
-undo commit：git reset –soft
+```
 
-push操作：
-undo push:
+两个git add 会怎样？会merge为一个吧？git add + rm 前面的add的changes就完全丢了吧？
 
-force push操作：git push –force
-undo force push:
+If you don't have `uncommited changes` for removed files, the
 
-rm操作：
-undo rm：
+
+如何撤销已经push的commit？
+
+如何撤销已经force push的commit？
+
+https://www.borfast.com/blog/2014/10/19/how-to-undo-a-git-push---force-and-undelete-things/
+
+
+
+Reset
 
 
 
