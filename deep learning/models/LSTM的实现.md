@@ -20,7 +20,7 @@ long short-term memory。
 
 LSTM的核心：
 - cell:
-- gate: 用于解决vanilla RNN中的梯度消失问题
+- gate: 用于解决传统RNN中的梯度消失问题
 
 
 
