@@ -1,6 +1,10 @@
 ---
 title: LSTM的源码浅析
-date:
+date: 2018-02-06 19:08:53
+tags: lstm
+categories:
+- deep learing
+- RNN
 ---
 
 <!-- the implementation of LSTM -->

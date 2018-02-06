@@ -1,4 +1,11 @@
-
+---
+title: 关于RNN
+date: 2018-02-06 19:08:53
+tags: rnn
+categories:
+- deep learing
+- RNN
+---
 
 ##
 
