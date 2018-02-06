@@ -67,7 +67,7 @@ https://im.daovoice.io/v1/conversations/02010594-d7b8-4f3a-896a-4f82e2cc9198/rep
 ### 利用websocket
 
 
-### 利用微信js api
+### 利用微信api
 
 
 
