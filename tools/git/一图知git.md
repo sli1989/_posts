@@ -149,9 +149,14 @@ Reset
 - 布局，整体，有点丑
 
 
+## 待看
 
 
+https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E6%A3%80%E5%87%BA%E4%BB%A5%E5%89%8D%E7%9A%84%E6%8F%90%E4%BA%A4.md
 
+[代码合并：Merge、Rebase 的选择](https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6Merge%E8%BF%98%E6%98%AFRebase.md)
+[重写项目历史](https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E9%87%8D%E5%86%99%E9%A1%B9%E7%9B%AE%E5%8E%86%E5%8F%B2.md)
+[常见工作流比较](https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E5%B8%B8%E8%A7%81%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%AF%94%E8%BE%83.md)
 
 
 

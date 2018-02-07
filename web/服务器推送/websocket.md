@@ -1,5 +1,9 @@
 ---
 title: 关于websocket
+date: 2018-02-05 19:08:53
+tags: ["html5","websocket"]
+categories:
+- html5
 ---
 
 websocket属于服务器推送技术的一种。
@@ -33,11 +37,16 @@ Websocket是基于HTTP协议的，或者说借用了HTTP的协议来完成一部
 ## 服务端的实现
 websocket服务器则因语言不同而提供不同的调用方式。
 
-- [基于java的实现]
-    - [tomcat的websocket实现] (https://github.com/BitMindLab/tomcat-example/tree/master/WEB-INF/classes/websocket/)
+是叫实现，还是应该叫封装？
+
+- 基于java的实现
+    - [tomcat的websocket实现](https://github.com/BitMindLab/tomcat-example/tree/master/WEB-INF/classes/websocket/)
     - [jetty的websocket实现]()
 - 基于nodejs的实现
-- WebSocketd，提供shell接口
+    - 服务器端的socket.io，搭配客户端js库`socket.io-client`
+- 基于python的实现
+- 基于shell的实现
+    - WebSocketd
 
 
 ## 原理

@@ -29,7 +29,7 @@ RNN的形式有很多种
 <image title="An unrolled recurrent neural network" src="https://github.com/xsung/raw/raw/master/rnn-overview-xs.png" >
 
 该图的总结很好，大部分应用都可归入该框架。具体的应用可参考[karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
-<dddfafda>
+<!-- 框架之外的模型: attention -->
 
 核心:
 out, hidden = lstm(input, hidden)  // 来自pytorch的抽象
@@ -41,6 +41,13 @@ out, hidden = lstm(input, hidden)  // 来自pytorch的抽象
 - hidden
 - cell
 - output在stack RNN中也叫hidden
+
+output = new_state =
+
+Most basic RNN:
+output = new_state = act(W * input + U * state + B).
+
+https://www.quora.com/How-is-the-hidden-state-h-different-from-the-memory-c-in-an-LSTM-cell
 
 vanilla RNN中没有cell，所以hidden=cell=out
 LSTM中
@@ -120,11 +127,11 @@ for input in inputs:
 ```
 
 ```python
-out, hidden = lstm(inputs, hidden)
+output, (h_n, c_n) = lstm(input, (h_0, c_0))
 ```
 pytorch是动态图，会随着inputsequence
 
-[源码实现](https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/rnn.py)
+[源码实现](https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/rnn.py#L346)
 
 
 

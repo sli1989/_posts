@@ -22,6 +22,7 @@ categories:
 - jekyll 更活跃，github官方指定。像黑客一样写作。可以通过http://prose.io直接写博客。
 缺点： 模板基于liquid template engine，更改较复杂
 安装：稍复杂。
+- hakyll   Haskell  http://colah.github.io
 
 |             | jekyll | hexo  |
 |-------------|--------|-------|

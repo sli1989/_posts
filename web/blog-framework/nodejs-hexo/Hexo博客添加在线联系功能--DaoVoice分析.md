@@ -9,7 +9,11 @@ categories:
 
 ## 垃圾中的垃圾 之 DaoVoice
 
-原理:
+特点：高延迟
+
+你如果用过DaoVoice的话，肯定知道它延迟很长。但是为什么延迟这么长呢，下面来看看。
+
+通常web-chat都采用websocket。
 html--server--html
 就是一堆的websocket连接
 
