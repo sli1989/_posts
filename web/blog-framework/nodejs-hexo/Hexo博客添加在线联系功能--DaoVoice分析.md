@@ -1,5 +1,5 @@
 ---
-title: 垃圾中的垃圾 之 DaoVoice
+title: 渣渣中的渣渣 之 DaoVoice
 date: 2018-01-25 03:08:53
 tag: ["hexo"]
 categories:

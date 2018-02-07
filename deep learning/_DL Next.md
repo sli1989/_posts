@@ -1,3 +1,11 @@
+---
+title: DL next
+date: 2018-02-06 21:08:53
+tags:
+categories:
+- deep learning
+---
+
 # DL future
 
 

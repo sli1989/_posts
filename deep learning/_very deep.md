@@ -1,3 +1,10 @@
+---
+title: very large 网络
+date: 2018-02-06 21:08:53
+tags:
+categories:
+- deep learning
+---
 
 
 ## residual & highway 发展历程
@@ -8,7 +15,7 @@
 
 
 
-###  Deep Residual Learning for Image Recognition 
+###  Deep Residual Learning for Image Recognition
 
 
 ### Identity Mappings in Deep Residual Networks
@@ -26,4 +33,3 @@ Residual Net 核心思想是，去拟合残差函数 F （F = y - h（x）），
 
 
 ## 待看blog
-
