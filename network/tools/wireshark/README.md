@@ -3,11 +3,17 @@
 
 ## 常用filter
 
+常用的filter可参考`wireshark--视图--着色规则`
+
 表达式规则
 
  1. 协议过滤
 
 比如TCP，只显示TCP协议。
+http
+dns
+
+同时显示两个协议： http || dns
 
 2. IP 过滤
 

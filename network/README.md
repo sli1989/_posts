@@ -18,6 +18,18 @@ categories:
 
 
 
+## 名词解释--疑问
+
+
+<image src="https://i-technet.sec.s-msft.com/dynimg/IC213263.gif">
+
+来源 https://technet.microsoft.com/en-us/library/cc958821.aspx
+http://www.omnisecu.com/tcpip/tcpip-model.php
+
+network internet web三个单词的区别?
+分层中的网络层，到底是internet layer还是network layer？  
+链路层是network access layer还是 datalink layer？
+
 
 ## 分类 TOC
 - 网络基础理论

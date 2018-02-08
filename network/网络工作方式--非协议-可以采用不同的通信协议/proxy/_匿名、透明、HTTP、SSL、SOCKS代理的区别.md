@@ -2,6 +2,30 @@
 
 
 
+## 关于代理设置--SwitchyOmega
+
+为什么HTTP和HTTPS都需要验证(Authentication)，而SOCKS4和SOCKS5不需要验证？
+
+
+Bypass List（默认）
+```
+127.0.0.1
+[::1]
+localhost
+```
+
+
+## 如何分析
+
+1. 路由分析
+
+2. 抓包分析，好像用不着这么底层
+
+
+
+## 其他
+
+
 socks5是协议，不是加密算法
 采用socks协议的代理服务器就是SOCKS服务器，是一种通用的代理服务器。
 

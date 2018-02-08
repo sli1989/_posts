@@ -16,7 +16,7 @@ categories:
 
 
 - 利用submodule管理blog  
-> 模块化，解耦合，易整合。hexo本身就是模块化很好的例子。cli server分离，主hexo与theme分离。generator deployer render分离。
+> 模块化，解耦合，易整合。hexo本身就是模块化很好的例子。cli server分离，主hexo与theme分离。generator deployer render分离。推荐一个模块化比较好的例子 https://github.com/distillpub
 - 先fork再add submodule
 
 

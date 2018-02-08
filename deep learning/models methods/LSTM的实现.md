@@ -74,7 +74,7 @@ gate类似阀门，是一种开关。
 # LSTM: 接口设计
 
 ##
-接口(对LSTM的封装)要容易理解，易扩展(水平扩展-sequence，垂直扩展-stack)。
+
 
 ```python
 output, (h_n, c_n) = lstm(input, (h_0, c_0))  # pytorch的接口 hidden=(h,c)
@@ -84,7 +84,20 @@ new_h, (new_c, new_h) = lstm(inputs, (c, h))  # tensorflow的接口，其中stat
 inputs, state):
 inputs, state):
 
+
+
+
+**为什么lstm代码里和有些图里，习惯吧output称作h(hidden)？**
+https://zhuanlan.zhihu.com/p/28919765
+接口(对LSTM的封装)要具有良好的扩展性(水平扩展-sequence，垂直扩展-stack)。
+在stack lstm中，下一层的out对接上一层的input，在深度模型的概念里这就是隐含层hidden的作用，所以命名为hidden。
+
+但是呢，作为一个cell，我还是觉得叫output比较好。追根溯源，谁第一个采用hidden命名的？
+
+
+**为什么lstm代码里要把(c, h)封装成一个tuple？**
 这样设计的目的是为了兼容RNN的接口(毕竟LSTM属于RNN的一种)。
+
 
 
 
@@ -151,9 +164,6 @@ def call(self, inputs, state):
 
 
 # 常见问题
-
-为什么lstm代码里和有些图里，习惯吧output称作h(hidden)？
-https://zhuanlan.zhihu.com/p/28919765
 
 
 关于静态图和动态图？

@@ -5,6 +5,7 @@
 
 
 
+
 ## 无代理时
 
 
@@ -19,3 +20,14 @@ Referrer Policy:no-referrer-when-downgrade
 
 
 ## 有代理时
+
+### 公司代理，不需要客户端。
+
+浏览器代理配置：
+```
+Protocol: HTTP
+server: webproxy.abc.def.com
+port: 8080
+```
+
+### shadowsocks
