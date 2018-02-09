@@ -47,6 +47,16 @@ wordpress
 重量级
 
 
+## 推荐的博客
+
+theme-next的owner，果然不一般  https://almostover.ru/
+
+https://notes.wanghao.work/
+
+https://acris.me/ 的title字体
+
+
+
 ## 参考
 - https://www.zhihu.com/question/21981094
 - https://www.slant.co/topics/329/~best-solutions-for-a-personal-blog

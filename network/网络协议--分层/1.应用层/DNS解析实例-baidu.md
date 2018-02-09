@@ -1,5 +1,5 @@
 ---
-title: 揭秘 百度DNS解析规则
+title: 反演 百度DNS解析规则
 date: 2018-02-09
 tags: ["network","dns"]
 categories:
@@ -7,6 +7,13 @@ categories:
 - dns
 ---
 
+<!--
+反函数：inverse function (or anti-function[1]) is a function that "reverses" another function
+反编译：
+
+DNS解析：host--ip
+
+-->
 
 ## 百度DNS解析规则
 
@@ -98,12 +105,12 @@ PING baidu.com (111.13.101.208) 56(84) bytes of data.
 <image src="https://github.com/xsung/raw/raw/master/HTTP%20-%20Wireshark%20-%20www.a.shifen.com.png">
 
 流程：
-- [x] DNS解析
-- [x] 三次握手，建立TCP连接
-- [x] 发送HTTP Get请求
-- [ ] 服务器返回RST复位信号，强制关闭TCP连接
+- [x] [1,2,3,4] - DNS解析
+- [x] [5,6,7] - 三次握手，建立TCP连接
+- [x] [8] - 发送HTTP Get请求
+- [ ] [9] - 服务器返回RST复位信号，强制关闭TCP连接
 
-那应该就是服务器检查host，非baidu.com就拒绝访问。
+服务器成功收到了HTTP Get请求，后台逻辑认为这个连接不符合规范()。所谓baidu定义的规范那应该就是服务器检查host，非`baidu.com`或``就拒绝访问。
 
 
 
