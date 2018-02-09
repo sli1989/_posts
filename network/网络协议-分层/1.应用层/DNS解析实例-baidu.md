@@ -20,16 +20,16 @@ DNS解析：host--ip
 | 编号 | 记录类型 | 主机记录         | 解析线路(isp) | 记录值                       | TTL值(不定) | 备注                                  |
 |------|----------|------------------|---------------|------------------------------|-------|---------------------------------------|
 | 1    | CNAME    | www.baidu.com    | --            | www.a.shifen.com             | 268   |                                       |
-| 2    | A        | www.a.shifen.com | 新加坡 百度   | 45.113.192.101 ....一大波ip  | 160   | DNS响应: 1-->2,3   (同时返回多个IP)   |
-| 3    | A        | www.a.shifen.com | 北京电信      | 220.181.111.188 ....一大波ip | 160   |                                       |
+| 2    | A        | www.a.shifen.com | 新加坡 百度   | 45.113.192.101 | 160   | 见解析方式一  |
+| 3    | A        | www.a.shifen.com | 北京电信      | 220.181.111.188  | 160   |                                       |
 | 4    | A        | www.a.shifen.com | 其他          |                              |       |                                       |
 |      |          |                  |               |                              |       |                                       |
 | 5    | CNAME    | www.a.shifen.com | --            | www.wshifen.com              | 271   |                                       |
 | 6    | NS       | wshifen.com      | --            | ns1.wshifen.com              | 163   |                        |
 | 7    | AAAA     | www.baidu.com    |               |                              |       | 百度没有AAAA记录吧？                  |
 |      |          |                  |               |                              |       |                                       |
-| 8    | A        | baidu.com        | 北京移动      | 111.13.101.208  ... 一大波ip |       |                                       |
-| 9    | A        | baidu.com        | 北京联通...   | 123.125.114.144 ... 一大波ip |       |                                       |
+| 8    | A        | baidu.com        | 北京移动      | 111.13.101.208   |       |                                       |
+| 9    | A        | baidu.com        | 北京联通...   | 123.125.114.144 |       |                                       |
 | 10   | NS       | baidu.com        | --            | dns.baidu.com                | 900   |                                       |
 |      |          |                  |               |                              |       |                                       |
 | 11   | NS       | a.shifen.com     | --            | ns1.a.shifen.com             | 397   |                                       |
