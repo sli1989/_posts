@@ -2,6 +2,54 @@
 
 
 
+## 概念
+
+
+- 域名系统（DNS）是一种用于 TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。
+
+- DNS Server
+
+- Nameserver:
+Nameserver is a server on the internet specialized in handling queries regarding the location of a domain name’s various services. Nameservers are a fundamental part of the Domain Name System (DNS).
+
+- 地址解析器 resolver
+在 Unix主机中，该解析器主要是通过两个库函数gethostbyname和来访问
+的，它们在编译应用程序时与应用程序连接在一起。
+
+- 网络信息中心NIC。负责分配顶级域和委派其他指定地区域的唯一授权机构。 -- TCPIP详解
+
+- ISP
+
+
+
+
+
+### 概念疑问
+
+BasicDNS and Web Hosting DNS 区别？
+
+BasicDNS includes the nameservers which are provided by default during domain registration while Web Hosting DNS is the set of nameservers which comes along with the corresponding shared hosting package purchased at Namecheap.
+
+DNS除了nameserver之外，还包含什么？
+
+
+
+## 解析过程
+
+DNS地址解析器的核心功能能
+- gethostbyname  主机名-->ip   
+- gethostbyaddr  ip--主机名
+
+
+通常情况下，我们是先设定DNS解析规则，然后ISP(供应商)依据指定的解析规则进行DNS解析。同样，我们通过测试解析结果，也可以反推DNS解析规则。本文以百度首页为例，分析其DNS解析规则。
+
+
+
+
+
+## 其他
+
+
 
 什么是智能解析？
 
@@ -9,6 +57,19 @@
 
 
 归结就是，一个域名，配了多条A记录。
+
+
+
+
+
+## 原理
+
+> 解析器主要是通过两个库函数 gethostbyname 和gethostbyaddr来访问的，它们在编译应用程序时与应用程序连接在一起。
+
+- gethostbyname  主机名-->ip   
+- gethostbyaddr  ip--主机名
+
+主机名和ip是多对多关系。多个主机名可指向同一IP(别名，多个入口)，一个主机名也可指向多个IP(可用于多线智能解析和负载均衡)。
 
 
 

@@ -17,12 +17,19 @@ categories:
 
 - 利用submodule管理blog  
 > 模块化，解耦合，易整合。hexo本身就是模块化很好的例子。cli server分离，主hexo与theme分离。generator deployer render分离。推荐一个模块化比较好的例子 https://github.com/distillpub
+
 - 先fork再add submodule
+>
+
+- 利用branch管理自己的project和需要PR的project
+> 主要目的也是为了不和自己的修改绞在一起产生混乱。比如我从next仓库fork到我自己的仓库，然后我做了一些只用于我自己的个性化修改，这时候我的master分支和远程master分支之间的变动越来越大了。
+然后我碰到一个适用于所有人的变动，这时候想提交个pr，最好的方式显然是切换到远程master分支，然后做修改，之后提交到一个新的分支，再然后就可以去github上提交pr了，不会把自己master上的一些修改混到里面
+不过如果自己master和远程master始终保持完全一致的话倒是可以直接提交到自己master上，然后直接用自己master分支提交pr
 
 
 **细节**
 主仓库
-- `themes/` 每个theme是一个子仓库  (经常update一下主题，有很多新功能。不用为了增加某些功能而自己改模板源文件，比如busuanzi，disqus的lazy_load)
+- `themes/` 每个theme是一个子仓库  (经常pull一下主题，有很多新功能和bug-fix。不用为了增加某些功能而自己改模板源文件，比如busuanzi，disqus的lazy_load)
 - `source/post/`设置为一个子仓库  (可多终端同步文章)
 - `source/demos/`下包含多个子仓库
 - `source/games`下包含多个子仓库
