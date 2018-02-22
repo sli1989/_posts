@@ -55,8 +55,8 @@ DNS地址解析器的核心功能能
 
 > 注：表中所有数据均来自作者抓包实测，所有解析路线由ip.cn提供。
 
-解析方式一: 1-->2 （www.baidu.com，查询类型A）
-```
+解析方式一: 1-->2 （www.baidu.com，查询类型A，即查询IPv4地址）
+```bash
 # 一会功夫变成102了
 # DNS响应一般为多个ip，后续连接只用一个ip
 $ ping www.baidu.com
@@ -66,20 +66,62 @@ PING www.wshifen.com (45.113.192.102) 56(84) bytes of data.
 
 解析方式二：8  （baidu.com，查询类型A）
 
-```
+```bash
 # 这种域名一般情况下是不能做cname解析的，只能用A记录
 $ ping baidu.com
 PING baidu.com (111.13.101.208) 56(84) bytes of data.
 64 bytes from 111.13.101.208: icmp_seq=1 ttl=45 time=13.8 ms
 ```
 
-解析方式三: 1-->5-->6  （www.baidu.com，查询类型AAAA）
-```
-# 为什么走这个路线，我也不知道...
+解析方式三: 1-->5-->6  （www.baidu.com，查询类型AAAA，即查询IPv6地址）
+```yml
+# 为什么走这个路线？
+# 目前使用IPv6的还是极少数，所以得不到AAAA记录的。
+# DNS响应报文中的资源记录部分：回答字段、授权字段和附加信息字段，均采用一种称为资源记录RR（ Resource Record）的相同格式。
+#
+Domain Name System (response)
+    Questions: 1
+    Answer RRs: 2
+    Authority RRs: 1
+    Additional RRs: 0
+    Queries
+        www.baidu.com: type AAAA, class IN
+    Answers # 回答字段
+        www.baidu.com: type CNAME, class IN, cname www.a.shifen.com
+            Name: www.baidu.com
+            Type: CNAME (Canonical NAME for an alias) (5)
+            CNAME: www.a.shifen.com
+        www.a.shifen.com: type CNAME, class IN, cname www.wshifen.com
+            Name: www.a.shifen.com
+            Type: CNAME (Canonical NAME for an alias) (5)
+            Class: IN (0x0001)
+            Time to live: 271
+            Data length: 14
+            CNAME: www.wshifen.com
+    Authoritative nameservers  # 授权字段
+        wshifen.com: type SOA, class IN, mname ns1.wshifen.com
+            Name: wshifen.com
+            Type: SOA (Start Of a zone of Authority) (6)
+            Primary name server: ns1.wshifen.com baidu_dns_master.baidu.com
+
+
 ```
 
 解析方式四：10  （baidu.com，查询类型AAAA）
-```
+```bash
+
+Domain Name System (response)
+    Questions: 1
+    Answer RRs: 0
+    Authority RRs: 1
+    Queries
+        baidu.com: type AAAA, class IN
+    Authoritative nameservers
+        baidu.com: type SOA, class IN, mname dns.baidu.com
+            Name: baidu.com
+            Type: SOA (Start Of a zone of Authority) (6)
+            Primary name server: dns.baidu.com
+
 
 ```
 
