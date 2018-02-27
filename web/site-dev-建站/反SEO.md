@@ -1,7 +1,11 @@
 ---
 title: 禁止搜索引擎收录的方法
+date: 2018-02-27
+tags: ["域名","web","robot协议","搜索引擎"]
+categories:
+- web
+- site-dev
 ---
-
 
 # 什么是robots协议
 

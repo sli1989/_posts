@@ -1,6 +1,7 @@
 ---
 title: Advanced Markdown tips
-date:
+date: 2018-02-04
+
 ---
 
 
