@@ -14,7 +14,7 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 
 -->
 
-本文主要介绍markdown嵌入html标签的用法
+本文主要介绍markdown嵌入html标签的用法。(有些markdown render不支持内嵌html)
 - `<summary>`
 - `<img>`
 
@@ -40,8 +40,11 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 
 
 ## 图片样式
-
-图片大小，位置，标题等样式
+markdown的语法不支持图片大小，位置等样式。
+```md
+![Alt text](图片链接 "optional title")
+```
+所以可采用`<img>`标签
 
 ```html
 <img title="hover" alt=="alternate_text" align="middle" width="50" height="50" src="http://www.fillmurray.com/100/100">

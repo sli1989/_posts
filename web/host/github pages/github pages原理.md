@@ -41,6 +41,10 @@ categories:
 
 ## 关于https
 
+## 是否可以多个域名指向同一个 GitHub Pages？
+
+GitHub Pages 的官方文档，一个 username.github.io 只能支持一个域名。
+
 
 ## todo
 - [ ] 如何解决md同步问题？
