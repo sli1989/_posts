@@ -47,12 +47,36 @@ Robots协议（也称为爬虫协议、机器人协议等）的全称是“网�
 | baidu、google      | ×    | ×      | ×    | 搜索引擎，屏蔽一切搜索引擎爬虫                                       |
 |                    |      |        |      |                                                                      |
 |                    |      |        |      |                                                                      |
-## github - 屏蔽百度
+## github - 屏蔽百度、搜狗、360等
 
+### 为什么屏蔽百度
+
+> We are currently blocking the Baidu user agent from crawling GitHub Pages sites in response to this user agent being responsible for an excessive amount of requests, which was causing availability issues for other GitHub customers.
+
+> This is unlikely to change any time soon, so if you need the Baidu user agent to be able to crawl your site you will need to host it elsewhere.
+
+> -- by <a href="http://jerryzou.com/posts/feasibility-of-allowing-baiduSpider-for-Github-Pages/">Github Support</a> Jerry's blog
+
+
+即百度爬虫爬得太猛烈，已经对很多 Github 用户造成了可用性的问题了，而禁用百度爬虫这一举措可能会一直持续下去。
+
+
+
+白名单中竟然有 EtaoSpider。why？
 为什么百度中搜索`site:github.io`有结果？
 
-节省流量
+`www.github.com`中的[robots.txt](www.github.com/robots.txt)
+```yml
+User-agent: Googlebot   # google yandex等都在白名单。
+Allow: /*/*/tree/master
+Allow: /*/*/blob/master
 
+User-agent: *   
+Allow: /humans.txt
+Disallow: /      # 百度不在白名单，即整个站点屏蔽百度
+```
+
+除设置了robots.txt之外，github后台服务器还会检查HTTP请求的UA，如果是百度就返回403 forbidden。
 
 ## 电商
 ### 淘宝 - 屏蔽百度
@@ -226,6 +250,7 @@ robots.txt 协议不是法律法规，也不是行业规范。但是一个搜索
 
 # 如何在技术上反爬虫
 
+检查UA
 
 
 # s

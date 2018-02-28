@@ -72,7 +72,12 @@ robots.txt位置固定，sitemap.xml需要在robots.txt中指定路径
 
 由于robots.txt的位置是固定的，于是大家就想到了把sitemap的位置信息放在robots.txt里。这就成为robots.txt里的新成员了。
 
-## 怎样判断网站有网址规范化问题？
+
+站点地图对于百度失效。可以用主动推送和自动推送，
+
+
+
+# 怎样判断网站有网址规范化问题？
 1) 查一下这些URL是否都有差不多的PR值和网页快照：
 
 http://domainname.com
@@ -87,7 +92,7 @@ http://www.domainname.com
 reference： https://www.seozac.com/seo/301-redirect/
 
 site:.top
-## tips
+# tips
 1. edu和gov后缀的域名天生权重更高。有些域名天生反链高，比如xxx   sex   之类的等等！
     - 百度说：使用何种形式的域名后缀对百度网页搜索没有影响
 
@@ -106,12 +111,17 @@ gov和edu对排名有利，但对大多数人没什么指导意义，因为你�
 域名买卖历史，（不涉及到违规行业越好）
 
 
-被百度惩罚
+惩罚 & 奖励
 - 关键词堆砌
 - 频繁的修改网页title、description和keywords
 - 网站加上黑链
 - 短时间内频繁的增加外链，或者短时间内大量的删除外链
 - 服务器不稳定，网站经常打不开活域名解析错误。
+- 全站 HTTPS，谷歌对 HTTPS 有加分
+- 响应式设计，谷歌对提供友好移动端友好页面有加分
+- AMP，谷歌对提供 AMP 支持的网站有加分
+- PWA，谷歌对 PWA 有加分
+- 加载优化，谷歌对 Pageseed 测试 90 分以上的网站有加分
 
 ## tricks
 
