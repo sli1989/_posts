@@ -41,9 +41,19 @@ categories:
 
 ## 关于https
 
-## 是否可以多个域名指向同一个 GitHub Pages？
+## 多个域名能否指向同一个 GitHub Pages？
 
 GitHub Pages 的官方文档，一个 username.github.io 只能支持一个域名。
+
+coding page支持多个域名。
+
+## 一个账号能否见多个github page？
+
+可以建立多个， 个人账户page只能有一个， 项目page可以有多个
+
+比如你的账号名为  username, 项目叫 project1    那你可以通过  username.github.io/project1 访问， 如果配置了个人域名就可以用自己的域名访问了
+
+但是CNAME不能指向username.github.io/project1，怎么办？
 
 
 ## todo

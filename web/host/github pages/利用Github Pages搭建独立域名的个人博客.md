@@ -88,6 +88,8 @@ mail：将域名解析为mail.aliyun.com，通常用于解析邮箱服务器。
 在source目录下新建CNAME文件，内容是`xusong.vip`。这样每次deploy会自动完成`步骤3`。
 
 
+## 
+
 
 ## 5. 疑点重重
 - [x] 为什么还要再github仓库中设置？dns解析不是已经做了重定向了吗。指向ip:80端口还不够吗？
