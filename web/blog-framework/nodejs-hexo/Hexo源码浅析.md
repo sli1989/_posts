@@ -18,7 +18,7 @@ categories:
 
 ```sh
 $ npm ls --depth 0
-├── hexo@3.5.0
+├── hexo@3.5.0  # https://github.com/hexojs/hexo/  hexo仅仅是一个module而已，用于...
 ├── hexo-deployer-git@0.3.1       # 多数采用git部署吧，其他我也不会用
 ├── hexo-generator-archive@0.1.5  # generator最复杂
 ├── hexo-generator-baidu-sitemap@0.1.2  # Hexo自动生成sitemap.xml，收录
@@ -36,6 +36,8 @@ $ npm ls --depth 0
 └── hexo-wordcount@3.0.2           # 博客字数统计、站点总字数统计
 
 ```
+
+> 更新各个模块，命令 npm update
 
 
 
@@ -85,7 +87,7 @@ INFO  Install dependencies
 看到这里就应该解开谜团了。
 如果对追寻答案的过程感兴趣，可以继续往下看。
 
-### 追寻答案的旅程 - optinal
+### 追寻答案的旅程 - optional
 
 首先看一下hexo。
 

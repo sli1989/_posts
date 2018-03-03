@@ -1,7 +1,8 @@
 ---
 title: Github Pages托管静态博客-原理浅析
-date: 2018-01-26 03:08:53
-tags: ["git","blog"]
+date: 2018-01-26
+keywords: ["github","pages","pages服务","blog","博客","静态网页","网页托管","免费","自定义域名","Jekyll"]
+tags: ["github","blog"]
 categories:
 - web
 - host
