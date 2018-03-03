@@ -1,4 +1,11 @@
-
+---
+title: hexo中的SEO技巧
+date: 2018-03-04
+tags: ["domain","SEO","hexo"]
+categories:
+- web
+- site-dev
+---
 
 
 ## 关于keywords
@@ -26,5 +33,7 @@ https://github.com/hexojs/hexo/blob/master/lib/plugins/helper/open_graph.js
 
 https://github.com/theme-next/hexo-theme-next/blob/master/layout/_partials/head/head-unique.swig
 
+
+建议tags标签和keywords标签都加。由于keywords在页面不会展示，因此添加更自由，添加面向SEO的标签。
 
 ##
