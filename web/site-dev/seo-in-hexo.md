@@ -1,5 +1,5 @@
 ---
-title: hexo中的SEO技巧
+title: Hexo中的SEO技巧
 date: 2018-03-04
 tags: ["domain","SEO","hexo"]
 categories:
@@ -36,4 +36,8 @@ https://github.com/theme-next/hexo-theme-next/blob/master/layout/_partials/head/
 
 建议tags标签和keywords标签都加。由于keywords在页面不会展示，因此添加更自由，添加面向SEO的标签。
 
-##
+## 关于robots.txt 和 sitemap.xml
+
+## 参考
+
+http://www.restran.net/2017/05/02/hexo-custom-html-meta-keywords/

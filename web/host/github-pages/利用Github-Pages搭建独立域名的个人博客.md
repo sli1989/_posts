@@ -1,3 +1,4 @@
+
 ---
 title: 利用Github Pages搭建独立域名的个人博客
 date: 2018-01-26 03:08:53
@@ -88,7 +89,7 @@ mail：将域名解析为mail.aliyun.com，通常用于解析邮箱服务器。
 在source目录下新建CNAME文件，内容是`xusong.vip`。这样每次deploy会自动完成`步骤3`。
 
 
-## 
+##
 
 
 ## 5. 疑点重重

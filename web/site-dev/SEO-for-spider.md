@@ -1,6 +1,7 @@
 ---
 title: 关于SEO
 date: 2018-01-25
+keywords: ["domain","SEO","域名","搜索引擎","站长","sitemap","爬虫"]
 tags: ["domain","SEO"]
 categories:
 - web
@@ -89,7 +90,7 @@ https://www.zhihu.com/question/19987112
 
 ## URL设计 与 SEO
 - 静态URL
-- 尽量英文，中文用拼音。(现在搜索引擎也对中文优化了，貌似中文url也不错)
+- 尽量英文，中文用拼音。(现在搜索引擎也对中文优化了，貌似中文url也不错，例如wikipedia的中文页面就采用的中文url)
 - 字母全部小写
 - URL中包含关键词
 - url要短
@@ -101,6 +102,15 @@ robots.txt位置固定，sitemap.xml需要在robots.txt中指定路径
 
 必要性
 
+# 提交链接的几种方式
+
+Sitemap提交：在配置sitemap文件时，无论是txt格式的文本文档还是还是xml格式的文件。都不建议将其sitemap的文件名命名为sitemap.txt或sitemap.xml这么大众化且谁都能够知道的文件名。如果你这样设置，你的竞争对手或需要你网站内容的人很容易就能拿到你所有的页面url。出于保险起见还是使用一些自己定义的较复杂的文件名。每一个url都必须包含http://，文件中包含的url不得超过5万条，单文件大小不得超过10MB，一个站点最多提交5万个sitemap文件，超出5万个不再处理并会提示“链接数超”。如果是通过子域名的形式验证的站点。那么主域名下的sitemap文件是可以包含该域名下的所有域名的url的。
+
+主动推送：
+
+对比sitemap而言在及时抓取上推送更快、发现更快、抓取更及时。如果是时效性文章不排除其收录速度达到一瞬间的效率，这里特别建议一下，最好是主动推送我们网站第一时间产生的新内容给百度其效果更佳；主动推送是有推送数量的限制，尽可能的不要推送重复的内容给百度。这样会大大浪费自己的可推送资源。
+
+自动推送：`在页面被访问时，页面URL将立即被推送给百度`。
 
 ## sitemap
 爬虫会通过网页内部的链接发现新的网页。但是如果没有连接指向的网页怎么办?或者用户输入条件生成的动态网页怎么办?能否让网站管理员通知搜索引擎他们网站上有哪些可供抓取的网页?这就是sitemap，最简单的 Sitepmap 形式就是XML文件，在其中列出网站中的网址以及关于每个网址的其他数据(上次更新的时间、更改的频率以及相对于网站上其他网址的重要程度等等)，利用这些信息搜索引擎可以更加智能地抓取网站内容。
@@ -119,7 +129,75 @@ robots.txt位置固定，sitemap.xml需要在robots.txt中指定路径
 必要性：不做也能收录。
 最好做，为蜘蛛提供一个引导，有利于收录
 
-知乎没有sitemap.xml
+知乎没有sitemap.xml，或许自定义了文件名
+
+
+https://blog.eson.org/2018/03/04/web/site-dev/seo-in-hexo/
+
+## 主动推送
+
+调用接口
+http://data.zz.baidu.com/urls?site=https://blog.eson.org&token=hOraXsrU6jl6Pifg"
+
+### 应用实例
+
+hexo的baidu主动推送[hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit)
+
+新链接的产生，hexo generate会产生一个文本文件，里面包含最新的链接
+新链接的提交，hexo deploy会从上述文件中读取链接，提交至百度搜索引擎。
+
+## 自动推送
+页面每次被访问时，页面URL将立即被推送给百度。借助用户的浏览行为来触发推送动作，无需站长汇总URL再进行主动推送操作，省去了站长人工操作的时间。
+
+### 源码
+需要将这段js代码部署到我们的每一个网页中
+```js
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);  //
+})();
+</script>
+```
+
+每当用户进行访问时，就会触发了这段代码，这段代码自动将当前页面的url推送给了百度。具体推送代码如下：
+
+[push.js](https://zz.bdstatic.com/linksubmit/push.js)
+```js
+!function() {
+    var e = /([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi
+      , r = window.location.href
+      , t = document.referrer;
+    if (!e.test(r)) {
+        var o = "https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif";
+        t ? (o += "?r=" + encodeURIComponent(document.referrer),
+        r && (o += "&l=" + r)) : r && (o += "?l=" + r);
+        var i = new Image;
+        i.src = o
+    }
+}(window);
+```
+
+比如每次访问页面`https://blog.eson.org`时，都会触发一个http请求`https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif?l=https://blog.eson.org/`。这就是自动推送。
+
+
+### 应用实例：
+
+hexo-theme-next中的baidu自动推送，[ baidu-push.swig](https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/seo/baidu-push.swig)
+
+
+## 总结
+
+建议同时配置这三种方式，并让三者协同工作，将抓取和收录价值最大化。
+
 
 # 怎样判断网站有网址规范化问题？
 1) 查一下这些URL是否都有差不多的PR值和网页快照：
@@ -185,9 +263,56 @@ http://www.ehcoo.com/seo.html
 [百度站长平台关于SEO的建议](https://ziyuan.baidu.com/college/articleinfo?id=36)
 [自动推送Hexo博客文章至百度](https://lemonxq.cn/2017/11/23/[%E8%87%AA%E5%88%B6%E5%B7%A5%E5%85%B7]%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81Hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E8%87%B3%E7%99%BE%E5%BA%A6/) 待看
 [知乎是怎么把 SEO 做起来的？](https://www.zhihu.com/question/22726981)
+- [https建议](http://www.chinaz.com/web/2015/1118/471868.shtml)
+- [新站如何被百度快速收录](https://ziyuan.baidu.com/college/articleinfo?id=874)
 ## 待续
 
+
+# 常见疑问
+
+## http站点转为https后，对站点原本的评价权重得分是否有影响？  
+
+无影响，后续会有正向收益，认为https更安全，在排序上会有倾斜。
+
+## 转https后，需要做301跳转，在这个过程中，http已有的排名是否会有变动？快照是否有变动？301需要永久存在吗？  
+
+快照和排名不会有变化，建议301永久存在，不管是对搜索引挚还是对用户来说都更好一些。
+
+## 针对https的站点，百度在抓取技术层面上有哪些建议？
+
+如果以前有http站点，建议永久保留跳转行为。之后注意通过百度站长平台的抓取诊断工具和抓取异常工具关注抓取结果。
+
+
+
+## 百度索引量增加收录量反而下降是什么原因？
+
+百度索引量是指被百度收集的数量，百度收录量是指被百度放出的数量
+> 1. 索引量指可以被搜索用户搜索到的网站数据库，索引量工具同时支持站点自定义想要关注的目录，查看某一目录规则下的索引量；索引量不等于流量，索引量会有定期数据波动，属于正常现象。
+> 2. 百度索引数据最快每天更新一次，最迟一周更新一次，不同站点的更新日期可能不同。
+> 3. 您可以查询到近一年中每天的索引量数据，一年前的索引量数据为每月索引量数据。
+> 4. 如果已有流量数据查询不到，请隔日再查，最长间隔一周可查询到数据。
+> 来自百度 https://ziyuan.baidu.com
+
+1. 百度索引是指你的网页已被百度蜘蛛爬取到百度索引库里了，但这不表示你的网页被百度收录了，所以你是检索不到的。
+1. 百度收录是指，在百度索引库的网页经一定检查符合百度标准的，百度“转移到”（这个词是我自己说的，方便理解，实际百度未必这样处理）收录库里，予以放出，也就是被百度收录了这时你才能检索到自己的网页，但此时你的网页如果不符合标准仍然有从百度收录库被删的可能，比如文章是复制的重复率太高等等，百度检查也不是完美的。
+
+索引增加说明，百度蜘蛛还会定期到你的网站爬取网页，所以你的索引会增加。
+收录减少很可能是因为你的网页在百度的价值不够，又被百度收录删了。
+
+
+## 为什么百度索引量和收录量一直不增加呢?
+
+新站开始收录比较慢比较正常，当然有些新站收录也会比较好。
+这个也是有一些偶性的，看下抓取频次和日志里面的蜘蛛爬行情况，都是正常即可。
+
+## 提交链接后，都会被百度抓取并收录吗？
+百度对已提交的数据，不保证一定会抓取及收录所有网址。是否收录与页面质量相关。
 
 ## 实例
 
 电商比较重视排名，SEO一定要好
+
+
+# 总结
+
+麻蛋，百度不行啊。seo设置麻烦，收录又慢。google都不用设置，收录又新又好。
