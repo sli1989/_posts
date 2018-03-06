@@ -163,7 +163,7 @@ Domain Name System (response)
 
 ### 为什么无法直接访问www.a.shifen.com
 
-<image src="/image/raw/HTTP%20-%20Wireshark%20-%20www.a.shifen.com.png">
+<image src="/images/raw/HTTP%20-%20Wireshark%20-%20www.a.shifen.com.png">
 
 流程：
 - [x] [1,2,3,4] - DNS解析
