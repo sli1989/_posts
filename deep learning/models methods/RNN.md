@@ -26,7 +26,7 @@ categories:
 该文章针对广义上的RNN。
 
 RNN的形式有很多种
-<image title="An unrolled recurrent neural network" src="image/raw/rnn-overview-xs.png" >
+<image title="An unrolled recurrent neural network" src="/image/raw/rnn-overview-xs.png" >
 
 该图的总结很好，大部分应用都可归入该框架。具体的应用可参考[karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 <!-- 框架之外的模型: attention -->

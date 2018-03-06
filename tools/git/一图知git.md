@@ -64,7 +64,7 @@ hash
 ## 上图
 
 
-<img src="image/raw/git-graph-mid.svg?sanitize=true" height="110%" width="110%">
+<img src="/image/raw/git-graph-mid.svg?sanitize=true" height="110%" width="110%">
 
 
 
