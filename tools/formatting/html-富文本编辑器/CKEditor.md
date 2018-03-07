@@ -13,6 +13,7 @@ categories:
 [CKEditor with CDN](https://js.plus/docs/how-to-install-ckeditor-plugin-from-cdn)
 
 
+为知笔记也不错。
 
 https://github.com/ckeditor/ckeditor-dev
 
