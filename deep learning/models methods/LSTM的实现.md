@@ -1,6 +1,7 @@
 ---
 title: LSTM的源码浅析
 date: 2018-02-06 19:08:53
+keywords: ["lstm","rnn","源码","深度学习","deep learning"]
 tags: lstm
 categories:
 - deep learing
@@ -45,8 +46,7 @@ gate类似阀门，是一种开关。
 <!-- In theory, RNNs are absolutely capable of handling “long-term dependencies.” -->
 
 <!--"https://www.cc.gatech.edu/~san37/img/dl/grad_vanishing.png"-->
-<image title="d" src="/images/raw/RNN-vanish-gradient-problem.PNG" width="70%">
-<!-- /images/raw/RNN-vanish-gradient-problem.PNG -->
+<image title="d" src="/images/raw/RNN - vanish gradient problem.png" width="70%">
 
 传统RNN中存在的梯度消失。
 <!-- conventional RNN: 1. The sensitivity of the input valus decays overtime 2. The network forgets the previous input-->
@@ -54,7 +54,7 @@ gate类似阀门，是一种开关。
 
 
 <!-- https://www.cc.gatech.edu/~san37/img/dl/grad_lstm.png -->
-<image title="Preservation of gradient information by LSTM" width="70%" src="/images/raw/LSTM-grad.PNG">
+<image title="Preservation of gradient information by LSTM" width="70%" src="/images/raw/LSTM - preservation of gradient.png">
 <!-- LSTM: 1. The cell remember the input as long as it wants 2. The output can be used anytime it wants-->
 
 上面这个例子中，数据从实心1向后传递。通过gate的配合，成功在节点4和6输出该数据。数据流不会因long-term传输而消息，有效解决RNN的梯度消失问题。
@@ -122,7 +122,7 @@ for current_batch_of_words in words:
 
 ## LSTM: tensorflow实现
 
-<image src="/images/raw/LSTM-in-tensorflow-withEquation.png">
+<image src="/images/raw/LSTM - tensorflow with Equation.png">
 
 
 tensorflow源码 - [BasicLSTMCell](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py#L553)
