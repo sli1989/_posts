@@ -1,8 +1,12 @@
 ---
-title: afda
-
+title: DNS解析实例之 Coding Pages
+date: 2018-03-06
+keywords: ["dns","解析","coding.net","pages"]
+tags: ["network","dns"]
+categories:
+- network
+- dns
 ---
-
 
 
 
@@ -11,8 +15,14 @@ title: afda
 
 ## coding page跳转至首页
 
+DNS配置
+<img src="/images/raw/建站 - DNS解析 - 配置.png"></img>
 
-首选域名，一次到达
+coding.net域名配置
+<img src="/images/raw/建站 - Coding Pages - 域名配置.png"></img>
+
+
+`首选`域名，一次到达
 
 ```sh
 $ wget https://blog.eson.org
@@ -26,25 +36,25 @@ Saving to: ‘index.html.1’
 
 
 ```
-跳转的域名，采用301跳转
+`跳转至首页`的域名，采用301跳转
 
 ```sh
 $ wget xusong.vip
 --2018-03-02 17:35:28--  http://xusong.vip/
-# dns解析，CNAME记录：xusong.vip --> xu-song.coding.me
-# 即域名xu-song.coding.me对应的服务器。
-# 返回301跳转到 http://blog.eson.org/
+# dns解析xusong.vip，根据CNAME记录得到xu-song.coding.me。
+# 然后解析xu-song.coding.me对应的服务器IP。
+# 返回“301跳转到 http://blog.eson.org/”
 Resolving xusong.vip (xusong.vip)... 103.72.145.7, 23.91.101.50, 103.218.240.147, ...
 Connecting to xusong.vip (xusong.vip)|103.72.145.7|:80... connected.
 HTTP request sent, awaiting response... 301 Moved Permanently
 Location: http://blog.eson.org/ [following]
-# dns解析
+# DNS解析http站点，返回“301跳转至https页面”
 --2018-03-02 17:35:29--  http://blog.eson.org/
 Resolving blog.eson.org (blog.eson.org)... 103.72.147.211, 103.72.145.7, 23.91.101.50, ...
 Reusing existing connection to xusong.vip:80.
 HTTP request sent, awaiting response... 301 Moved Permanently
 Location: https://blog.eson.org/ [following]
-#
+# DNS解析https站点，返回页面内容
 --2018-03-02 17:35:31--  https://blog.eson.org/
 Connecting to blog.eson.org (blog.eson.org)|103.72.147.211|:443... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -54,6 +64,7 @@ Saving to: ‘index.html’
 
 ```
 
+不加https协议，会首先301跳转到https站点。
 
 ```sh
 $ wget blog.eson.org
@@ -74,8 +85,7 @@ Saving to: ‘index.html’
 ```
 
 
-
-要跳转2次，一次302，一次301
+直接访问coding pages页面，要跳转2次，一次302，一次301
 ```sh
 $ wget xu-song.coding.me
 #
