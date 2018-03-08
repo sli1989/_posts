@@ -62,6 +62,12 @@ DNS地址解析器的核心功能能
 $ ping www.baidu.com
 PING www.wshifen.com (45.113.192.102) 56(84) bytes of data.
 64 bytes from 45.113.192.102: icmp_seq=1 ttl=43 time=87.3 ms
+
+$ wget www.baidu.com
+--2018-03-08 11:30:32--  http://www.baidu.com/
+Resolving www.baidu.com (www.baidu.com)... 45.113.192.102, 45.113.192.101
+Connecting to www.baidu.com (www.baidu.com)|45.113.192.102|:80... connected.
+HTTP request sent, awaiting response... 200 OK
 ```
 
 解析方式二：8  （baidu.com，查询类型A）
@@ -71,7 +77,20 @@ PING www.wshifen.com (45.113.192.102) 56(84) bytes of data.
 $ ping baidu.com
 PING baidu.com (111.13.101.208) 56(84) bytes of data.
 64 bytes from 111.13.101.208: icmp_seq=1 ttl=45 time=13.8 ms
+
+# DNS中没有对baidu.com做CNAME记录，貌似。
+# 为什么浏览器重定向到http://www.baidu.com/？ 后面章节会介绍
+$ wget baidu.com
+--2018-03-08 11:32:10--  http://baidu.com/
+Resolving baidu.com (baidu.com)... 111.13.101.208, 220.181.57.216
+Connecting to baidu.com (baidu.com)|111.13.101.208|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+
 ```
+
+
+
 
 解析方式三: 1-->5-->6  （www.baidu.com，查询类型AAAA，即查询IPv6地址）
 ```yml
@@ -171,12 +190,23 @@ Domain Name System (response)
 - [x] [8] - 发送HTTP Get请求
 - [ ] [9] - 服务器返回RST复位信号，强制关闭TCP连接
 
-服务器成功收到了HTTP Get请求，后台逻辑认为这个连接不符合规范()。所谓baidu定义的规范那应该就是服务器检查host，非`baidu.com`或``就拒绝访问。
+服务器成功收到了HTTP Get请求，后台逻辑认为这个连接不符合规范()。所谓baidu定义的规范那应该就是服务器检查host，非`baidu.com`或`s`就拒绝访问。
 
 
 ### 抓包貌似看不到整个路由，是吗？如何分析整个路由？
 
---
+。。
+
+### 为什么访问 baidu.com 会跳转到 www.baidu.com ？
+
+
+`baidu.com`返回的页面如下：
+```html
+<html>
+<meta http-equiv="refresh" content="0;url=http://www.baidu.com/">
+</html>
+```
+表示0秒之后跳转到`www.baidu.com`主页。这种叫做`HTML redirections`。并非30X 重定向。[参考](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
 
 ## 参考
 
