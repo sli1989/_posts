@@ -32,7 +32,9 @@ categories:
 - `themes/` 每个theme是一个子仓库  (经常pull一下主题，有很多新功能和bug-fix。不用为了增加某些功能而自己改模板源文件，比如busuanzi，disqus的lazy_load)
 - `source/post/`设置为一个子仓库  (可多终端同步文章)
 - `source/demos/`下包含多个子仓库
+- `source/public` 如果文件可以被渲染的话，会经过解析然后储存到 public 文件夹，否则会直接拷贝到 public 文件夹。
 - `source/games`下包含多个子仓库
+
 
 
 **模块搭建&整合流程**

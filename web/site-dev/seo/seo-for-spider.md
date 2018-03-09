@@ -62,6 +62,15 @@ github 禁止了百度的爬虫，你可以在 国内的 coding.net 上放一份
 当网页A用301重定向转到网页B时，搜索引擎可以肯定网页A永久的改变位置，或者说实际上不存在了，搜索引擎就会把网页B当作唯一有效目标。好处是，第一，没有网址规范化问题，第二，也很重要的，网页A的PR网页级别会传到网页B。
 
 
+
+# SEO与跳转(重定向)
+
+301 vs 302 vs meta-refresh tag
+
+<img src="http://www.redalkemi.com/public/tinymce/images/uploads/2008/04/bot-blog4.jpg"></img>
+
+[参考](http://www.redalkemi.com/blog/post/the-seo-war-of-redirects-301-vs-302-vs-meta-refresh-tag)
+
 ## 网站迁移
 
 ### 域名迁移

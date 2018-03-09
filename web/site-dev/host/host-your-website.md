@@ -1,7 +1,7 @@
 ---
 title: 如何托管你的网站
 date: 2018-03-08
-keywords: ["托管","网站","几种方式","host","website","github","pages","coding.net",""]
+keywords: ["托管","网站","几种方式","host","website","github","pages","coding.net","绑定域名","GAE","云主机"]
 tags: ["github","blog"]
 categories:
 - web
@@ -17,16 +17,16 @@ web hosting (service)可以被翻译为：网站托管。这里的host，类似�
 
 大体分Iaas和PaaS两种
 
-- IaaS：云主机(或虚拟机)
+- IaaS：云主机(或虚拟机) - 权限大，费用贵
   - 阿里云主机、Google云主机(GCE)、腾讯云主机等
-- PaaS：云平台(运行软件的平台)
+- PaaS：云平台(运行软件的平台) - 权限小，便宜或免费
   - 动态页面托管平台：SAE、GAE等
   - 静态页面托管平台：github pages服务、coding pages服务
 
-> Saas：云应用(软件)。我们的网站本身就是应用级别的，要搭建在平台或主机上。<br>
-> 注意区分：<br>
-> github的仓库是版本控制软件，是github提供的SaaS服务。<br>
-> github的Pages服务用于网站托管，是github提供的PaaS服务。<br>
+<!-- Saas：云应用(软件)。我们的网站本身就是应用级别的，要搭建在平台或主机上。-->
+> 注意区分：
+> github的仓库是版本控制软件，是github提供的SaaS服务。
+> github的Pages服务用于网站托管，是github提供的PaaS服务。
 
 多数个人博客采用的Pages服务来托管
 
@@ -36,27 +36,18 @@ github仓库属于软件级别，里面的代码。
 
 -->
 
-## 云主机
-
-## Pages服务
+## 云主机 - 贵
 
 
-# 什么是 Internet 服务提供商（ISP）？
 
-ISP 指的是 Internet 服务提供商。通常指移动、联通、电信吧
+## GAE - 限额免费
 
-ISP 可提供 Internet 服务。
+Google App Engine是Google提供的基于Google数据中心的开发、托管网络应用程序的平台，每个 Google App Engine 应用程序都可使用1GB存储空间和每天1G的流量，GAE对于使用资源有各种限制，跑动态网站往往会配置不够用，但如果网站使用纯粹的静态HTML建立，那么这种网站还是可以支持较大的访问量。
 
-最常见的 Internet 服务是网站主机。
+GAE网站的`免费额度`限制主要是：文件总容量小于1G，文件数量少于1万个，每天流量小于1G，由于静态网站对于CPU消耗很少，因此CPU的运算限制可以忽略，通常来说，这样的配额对于普通中小型网站已经足够了。
 
-网站主机服务可把您的网站存放到一个公共的服务器上。
+## Pages服务 - 免费 - 适合纯静态网站 - 简单
 
-网站主机服务通常包括了域名注册服务。
-
-
-# 什么是网站主机？什么是
-
-github不是云主机。
 
 
 

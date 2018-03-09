@@ -28,7 +28,7 @@ $ npm ls --depth 0
 ├── hexo-generator-searchdb@1.0.8
 ├── hexo-generator-sitemap@1.2.0
 ├── hexo-generator-tag@0.2.0
-├── hexo-renderer-ejs@0.3.1       # nodejs的模板引擎，有EJS、Jade、Swig。theme-next采用的swig
+├── hexo-renderer-ejs@0.3.1       # nodejs的模板引擎，有EJS、Jade、Swig、Haml。theme-next采用的swig
 ├── hexo-renderer-marked@0.3.2    # markdown的render engine，即`.md`转`html`
 ├── hexo-renderer-stylus@0.3.3
 ├── hexo-server@0.2.2
@@ -45,7 +45,7 @@ $ npm ls --depth 0
 
 以下来自[官方文档](https://github.com/hexojs/hexo/blob/master/README.md)
 
-``` bash
+```sh
 # 1. Installation
 $ npm install hexo-cli -g
 
@@ -77,13 +77,14 @@ npm list -g 能够看到安装路径。一般在/usr/lib/node_modules/ 或者/us
 `hexo init`命令做了什么？下面直接放答案
 ### 答案
 以下是`hexo init`的log。`hexo init`做了两个事情，git-clone & install-dependency，分别对应以下两行shell命令。
-```bash
+```sh
 # 1. git clone --recursive https://github.com/hexojs/hexo-starter.git blog
 INFO  Cloning hexo-starter to blog
 
 # 2. npm install --production
 INFO  Install dependencies
 ```
+
 看到这里就应该解开谜团了。
 如果对追寻答案的过程感兴趣，可以继续往下看。
 
@@ -91,7 +92,7 @@ INFO  Install dependencies
 
 首先看一下hexo。
 
-```bash
+```sh
 $ which hexo
 /usr/bin/hexo
 
@@ -104,35 +105,32 @@ require('../lib/hexo')();
 
 这里你会发现，hexo命令是nodejs脚本。 `../lib/hexo`对应的是`usr/lib/hexo`，然而没有path。
 
-```bash
+```sh
 $ ls -l /usr/bin/hexo
  /usr/bin/hexo -> ../lib/node_modules/hexo-cli/bin/hexo
 ```
 
 原来`/usr/bin/hexo`是个符号链接，链接到nodejs的modules目录里。
 
-```bash
+```sh
 $ cd /usr/lib/node_modules/hexo-cli/bin/hexo
 
 ```
 
 
 **`init.js`核心代码**
+
 ```js
 var GIT_REPO_URL = 'https://github.com/hexojs/hexo-starter.git';
-
 // 1. git clone --recursive https://github.com/hexojs/hexo-starter.git blog
 log.info('Cloning hexo-starter to'
 spawn('git', ['clone', '--recursive', GIT_REPO_URL, target]);
 removeGitDir(target);
 removeGitModules(target);
-
 // 2. npm install --production
 log.info('Install dependencies');
 spawn(npmCommand, ['install', '--production']);
-
 ```
-
 
 实际上吧，如果hexo的log打印出来`GIT_REPO_URL`就更清晰，非要藏起来等人挖掘。
 
@@ -164,6 +162,9 @@ spawn(npmCommand, ['install', '--production']);
 
 生成静态文件。将我们的数据和界面相结合生成静态文件的过程。会遍历主题文件中的 source 文件夹（js、css、img 等静态资源），然后建立索引，然后根据索引生成 pubild 文件夹中，此时的 publid 文件是由 html、 js、css、img 建立的纯静态文件可以通过 index.html 作为入口访问你的博客。
 
+
+- .md解析成html
+- .swig渲染为html
 
 ## 6. hexo deploy
 deploy到底干了什么？执行了git push？
