@@ -2,7 +2,7 @@
 title: Github Pages托管静态博客-原理浅析
 date: 2018-01-26
 keywords: ["github","pages","pages服务","blog","博客","静态网页","网页托管","免费","自定义域名","Jekyll"]
-tags: ["github","blog"]
+tags: ["github","pages","blog"]
 categories:
 - web
 - host
@@ -11,6 +11,10 @@ categories:
 ## 关于github提供的http server
 
 #### ping 几个不同账号的gitpage(比如`colah.github.io`,`xu-song.github.io`)，发现对应的是同一个ip。为什么返回的页面不同呢？
+
+github pages 的 CNAME 是绑定 pages.github.io，不是${username}.github.io
+
+coding.net 的 CNAME 是绑定 pages.coding.me 
 
 显然，Github肯定在后台做了处理。即github自身会维护一个映射，`host_name --> www_path`，这样就可以根据不同的host信息返回不同的html了。
 
@@ -41,6 +45,12 @@ categories:
 
 
 ## 关于https
+
+### 为什么Github Pages不支持为自定义域名添加SSL证书？
+
+https://steffan.cn/2017/03/22/use-cloudflare-to-implement-HTTPS-for-GithubPages-with-custom-domain-names/
+
+
 
 ## 多个域名能否指向同一个 GitHub Pages？
 

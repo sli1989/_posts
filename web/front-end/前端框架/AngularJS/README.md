@@ -12,8 +12,9 @@ AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同�
 AngularJS 将在表达式书写的位置"输出"数据。
 
 
+# Angular 发展史
 
-# AngularJS 1
+## Angular 1 也叫 AngularJS
 
 http://www.runoob.com/angularjs/angularjs-tutorial.html
 
@@ -24,9 +25,9 @@ AngularJS 可以构建一个单一页面应用程序（SPAs：Single Page Applic
 
 Angular 1
 
-# Angular 2
+## Angular 2 （或简称Angular）
 
-
+[Angular2架构](http://www.runoob.com/angularjs2/angularjs2-architecture.html)
 Angular2.x与Angular1.x 的区别类似 Java 和 JavaScript 或者说是雷锋与雷峰塔的区别，
 - Angular2不是从Angular1升级过来的，Angular2是`重写`的，所以他们之间的差别比较大，
 - Angular2使用了javascript的超集`Typescript`，所以angular1和angular2从设定之初就是不一样的；
@@ -40,6 +41,15 @@ Angular2 的核心灵魂只有一个，那就是组件化（Component），而�
 
 
 angular需要借助nodejs在后台把.ts编译成.js
+
+## Angular 4
+
+Angular 服务端渲染：
+这个版本现在包含了服务端渲染团队在过去几个月中的外部和内部工作的结果。主要代码都在 @angular/platform-server。（译者注：原先的 Angular 服务端渲染是社区人员维护的，后被 Angular 官方采用，https://github.com/angular/universal）
+
+了解更多 Angular 服务端渲染，让我们来看看新的 renderModuleFactory 方法，它在 @angular/platform-server，或者 Rob Wormald 演示代码（译者注：https://github.com/robwormald/ng-universal-demo）。更多文档和代码实例随后提供。
+
+参考：https://coyee.com/article/12371-angular-2-vs-angular-4-features-performance
 
 # 关系
 
@@ -55,8 +65,7 @@ webpack这类依赖
 
 Angular 1应该完全不依赖node，因为不支持`Typescript`。
 
-
-还有其他的编译工具，
+Angular是前端框架，运行在浏览器上。nodejs是后端平台，相当与还一个JVM。node运行的例子，是用node做后台来演示而已，也可以使用apache服务器，也可以使用python服务器，tomcat服务器，甚至直接双击html打开。
 
 
 ## angular是服务端渲染还是浏览器端渲染

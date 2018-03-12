@@ -36,24 +36,35 @@ DNS地址解析器的核心功能能
 
 ## 百度DNS解析规则
 
-| 编号 | 记录类型 | 主机记录         | 解析线路(isp) | 记录值                       | TTL值(不定) | 备注                                  |
-|------|----------|------------------|---------------|-------------------|-------|----------------------|
-| 1    | CNAME    | www.baidu.com    | --            | www.a.shifen.com  | 268   |                     |
-| 2    | A        | www.a.shifen.com | 新加坡 百度   | 45.113.192.101     | 160   | 见解析方式一  |
-| 3    | A        | www.a.shifen.com | 北京电信      | 220.181.111.188    | 160   |                 |
-| 4    | A        | www.a.shifen.com | 其他          |                   |       |                                       |
-|      |          |                  |               |                   |       |                                       |
-| 5    | CNAME    | www.a.shifen.com | --            | www.wshifen.com   | 271   |   见解析方式三                     |
-| 6    | NS       | wshifen.com      | --            | ns1.wshifen.com   | 163   |                        |
-| 7    | AAAA     | www.baidu.com    |               |                   |       | 百度没有AAAA记录吧？                  |
-|      |          |                  |               |                   |       |                                       |
-| 8    | A        | baidu.com        | 北京移动      | 111.13.101.208     |       |     见解析方式二                 |
-| 9    | A        | baidu.com        | 北京联通...   | 123.125.114.144    |       |                                       |
-| 10   | NS       | baidu.com        | --            | dns.baidu.com     | 900   | 见解析方式四                       |
-|      |          |                  |               |                   |       |                                       |
-| 11   | NS       | a.shifen.com     | --            | ns1.a.shifen.com   | 397   | 见解析方式五                       |
+| 编号 | 主机记录         | 记录类型 | 解析线路(isp) | 记录值           | TTL值(不定) | 备注               |
+|------|------------------|----------|---------------|------------------|-------------|--------------------|
+|      | www.baidu.com    | CNAME    | --            | www.a.shifen.com | 268         |                    |
+|      |                  |          |               |                  |             |                    |
+|      | www.a.shifen.com | CNAME    | --            | www.wshifen.com  | 271         | 见解析方式三       |
+|      |                  |          |               |                  |             |                    |
+|      | www.wshifen.com  | A        | 新加坡 百度   | 45.113.192.101   | 160         | 见解析方式一       |
+|      | www.wshifen.com  | A        | 北京电信      | 220.181.111.188  | 160         |                    |
+|      | www.wshifen.com  | A        | 其他          |                  |             |                    |
+|      |                  |          |               |                  |             |                    |
+|      | wshifen.com      | NS       | --            | ns1.wshifen.com  | 163         | 很多name server    |
+|      |                  |          |               |                  |             |                    |
+|      | baidu.com        | A        | 北京移动      | 111.13.101.208   |             | 见解析方式二       |
+|      | baidu.com        | A        | 北京联通...   | 123.125.114.144  |             |                    |
+|      | baidu.com        | SOA      | --            | dns.baidu.com    | 900         | 见解析方式四       |
+|      | baidu.com        | NS       | --            | ns1.baidu.com    |             |                    |
+|      | baidu.com        | NS       | --            | ns2.baidu.com    |             |                    |
+|      |                  |          |               |                  |             |                    |
+|      | shifen.com.      | NS       |               | ns1.baidu.com    |             |                    |
+|      | shifen.com.      | A        |               | 202.108.250.218  |             |                    |
+|      | shifen.com       | SOA      |               | dns.shifen.com   |             | dig shifen.com soa |
+|      |                  |          |               |                  |             |                    |
+|      | a.shifen.com     | NS       | --            | ns1.a.shifen.com | 397         | 见解析方式五       |
 
 > 注：表中所有数据均来自作者抓包实测，所有解析路线由ip.cn提供。
+
+www.wshifen.com  没有NS记录，没有SOA记录。
+`dig www.wshifen.com ns`。没有answer，即没有ns记录
+`dig wshifen.com ns`，有answer
 
 解析方式一: 1-->2 （www.baidu.com，查询类型A，即查询IPv4地址）
 ```bash
@@ -68,9 +79,19 @@ $ wget www.baidu.com
 Resolving www.baidu.com (www.baidu.com)... 45.113.192.102, 45.113.192.101
 Connecting to www.baidu.com (www.baidu.com)|45.113.192.102|:80... connected.
 HTTP request sent, awaiting response... 200 OK
+
+$ dig www.baidu.com
+;; QUESTION SECTION:
+;www.baidu.com.                 IN      A
+
+;; ANSWER SECTION:
+www.baidu.com.          337     IN      CNAME   www.a.shifen.com.
+www.a.shifen.com.       191     IN      CNAME   www.wshifen.com.
+www.wshifen.com.        110     IN      A       45.113.192.102
+www.wshifen.com.        110     IN      A       45.113.192.101
 ```
 
-解析方式二：8  （baidu.com，查询类型A）
+解析方式二：9  （baidu.com，查询类型A）
 
 ```bash
 # 这种域名一般情况下是不能做cname解析的，只能用A记录
@@ -86,15 +107,28 @@ Resolving baidu.com (baidu.com)... 111.13.101.208, 220.181.57.216
 Connecting to baidu.com (baidu.com)|111.13.101.208|:80... connected.
 HTTP request sent, awaiting response... 200 OK
 
+#
+$ dig baidu.com
+;; QUESTION SECTION:
+;baidu.com.                     IN      A
 
+;; ANSWER SECTION:
+baidu.com.              345     IN      A       111.13.101.208
+baidu.com.              345     IN      A       220.181.57.216
 ```
 
 
 
 
-解析方式三: 1-->5-->6  （www.baidu.com，查询类型AAAA，即查询IPv6地址）
+解析方式三: 1-->5-->8  （www.baidu.com，查询类型AAAA，即查询IPv6地址）
+
+请求路线：
+- www.baidu.com 未找到AAAA记录，走CNAME记录1
+- www.a.shifen.com 未找到AAAA记录，走CNAME记录5
+- www.wshifen.com 找到NS记录，返回
+
+抓包内容
 ```yml
-# 为什么走这个路线？
 # 目前使用IPv6的还是极少数，所以得不到AAAA记录的。
 # DNS响应报文中的资源记录部分：回答字段、授权字段和附加信息字段，均采用一种称为资源记录RR（ Resource Record）的相同格式。
 #
@@ -126,9 +160,23 @@ Domain Name System (response)
 
 ```
 
-解析方式四：10  （baidu.com，查询类型AAAA）
-```bash
+dig 内容
+```sh
+$ dig www.baidu.com AAAA
+;; QUESTION SECTION:
+;www.baidu.com.                 IN      AAAA
 
+;; ANSWER SECTION:
+www.baidu.com.          4       IN      CNAME   www.a.shifen.com.
+www.a.shifen.com.       174     IN      CNAME   www.wshifen.com.
+
+;; AUTHORITY SECTION:
+wshifen.com.            250     IN      SOA     ns1.wshifen.com. baidu_dns_master.baidu.com. 1803080001 60 30 2592000 3600
+```
+
+
+解析方式四：11  （baidu.com，查询类型AAAA）
+```bash
 Domain Name System (response)
     Questions: 1
     Answer RRs: 0
@@ -140,13 +188,28 @@ Domain Name System (response)
             Name: baidu.com
             Type: SOA (Start Of a zone of Authority) (6)
             Primary name server: dns.baidu.com
-
-
 ```
 
-解析方式五: 11  （www.a.shifen.com，查询类型AAAA）
+```
+$ dig baidu.com AAAA
+;; QUESTION SECTION:
+;baidu.com.                     IN      AAAA
+
+;; AUTHORITY SECTION:
+baidu.com.              4581    IN      SOA     dns.baidu.com. sa.baidu.com. 2012138564 300 300 2592000 7200
 ```
 
+解析方式五: 12  （www.a.shifen.com，查询类型AAAA）
+```
+$ dig www.a.shifen.com AAAA
+;; QUESTION SECTION:
+;www.a.shifen.com.              IN      AAAA
+
+;; ANSWER SECTION:
+www.a.shifen.com.       34      IN      CNAME   www.wshifen.com.
+
+;; AUTHORITY SECTION:
+wshifen.com.            235     IN      SOA     ns1.wshifen.com. baidu_dns_master.baidu.com. 1803080001 60 30 2592000 3600
 ```
 
 ## 疑问 & 剖析
