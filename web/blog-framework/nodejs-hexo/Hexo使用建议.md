@@ -43,19 +43,23 @@ categories:
 # 1. fork hexo-starter 作为blog主仓库
 $ git clone --recursive git@github.com:xsung/hexo-starter.git blog
 
-# 2. fork theme & add submodule
+# 2. 添加 submodule
+# 2.1 fork theme & add submodule
 $ cd blog/themes/
 $ git submodule add git@github.com:xsung/hexo-theme-next.git next
 
-# 3. fork _post & add submodule
+# 2.2 fork _post & add submodule
 $ git submodule add git@github.com:xsung/_posts.git
 
 
-# 4. fork project-u-like & add submodule
+# 2.3 fork project-u-like & add submodule
 $ mkdir blog/source/games/ && cd blog/source/games/
 $ git submodule add git@github.com:xsung/2048.git
 
-# 5. push到blog主仓库 (整合)
+# 检查是否添加成功
+$ vi .gitmodules
+
+# 3. push到blog主仓库 (整合)
 cd blog/
 git commit -m "add submodules hexo-theme-next source/_post games/2048"
 git push -u origin master
@@ -84,6 +88,13 @@ $ commit & push
 ```
 
 
+## clone & setup
+```bash
+$ git clone --recursive URL
+$ cd blog-dev
+$ npm install --production
+```
+
 ## pull & merge (整合)
 
 ```bash
@@ -95,6 +106,11 @@ $ git pull --recurse-submodules
 
 ```
 貌似不work啊，submodule的pull不work
+
+```sh
+$ git pull && git submodule init && git submodule update && git submodule status
+```
+这个work
 
 ## clone & deploy
 ```bash

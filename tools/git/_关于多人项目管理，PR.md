@@ -1,5 +1,24 @@
 
 
+```sh
+# 删除远程分支
+git push origin --delete <branchName>
+
+# 删除tag
+git push origin --delete tag <tagname>
+
+
+##### 创建分支
+# 创建一个orphan的分支，这个分支是独立的
+git checkout --orphan gh-pages
+# 删除原来代码树下的所有文件
+git rm -rf .
+rm \'.gitignore\'
+
+
+
+```
+
 
 利用branch管理自己的project和需要PR的project
 > 主要目的也是为了不和自己的修改绞在一起产生混乱。比如我从next仓库fork到我自己的仓库，然后我做了一些只用于我自己的个性化修改，这时候我的master分支和远程master分支之间的变动越来越大了。

@@ -37,4 +37,8 @@ npm是nodejs的包管理工具，npm随nodejs一同安装 (从 Node.js 0.6.3 开
 两者的关系相当于 pip -> python 或 gem -> ruby 或
 maven 和 Java 之间的关系
 
-##
+### npm与npx
+
+如果你把NPM升级到最新版本，npm@5.2.0，可能会发现，它会安装一个新的包npx。
+
+npx是一个工具，旨在提高从npm注册表使用软件包的体验 ，npm使得它非常容易地安装和管理托管在注册表上的依赖项，npx使得使用CLI工具和其他托管在注册表。它大大简化了一些事情，到目前为止，如何安装npx：

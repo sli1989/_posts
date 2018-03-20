@@ -32,35 +32,42 @@ DNS地址解析器的核心功能能
 **分析方式二：**
 一堆命令，见参考博客。
 
-
+参考 https://aslibra.com/blog/post/use_dig_dns_check.php
+[通过dig命令理解DNS](https://www.jianshu.com/p/71f61652ec23)
+[dig挖出DNS的秘密](http://roclinux.cn/?p=2449)
 
 ## 百度DNS解析规则
 
-| 编号 | 主机记录         | 记录类型 | 解析线路(isp) | 记录值           | TTL值(不定) | 备注               |
-|------|------------------|----------|---------------|------------------|-------------|--------------------|
-|      | www.baidu.com    | CNAME    | --            | www.a.shifen.com | 268         |                    |
-|      |                  |          |               |                  |             |                    |
-|      | www.a.shifen.com | CNAME    | --            | www.wshifen.com  | 271         | 见解析方式三       |
-|      |                  |          |               |                  |             |                    |
-|      | www.wshifen.com  | A        | 新加坡 百度   | 45.113.192.101   | 160         | 见解析方式一       |
-|      | www.wshifen.com  | A        | 北京电信      | 220.181.111.188  | 160         |                    |
-|      | www.wshifen.com  | A        | 其他          |                  |             |                    |
-|      |                  |          |               |                  |             |                    |
-|      | wshifen.com      | NS       | --            | ns1.wshifen.com  | 163         | 很多name server    |
-|      |                  |          |               |                  |             |                    |
-|      | baidu.com        | A        | 北京移动      | 111.13.101.208   |             | 见解析方式二       |
-|      | baidu.com        | A        | 北京联通...   | 123.125.114.144  |             |                    |
-|      | baidu.com        | SOA      | --            | dns.baidu.com    | 900         | 见解析方式四       |
-|      | baidu.com        | NS       | --            | ns1.baidu.com    |             |                    |
-|      | baidu.com        | NS       | --            | ns2.baidu.com    |             |                    |
-|      |                  |          |               |                  |             |                    |
-|      | shifen.com.      | NS       |               | ns1.baidu.com    |             |                    |
-|      | shifen.com.      | A        |               | 202.108.250.218  |             |                    |
-|      | shifen.com       | SOA      |               | dns.shifen.com   |             | dig shifen.com soa |
-|      |                  |          |               |                  |             |                    |
-|      | a.shifen.com     | NS       | --            | ns1.a.shifen.com | 397         | 见解析方式五       |
+| 编号 | 主机记录         | 记录类型 | 解析线路(isp) | 记录值           | TTL值(不定) | 备注                                   |     |
+|------|------------------|----------|---------------|------------------|-------------|----------------------------------------|-----|
+| 1    | www.baidu.com    | CNAME    | --            | www.a.shifen.com | 268         |                                        |     |
+|      |                  |          |               |                  |             |                                        |     |
+| 2    | www.a.shifen.com | CNAME    | --            | www.wshifen.com  | 271         |                                        |     |
+|      |                  |          |               |                  |             |                                        |     |
+| 3    | www.wshifen.com  | A        | 新加坡 百度   | 45.113.192.101   | 160         | "1-2-[3                                | 4]" |
+| 4    | www.wshifen.com  | A        | 北京电信      | 220.181.111.188  | 160         |                                        |     |
+|      |                  |          |               |                  |             |                                        |     |
+|      | wshifen.com      | NS       | --            | ns1.wshifen.com  | 163         | 很多name server                        |     |
+|      |                  |          |               |                  |             |                                        |     |
+|      | baidu.com        | A        | 北京移动      | 111.13.101.208   |             | 见解析方式二                           |     |
+|      | baidu.com        | A        | 北京联通...   | 123.125.114.144  |             |                                        |     |
+|      | baidu.com        | SOA      | --            | dns.baidu.com    | 900         | 见解析方式四                           |     |
+|      | baidu.com        | NS       | --            | ns1.baidu.com    |             |                                        |     |
+|      | baidu.com        | NS       | --            | ns2.baidu.com    |             |                                        |     |
+|      |                  |          |               |                  |             |                                        |     |
+|      | dns.baidu.com    | A        |               | 202.108.22.220   | 67498       | 这里只有一个A记录吗？为什么TTL这么高？ |     |
+|      | ns1.baidu.com    | A        |               | 202.108.22.220   | 27780       | 为什么和上个记录同IP？                 |     |
+|      | ns2.baidu.com    | A        |               | 61.135.165.235   | 86400       |                                        |     |
+|      |                  |          |               |                  |             |                                        |     |
+|      | shifen.com.      | NS       |               | ns1.baidu.com    |             |                                        |     |
+|      | shifen.com.      | A        |               | 202.108.250.218  |             |                                        |     |
+|      | shifen.com       | SOA      |               | dns.shifen.com   |             | dig shifen.com soa                     |     |
+|      | dns.shifen.com   | A        |               | 202.108.250.228  |             | dig dns.shifen.com                     |     |
+|      |                  |          |               |                  |             |                                        |     |
+|      | a.shifen.com     | NS       | --            | ns1.a.shifen.com | 397         | 见解析方式五                           |     |
+|      | ns1.a.shifen.com | A        |               | 61.135.165.224   | 600         |                                        |     |
 
-> 注：表中所有数据均来自作者抓包实测，所有解析路线由ip.cn提供。
+> 注：所有解析路线由ip.cn提供。
 
 www.wshifen.com  没有NS记录，没有SOA记录。
 `dig www.wshifen.com ns`。没有answer，即没有ns记录

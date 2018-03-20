@@ -37,6 +37,8 @@ $ npm ls --depth 0
 
 ```
 
+另外，也可以通过查看`package.json`文件来查看版本。
+
 > 更新各个模块，命令 npm update
 
 
@@ -78,11 +80,11 @@ npm list -g 能够看到安装路径。一般在/usr/lib/node_modules/ 或者/us
 ### 答案
 以下是`hexo init`的log。`hexo init`做了两个事情，git-clone & install-dependency，分别对应以下两行shell命令。
 ```sh
-# 1. git clone --recursive https://github.com/hexojs/hexo-starter.git blog
-INFO  Cloning hexo-starter to blog
+# 1. Cloning hexo-starter to blog
+$ git clone --recursive https://github.com/hexojs/hexo-starter.git blog
 
-# 2. npm install --production
-INFO  Install dependencies
+# 2. Install dependencies
+$ npm install --production
 ```
 
 看到这里就应该解开谜团了。
@@ -158,7 +160,9 @@ spawn(npmCommand, ['install', '--production']);
 
 这个好麻烦，看不动了。这么多`generator`和`render`。
 
-先直接饮用其他博客吧。后面有空再看。
+放个链接 https://github.com/hexojs/hexo-generator-index ，貌似主要先看这个。
+
+先直接引用其他博客吧。后面有空再看。
 
 生成静态文件。将我们的数据和界面相结合生成静态文件的过程。会遍历主题文件中的 source 文件夹（js、css、img 等静态资源），然后建立索引，然后根据索引生成 pubild 文件夹中，此时的 publid 文件是由 html、 js、css、img 建立的纯静态文件可以通过 index.html 作为入口访问你的博客。
 
@@ -169,16 +173,30 @@ spawn(npmCommand, ['install', '--production']);
 ## 6. hexo deploy
 deploy到底干了什么？执行了git push？
 
+deploy配置
+```yml
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+- type: git
+  repo: git@github.com:xu-song/xu-song.github.io.git
+  branch: master
+```
+
 部署主要是根据在 _config.yml 中配置的 git 仓库或者 coding 的地址，将 public 文件上传至 github 或者 coding 中。然后再根据上面的 github 提供的 pages 服务呈现出页面。当然你也可以直接将你生成的 public 文件上传至你自己的服务器上。
 
-**deploy.js核心源码**
+**deploy.js核心源码**：https://github.com/hexojs/hexo-deployer-git/blob/master/lib/deployer.js#L83
 ```js
-git('add', '-A');
+git('add', '-A');  // 对publc目录中执行add操作。
 git('commit', '-m', message);
 git('push', '-u', repo.url, 'HEAD:' + repo.branch, '--force');
 ```
 即等价于以下几个命令(通常情况下)
-```bash
+```sh
+$ rm -rf .deploy_git  # log.info('Clearing .deploy_git folder...');
+$ cp -rf public .deploy_git # log.info('Copying files from public folder...');
+$ cd .deploy_git
+
 $ git add -A
 $ git commit -m "Site updated: 2018-01-30 *:*:*" #某时间
 $ git push -u origin HEAD:master --force
