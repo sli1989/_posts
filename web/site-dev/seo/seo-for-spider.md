@@ -273,6 +273,44 @@ gov和edu对排名有利，但对大多数人没什么指导意义，因为你�
 有很多大学生在他们大学的个人网站上出卖链接。搜索引擎怎样去辨别哪些来自.edu的链接是自然的？哪些又是买卖的呢？
 
 
+## seo诊断
+bing站长有SEO Analyzer。
+
+### title长度
+
+诊断我的主页，title太短，因为只有四个字母ESON。
+
+> Recommended Action:
+Change the length of the title to be between 5 and 100 characters
+
+> SEO Explanation:
+If the title is too short, it may not provide us and users with enough information to understand the relevancy of your page.  If the title is too long, we may need to shorten it in the search results and your keywords may not appear on the search results page.  You should try to keep the length of the title somewhere between at least 5 characters and 100 characters.
+
+### description长度
+
+> Recommended Action:
+Change the description in the <meta description> tag in the page source to be between 25 and 160 characters in length.
+
+> SEO Explanation:
+Search engine crawlers only show the first 150-160 characters of the description in the search results page, so if a description is too long, searchers may not see all of the text. If a description is too short, the search engines may add text found elsewhere on the page. Note that search engines may show a different description from the one you have authored if they feel it may be more relevant to a user's search.
+
+
+### <h1> tag数量太多
+https://blog.eson.org/2018/01/25/web/site-dev/seo/seo-for-spider/
+
+> There are multiple <h1> tags on the page.
+> Recommended Action:
+Remove redundant <h1> tags from the page source, so that only one <h1> tag exists.
+
+### <img> tag 的 ALT属性
+
+> Recommended Action:
+Use the <img alt> attribute to write descriptive content for the image: <img source="pic.gif" alt="Accurate and descriptive keyword text that represents the image."</img>.
+
+> SEO Explanation: 
+As a general rule, search engines do not interpret the content of image files. The text provided in the <img alt> attribute enables the site owner to provide relevant information to the search engine and to the end user. Alt text is helpful to end users if they have images disabled or if the image does not properly load. In addition, the Alt text is utilized by screen readers. Make sure that your Alt text is descriptive and accurately reflects what the image represents and supports the content on the page.
+
+
 ## reference
 https://www.webmasterworld.com/forum25/3716.htm
 http://www.ehcoo.com/seo.html

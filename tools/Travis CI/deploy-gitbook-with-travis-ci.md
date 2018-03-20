@@ -1,6 +1,8 @@
 ---
 title: 利用travis自动构建Gitbook静态页面，并自动部署到Github Page
-date:
+date: 2018-03-20
+tags: ["travis","gitbook","自动部署","github pages"]
+keywords: ["travis","gitbook","github","自动部署","github pages","personal access token"]
 ---
 
 # 目的
@@ -51,6 +53,7 @@ git remote add origin 'https://f6884617cab7ada45740e5034604e3e82e4ac722@github.c
 
 实例&博客：https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example
 
+博客：https://shawnho.me/2017/11/23/deploy-hexo-blog-with-travis-ci/
 
 # 疑问
 
