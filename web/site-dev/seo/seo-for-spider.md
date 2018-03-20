@@ -304,10 +304,11 @@ Remove redundant <h1> tags from the page source, so that only one <h1> tag exist
 
 ### <img> tag 的 ALT属性
 
+
 > Recommended Action:
 Use the <img alt> attribute to write descriptive content for the image: <img source="pic.gif" alt="Accurate and descriptive keyword text that represents the image."</img>.
 
-> SEO Explanation: 
+> SEO Explanation:
 As a general rule, search engines do not interpret the content of image files. The text provided in the <img alt> attribute enables the site owner to provide relevant information to the search engine and to the end user. Alt text is helpful to end users if they have images disabled or if the image does not properly load. In addition, the Alt text is utilized by screen readers. Make sure that your Alt text is descriptive and accurately reflects what the image represents and supports the content on the page.
 
 
