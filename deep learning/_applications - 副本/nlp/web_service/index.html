@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+function loadXMLDoc() {
+    $.post("/nlp/text/distance",
+    {
+        text1:$("#text1").val(),
+        text2:$("#text2").val()
+    },
+    function(data, status){
+        document.getElementById("text_distance").innerHTML=data;
+    });
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<div class="title">text distance</div>
+
+<textarea id="text1" style="width:250px;height:150px;">Enter text here...</textarea>
+<textarea id="text2" style="width:250px;height:150px;">Enter text here...</textarea><br>
+<button type="button" onclick="loadXMLDoc()">submit</button>
+
+text distance:<div id="text_distance">ddd</div>
+
+
+
+</body>
+</html>
+
+
+<script>
