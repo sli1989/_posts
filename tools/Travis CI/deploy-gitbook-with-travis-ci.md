@@ -1,8 +1,8 @@
 ---
 title: 利用travis自动构建Gitbook静态页面，并自动部署到Github Page
 date: 2018-03-20
-tags: ["travis","gitbook","自动部署","github pages"]
-keywords: ["travis","gitbook","github","自动部署","github pages","personal access token"]
+tags: ["travis","gitbook","自动化部署","github pages"]
+keywords: ["travis","gitbook","github","自动化部署","github pages","personal access token"]
 ---
 
 # 目的
