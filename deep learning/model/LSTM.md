@@ -22,8 +22,15 @@ long short-term memory。
 
 LSTM的核心：
 - cell + gate, cel
-用于解决传统RNN中的梯度消失问题
+用于解决传统RNN中的梯度消失问题 (Gradient Vanish)
 
+
+梯度弥散是什么鬼？
+
+- **LSTM只能避免RNN的梯度消失**（gradient vanishing）；
+
+- 梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。下面简单说说LSTM如何避免梯度消失.
+-
 
 cell: memory_cell
 
@@ -34,9 +41,11 @@ cell: memory_cell
 
 包括：input gate, output gate, forget gate
 
-gate类似阀门，是一种开关。
+gate，即阀门，是一种开关。取值范围[0,1]，0表示关闭，1表示通行
 
-<image width="70%" src="http://www.solidswiki.com/images/3/34/Gate_valves.gif">
+
+
+<!-- 备用图片 http://www.solidswiki.com/images/3/34/Gate_valves.gif -->
 
 <image width="70%" src="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif">
 
@@ -45,11 +54,42 @@ gate类似阀门，是一种开关。
 ### 梯度消失问题--直观解释
 <!-- In theory, RNNs are absolutely capable of handling “long-term dependencies.” -->
 
-<!--"https://www.cc.gatech.edu/~san37/img/dl/grad_vanishing.png"-->
 <image title="d" src="/images/raw/RNN - vanish gradient problem.png" width="70%">
 
 传统RNN中存在的梯度消失。
 <!-- conventional RNN: 1. The sensitivity of the input valus decays overtime 2. The network forgets the previous input-->
+
+
+
+### 梯度消失 -- 产生的原因
+
+
+本质原因就是因为矩阵高次幂导致的
+
+在多层网络中，影响梯度大小的因素主要有两个：权重和激活函数的偏导。深层的梯度是多个激活函数偏导乘积的形式来计算，如果这些激活函数的偏导比较小（小于1）或者为0，那么梯度随时间很容易vanishing；相反，如果这些激活函数的偏导比较大（大于1），那么梯度很有可能就会exploding。因而，梯度的计算和更新非常困难。
+
+https://www.zhihu.com/question/34878706
+
+参考:
+- [BP Through Time and Vanishing Gradients](http://www.wildml.com/2015/10/recurrent-neural-networks-tutorial-part-3-backpropagation-through-time-and-vanishing-gradients/)
+- [Supervised Sequence Labelling with Recurrent Neural Networks - Chapter 4](https://www.cs.toronto.edu/~graves/phd.pdf)
+- [关于valve的比喻](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
+
+
+<!-- we fist introduce the interface, then the implementation  -->
+
+## 梯度消失问题 -- 解决方案
+
+使用一个合适激活函数，它的梯度在一个合理的范围。LSTM使用gate function，有选择的让一部分信息通过。gate是由一个sigmoid单元和一个逐点乘积操作组成，sigmoid单元输出1或0，用来判断通过还是阻止，然后训练这些gate的组合。所以，**当gate是打开的（梯度接近于1），梯度就不会vanish。并且sigmoid不超过1，那么梯度也不会explode**。
+
+<img src="https://pic3.zhimg.com/80/v2-f093af62bd8ef9f9b31aa76c4948eb95_hd.jpg">
+
+
+参考：https://www.zhihu.com/question/44895610
+
+## 梯度消失问题 -- LSTM是如何避免的
+
+1、当gate是关闭的，那么就会阻止对当前信息的改变，这样以前的依赖信息就会被学到。2、当gate是打开的时候，并不是完全替换之前的信息，而是在之前信息和现在信息之间做加权平均。所以，无论网络的深度有多深，输入序列有多长，只要gate是打开的，网络都会记住这些信息。
 
 
 
@@ -59,18 +99,8 @@ gate类似阀门，是一种开关。
 
 上面这个例子中，数据从实心1向后传递。通过gate的配合，成功在节点4和6输出该数据。数据流不会因long-term传输而消息，有效解决RNN的梯度消失问题。
 
-### 梯度消失问题--数学解释
-- df
-- d
 
 
-参考:
-- [BP Through Time and Vanishing Gradients](http://www.wildml.com/2015/10/recurrent-neural-networks-tutorial-part-3-backpropagation-through-time-and-vanishing-gradients/)
-- [Supervised Sequence Labelling with Recurrent Neural Networks - Chapter 4](https://www.cs.toronto.edu/~graves/phd.pdf)
-- [关于valve的比喻](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
-
-
-<!-- we fist introduce the interface, then the implementation  -->
 # LSTM: 接口设计
 
 ##

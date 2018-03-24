@@ -29,4 +29,7 @@ categories:
 # 疑问
 
 hexo-theme-next的owner到底是ivan-nginx还是iissnan？
+
 貌似iissnan是老owner，后来移交给了俄罗斯的ivan-nginx。
+
+Main repo was rebased from [iissnan's](https://github.com/iissnan/hexo-theme-next) profile to theme-next organization. 见https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
