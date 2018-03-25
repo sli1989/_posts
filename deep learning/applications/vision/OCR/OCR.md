@@ -1,4 +1,6 @@
-
+---
+title: OCR
+---
 
 
 [OCR文字识别用的是什么算法？--知乎](https://www.zhihu.com/question/20191727)
