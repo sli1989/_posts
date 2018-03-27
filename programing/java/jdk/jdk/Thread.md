@@ -1,3 +1,8 @@
+---
+title: java系列 - Thread
+date: 2017-02-02
+keywords: ["java"]
+---
 
 ## 疑问
 
@@ -44,7 +49,7 @@ native方法hotspot源码
 	JavaThread::JavaThread(ThreadFunction entry_point, size_t stack_sz) :
 	  Thread() {
 	   ...
-	   os::create_thread(this, thr_type, stack_sz); 
+	   os::create_thread(this, thr_type, stack_sz);
 	   // 可以看出java线程是映射到操作系统的内核线程上的
 	   ...
 	}

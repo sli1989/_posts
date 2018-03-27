@@ -1,3 +1,9 @@
+---
+title: java hotspot虚拟机 - SocketOutputStream
+date: 2017-02-02
+keywords: ["java"]
+---
+
 ## SocketOutputStream.java
 
 就只有这一个native方法
@@ -25,17 +31,17 @@
     #include <stdlib.h>
     #include <malloc.h>
     #include <sys/types.h>
-    
+
     #include "java_net_SocketOutputStream.h"
-    
+
     #include "net_util.h"
     #include "jni_util.h"
-    
+
     /************************************************************************
      * SocketOutputStream
      */
     static jfieldID IO_fd_fdID;
-    
+
     /*
      * Class:     java_net_SocketOutputStream
      * Method:    init
@@ -45,7 +51,7 @@
     Java_java_net_SocketOutputStream_init(JNIEnv *env, jclass cls) {
         IO_fd_fdID = NET_GetFileDescriptorID(env);
     }
-    
+
     /*
      * Class:     java_net_SocketOutputStream
      * Method:    socketWrite
@@ -59,7 +65,7 @@
         char BUF[MAX_BUFFER_LEN];
         int buflen;
         int fd;
-    
+
         if (IS_NULL(fdObj)) {
             JNU_ThrowByName(env, JNU_JAVANETPKG "SocketException", "Socket closed");
             return;
@@ -70,7 +76,7 @@
             JNU_ThrowNullPointerException(env, "data argument");
             return;
         }
-    
+
         /*
          * Use stack allocate buffer if possible. For large sizes we allocate
          * an intermediate buffer from the heap (up to a maximum). If heap is
@@ -87,15 +93,15 @@
                 buflen = MAX_BUFFER_LEN;
             }
         }
-    
+
         while(len > 0) {
             int loff = 0;
             int chunkLen = min(buflen, len);
             int llen = chunkLen;
             int retry = 0;
-    
+
             (*env)->GetByteArrayRegion(env, data, off, chunkLen, (jbyte *)bufP);
-    
+
             while(llen > 0) {
                 int n = send(fd, bufP + loff, llen, 0);
                 if (n > 0) {
@@ -103,7 +109,7 @@
                     loff += n;
                     continue;
                 }
-    
+
                 /*
                  * Due to a bug in Windows Sockets (observed on NT and Windows
                  * 2000) it may be necessary to retry the send. The issue is that
@@ -139,7 +145,7 @@
                     retry++;
                     continue;
                 }
-    
+
                 /*
                  * Send failed - can be caused by close or write error.
                  */
@@ -156,7 +162,7 @@
             len -= chunkLen;
             off += chunkLen;
         }
-    
+
         if (bufP != BUF) {
             free(bufP);
         }

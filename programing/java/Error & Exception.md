@@ -1,3 +1,8 @@
+---
+title: java系列 - Error & Exception
+date: 2017-02-02
+keywords: []
+---
 ## definition
 
 - catch an error at compile time:  before you even try to run the program  (think in java)

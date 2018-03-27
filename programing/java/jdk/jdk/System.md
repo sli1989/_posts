@@ -1,3 +1,8 @@
+---
+title: java系列 - System
+date: 2017-02-02
+keywords: ["java"]
+---
 
 ## 简介
 java.lang.System.java

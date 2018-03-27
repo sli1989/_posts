@@ -1,3 +1,8 @@
+---
+title: java hotspot虚拟机 - class文件
+date: 2017-02-02
+keywords: ["java"]
+---
 
 ## oop-klass model概述
 
@@ -38,7 +43,7 @@ instanceOop.cpp  // #include "oops/oop.hpp"
 methodKlass.cpp
 
 // A methodOop represents a Java method.
-// #include "oops/constantPoolOop.hpp"#include "oops/instanceKlass.hpp" #include "oops/oop.hpp" 
+// #include "oops/constantPoolOop.hpp"#include "oops/instanceKlass.hpp" #include "oops/oop.hpp"
 methodOop.cpp  
 
 methodDataKlass.cpp
@@ -57,7 +62,7 @@ oop* 有这个而东东啊
 
 - Desc：
 即Describe， {name}Desc classes describe the format of Java objects so the fields can be accessed from C++
-- oopDesc: 
+- oopDesc:
 oop对象的类型其实是oopDesc*。在Java程序运行的过程中，每创建一个新的对象，在JVM内部就会相应地创建一个对应类型的oop对象。各种oop类的共同基类为oopDesc类。
 
 - oop-klass model：
@@ -157,5 +162,3 @@ ss
 
 ## 参考
 [深入探究JVM | klass-oop对象模型研究](http://www.sczyh30.com/posts/Java/jvm-klass-oop/)
-
-

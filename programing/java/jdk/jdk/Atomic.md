@@ -1,3 +1,9 @@
+---
+title: java系列 - Atomic
+date: 2017-02-02
+keywords: ["java"]
+---
+
 ## 简介
 
 - 原子量和普通变量相比，主要体现在读写的线程安全上。对原子量的是原子的(比如多线程下的共享变量i++就不是原子的)，由CAS操作保证原子性。对原子量的读可以读到最新值，由volatile关键字来保证可见性。
@@ -164,5 +170,3 @@ windows_x86中
 ## 参考
 
 - (http://stackoverflow.com/questions/7169961/can-anyone-interpret-this-c-code-from-openjdk6-into-plain-english)
-
-

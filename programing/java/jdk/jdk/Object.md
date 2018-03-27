@@ -1,3 +1,9 @@
+---
+title: java系列 - Object
+date: 2017-02-02
+keywords: ["java"]
+---
+
 ## 架构
 
 - Object.java(rt.jar) 调用 jdk的native方法(Object.c)。
@@ -17,12 +23,12 @@ new Object[int]; // 在ArrayList的构造函数中用到了
 ### 为什么在stack trace中看不到调用Object.<init>
 
 
-有7个native方法。 
+有7个native方法。
 
 - private static native void registerNatives();
 - protected native Object clone() throws CloneNotSupportedException;
 - public final native Class<?> getClass();
-- public native int hashCode(); 
+- public native int hashCode();
 - public final native void notify();
 - public final native void notifyAll();
 - public final native void wait(long timeout) throws InterruptedException;
@@ -50,17 +56,17 @@ Object.c
      *
      *      former threadruntime.c, Sun Sep 22 12:09:39 1991
      */
-    
+
     #include <stdio.h>
     #include <signal.h>
     #include <limits.h>
-    
+
     #include "jni.h"
     #include "jni_util.h"
     #include "jvm.h"
-    
+
     #include "java_lang_Object.h"
-    
+
     // JVM_这些函数是在jvm.c中实现的
     static JNINativeMethod methods[] = {
         {"hashCode",    "()I",                    (void *)&JVM_IHashCode},  //  返回int
@@ -69,14 +75,14 @@ Object.c
         {"notifyAll",   "()V",                    (void *)&JVM_MonitorNotifyAll}, // 返回void
         {"clone",       "()Ljava/lang/Object;",   (void *)&JVM_Clone}, // 返回Ojbect
     };
-    
+
     JNIEXPORT void JNICALL
     Java_java_lang_Object_registerNatives(JNIEnv *env, jclass cls)
     {
         (*env)->RegisterNatives(env, cls,
                                 methods, sizeof(methods)/sizeof(methods[0]));
     }
-    
+
     JNIEXPORT jclass JNICALL
     Java_java_lang_Object_getClass(JNIEnv *env, jobject this)
     {
@@ -87,7 +93,7 @@ Object.c
             return (*env)->GetObjectClass(env, this);
         }
     }
-    
+
 其中JNINativeMethod的结构体如下:
 
     typedef struct {
@@ -105,7 +111,7 @@ Object.c
     // jvm.h 路径: openjdk\hotspot\src\share\vm\prims\jvm.h
     JNIEXPORT jint JNICALL
     JVM_IHashCode(JNIEnv *env, jobject obj);
-    
+
 
     // jvm.cpp 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
     JVM_ENTRY(jint, JVM_IHashCode(JNIEnv* env, jobject handle))
@@ -113,15 +119,15 @@ Object.c
       // as implemented in the classic virtual machine; return 0 if object is NULL
       return handle == NULL ? 0 : ObjectSynchronizer::FastHashCode (THREAD, JNIHandles::resolve_non_null(handle)) ;
     JVM_END
-    
-    
+
+
 FastHashCode才是真正计算hashcode的代码
 
 ### FastHashCode
 这是hashCode()的具体实现
 
     // 路径: openjdk\hotspot\src\share\vm\runtime\synchronizer.cpp
-    
+
     intptr_t ObjectSynchronizer::FastHashCode (Thread * Self, oop obj) {
       if (UseBiasedLocking) {
         // NOTE: many places throughout the JVM do not expect a safepoint
@@ -143,7 +149,7 @@ FastHashCode才是真正计算hashcode的代码
           assert(!obj->mark()->has_bias_pattern(), "biases should be revoked by now");
         }
       }
-    
+
       // hashCode() is a heap mutator ...
       // Relaxing assertion for bug 6320749.
       assert (Universe::verify_in_progress() ||
@@ -152,18 +158,18 @@ FastHashCode才是真正计算hashcode的代码
               Self->is_Java_thread() , "invariant") ;
       assert (Universe::verify_in_progress() ||
              ((JavaThread *)Self)->thread_state() != _thread_blocked, "invariant") ;
-    
+
       ObjectMonitor* monitor = NULL;
       markOop temp, test;
       intptr_t hash;
       markOop mark = ReadStableMark (obj);
-    
+
       // object should remain ineligible for biased locking
       assert (!mark->has_bias_pattern(), "invariant") ;
-    
+
       if (mark->is_neutral()) {
         hash = mark->hash();              // this is a normal header 对象的hashcode存储在对象头里
-        if (hash) {                       // if it has hash, just return it 注意这里有个cache，对于同一个Ojbect，第一次调用Object.hashCode将会执行实际的计算并记入cache，以后直接从cache中取出。 
+        if (hash) {                       // if it has hash, just return it 注意这里有个cache，对于同一个Ojbect，第一次调用Object.hashCode将会执行实际的计算并记入cache，以后直接从cache中取出。
           return hash;
         }
         hash = get_next_hash(Self, obj);  // allocate a new hash code
@@ -202,7 +208,7 @@ FastHashCode才是真正计算hashcode的代码
         // Any change to stack may not propagate to other threads
         // correctly.
       }
-    
+
       // Inflate the monitor to set hash code
       monitor = ObjectSynchronizer::inflate(Self, obj);
       // Load displaced header and check it has hash code
@@ -270,7 +276,7 @@ FastHashCode才是真正计算hashcode的代码
          Self->_hashStateW = v ;
          value = v ;
       }
-    
+
       value &= markOopDesc::hash_mask;
       if (value == 0) value = 0xBAD ;
       assert (value != markOopDesc::no_hash, "invariant") ;
@@ -278,19 +284,19 @@ FastHashCode才是真正计算hashcode的代码
       return value;
     }
 
-    
+
 hashCode()并不是简单的返回内存地址。
-OpenJDK一共实现了5中不同的计算hash值的方法，通过 
+OpenJDK一共实现了5中不同的计算hash值的方法，通过
 这段代码中hashCode进行切换。其中hashCode == 4的是直接使用地址的（前面的实验说明OpenJDK默认情况下并没有使用这种方式，或许可以通过运行/编译时参数进行选择）。
 
-### 
+###
 
 
 ### 结论
 
 前面通过JNI验证已经能够得到很显然的结论，hashCode返回的并不一定是对象的（虚拟）内存地址，具体取决于运行时库和JVM的具体实现。
-    
-    
+
+
 
 
 
@@ -300,7 +306,7 @@ OpenJDK一共实现了5中不同的计算hash值的方法，通过
 
     JNIEXPORT void JNICALL
     JVM_MonitorWait(JNIEnv *env, jobject obj, jlong ms);
-    
+
 
     // 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
     JVM_ENTRY(void, JVM_MonitorWait(JNIEnv* env, jobject handle, jlong ms))
@@ -334,7 +340,7 @@ OpenJDK一共实现了5中不同的计算hash值的方法，通过
     JNIEXPORT jobject JNICALL
     JVM_Clone(JNIEnv *env, jobject obj);
 
-    
+
     // 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
     JVM_ENTRY(jobject, JVM_Clone(JNIEnv* env, jobject handle))
       JVMWrapper("JVM_Clone");
@@ -470,7 +476,7 @@ C:\Program Files\java\jdk1.7.0_67\jre\lib\rt>
 ## 其他
 * object header: it's JVM dependent， 具体参考JVM
 
-    
+
 ## 扩展阅读
 
 - [Object.hashCode()的返回值到底是不是对象内存地址](http://www.voidcn.com/blog/xusiwei1236/article/p-35249.html)

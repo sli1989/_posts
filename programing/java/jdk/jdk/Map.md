@@ -1,9 +1,13 @@
-
+---
+title: java系列 - Map
+date: 2017-02-02
+keywords: ["java"]
+---
 
 ## dd
 
 | 类            | 同步(线程安全) | order            | key可为null | implementation |  复杂度：增删改查，containsValue |  其他语言 |
-| :--------     | --------:      | --------:        | --------:   |   --------:    |   --------:     | :--:      | 
+| :--------     | --------:      | --------:        | --------:   |   --------:    |   --------:     | :--:      |
 | HashMap       | No             |  无序            | Yes         | hash table （采用seperate chaining解决键冲突）    |  O(1), 顺序查找O(n)   | redis的字典
 | LinkedHashmap | No             |  按插入顺序排序  | Yes  key和value都可以       | 同上     |
 | Hashtable     | Yes            |  无序            | No  key和value都不可以        | 同上     |
