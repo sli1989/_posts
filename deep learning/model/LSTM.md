@@ -25,12 +25,11 @@ LSTM的核心：
 用于解决传统RNN中的梯度消失问题 (Gradient Vanish)
 
 
-梯度弥散是什么鬼？
+
 
 - **LSTM只能避免RNN的梯度消失**（gradient vanishing）；
-
 - 梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。下面简单说说LSTM如何避免梯度消失.
--
+- 梯度弥散是什么鬼？
 
 cell: memory_cell
 
@@ -51,6 +50,10 @@ gate，即阀门，是一种开关。取值范围[0,1]，0表示关闭，1表示
 
 > Gates are a way to optionally let information through.
 
+待看
+- An Empirical Exploration of Recurrent Network Architectures.
+- Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling.
+
 ### 梯度消失问题--直观解释
 <!-- In theory, RNNs are absolutely capable of handling “long-term dependencies.” -->
 
@@ -58,7 +61,6 @@ gate，即阀门，是一种开关。取值范围[0,1]，0表示关闭，1表示
 
 传统RNN中存在的梯度消失。
 <!-- conventional RNN: 1. The sensitivity of the input valus decays overtime 2. The network forgets the previous input-->
-
 
 
 ### 梯度消失 -- 产生的原因
@@ -98,6 +100,10 @@ https://www.zhihu.com/question/34878706
 <!-- LSTM: 1. The cell remember the input as long as it wants 2. The output can be used anytime it wants-->
 
 上面这个例子中，数据从实心1向后传递。通过gate的配合，成功在节点4和6输出该数据。数据流不会因long-term传输而消息，有效解决RNN的梯度消失问题。
+
+
+- 当gate是关闭的，那么就会阻止对当前信息的改变，这样以前的依赖信息就会被学到。
+- 当gate是打开的时候，并不是完全替换之前的信息，而是在之前信息和现在信息之间做加权平均。所以，无论网络的深度有多深，输入序列有多长，只要gate是打开的，网络都会记住这些信息。
 
 
 

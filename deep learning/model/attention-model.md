@@ -18,3 +18,4 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
 
 ## 参考
 [知乎](https://www.zhihu.com/question/36591394)
+[注意力机制和PyTorch实现机器翻译](https://plmsmile.github.io/2017/10/12/Attention-based-NMT/)
