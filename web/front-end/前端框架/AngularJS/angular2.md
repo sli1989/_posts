@@ -1,5 +1,5 @@
 ---
-title: Angular2原理浅析
+title: Angular2中的一些概念
 date: 2018-03-26
 keywords: ["angular","front-end","前端架构"]
 tags: ["angular","front-end","前端架构"]
