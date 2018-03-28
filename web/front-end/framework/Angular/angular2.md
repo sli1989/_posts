@@ -6,9 +6,7 @@ tags: ["angular","front-end","前端架构"]
 ---
 
 ## 教程
-https://angular.io/guide/quickstart
 
-https://github.com/angular/quickstart
 
 https://www.w3cschool.cn/angular
 

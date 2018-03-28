@@ -6,49 +6,33 @@ tags: ["angular","front-end","前端架构"]
 ---
 
 
-## 教程
+# 简介
+
+AngularJS是一个全面的客户端侧框架。其模板基于双向UI数据绑定。数据绑定是一种自动方法，在模型改变时更新视图，以及在视图改变时更新模型。
 
 
 
-在 Angular 中，通过 Component 装饰器和自定义组件类来创建自定义组件。
-创建 AppComponent 组件`./src/app/app.component.ts`
-```js
-import { Component } from '@angular/core';
-// 定义组件的元信息
-@Component({
-  selector: 'my-app', // 用于定义组件在HTML代码中匹配的标签
-  template: `<h1>Hello {{name}}</h1>`, // 定义组件内嵌视图。使用 {{}} 插值语法实现数据绑定(插值表达式)
-})
-// 定义组件类
-export class AppComponent  { name = 'Angular'; }  
-```
+
+## 流程简介
+
+https://github.com/angular/quickstart
+https://angular.io/guide/quickstart
+
+1. 浏览器默认请求`index.html`
+1. `index.html`调用`main.js`
+1. `main.js`调用`app.component.js`
+1. `app.component.js`扫描html，发现有`my-app`标签，将字符串`<h1>Hello {{name}}</h1>`动态插入到`my-app`元素里。
+1. `angular的js`扫描html，发现了`{{name}}`，向后台发送一个动态请求 (好像是在js中的hard code)
 
 
+## 流程分解
 
-### 声明 AppComponent 组件
+### 入口 index.html
 
+以下是`index.html`，其中调用了`main.js`
 
-
-```js
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent }  from './app.component';
-
-@NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
-})
-export class AppModule { }
-```
-
-使用 AppComponent 组件
-
-
-index.html入口
 ```html
-<!DOCTYPE html>
+<!-- src/index.html -->
 <html>
   <head>
     <title>Angular QuickStart</title>
@@ -63,6 +47,7 @@ index.html入口
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+    <!-- 这里是Angular的入口js文件 -->
     <script src="systemjs.config.js"></script>
     <script>
       System.import('main.js').catch(function(err){ console.error(err); });
@@ -75,6 +60,66 @@ index.html入口
   </body>
 </html>
 ```
+
+在`main.ts`中设置断点，会看到页面是这样子的。
+
+<img src="/images/raw/Web - frontend - Angular - quickstart.png"></img>
+
+### main.ts
+
+
+`main.ts`调用 AppModule模块，会创建AppModule类。(由Angular的NgModuleFactory创建)
+```js
+// src/main.ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+
+
+
+### AppModule 模块
+
+`AppModule`模块的声明如下。其中调用了`AppComponent`组件，即首先创建`AppComponent`类。(由Angular的ComponentFactory创建)
+```js
+// src/app/app.module.ts
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent }  from './app.component';
+
+@NgModule({
+  imports:      [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+```
+
+### AppComponent 组件
+
+`AppComponent` 组件会对html中的`my-app`标签进行渲染，返回`template`中指定的元素。
+```js
+// src/app/app.component.ts
+import { Component } from '@angular/core';
+// 通过 Component 装饰器和自定义组件类来创建自定义组件
+@Component({ // 定义组件的元信息
+  selector: 'my-app', // 用于定义组件在HTML代码中匹配的标签
+  template: `<h1>Hello {{name}}</h1>`, // 定义组件内嵌视图。使用 {{}} 插值语法实现数据绑定(插值表达式)
+})
+// 定义组件类
+export class AppComponent  { name = 'Angular'; }  
+```
+
+
+其中`{{name}}`变量是在浏览器端渲染。
+
+值得注意的是这里的`template`。
+Angular模板基于双向UI数据绑定。在模型改变时自动更新视图，以及在视图改变时自动更新模型。其HTML模板在浏览器中编译。
+比如这里的`<h1>Hello {{name}}</h1>`。
+
+
+
+
 
 
 # 工作流程
@@ -142,3 +187,8 @@ index.html入口
   "repository": {}
 }
 ```
+
+# 疑问
+
+1. 这个project，如何不依赖node，直接双击在浏览器运行？
+1. 这里的{{name}}是绑定的js中写死的静态变量。如何绑定后台的一个动态变量？
