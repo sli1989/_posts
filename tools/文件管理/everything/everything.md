@@ -28,7 +28,7 @@ Everything is an Awesome Utility that Locates Files and Folders Instantly in Win
 
 
 
-## 原理
+# 原理
 
 
 Everything搜索文件很快，是利用的NTFS分区的USN功能.
@@ -37,10 +37,45 @@ Everything搜索文件很快，是利用的NTFS分区的USN功能.
 
 原理：
 - 读取NTFS下的USN日志文件
+  - [UsnOperator类源码](https://github.com/BitMindLab/everything/blob/master/UsnOperation/UsnOperator.cs)
 - 根据USN继续查询；
 - 根据文件编号继续查询；
 - 创建USN（激活USN状态）；
-- 使用 FileSystemWatcher 监听文件变化
+- NTFS的Change Journal（更改日志）的方法实现监控功能
+
+
+> 未采用 FileSystemWatcher 监听文件变化。(everthing不是采用的这个window api)
+
+
+## 如何建索引
+
+
+## 如何监听文件变化
+
+这属于操作系统 & 文件系统的范畴。
+
+### Windows
+即利用windows api。
+
+以下几种方式：
+1. FindFirstChangeNotification
+  - 无法获取是哪一个文件发生了改变。
+1. ReadDirectoryChangesW
+  - 据说变化量大又密集时，丢失通知现象很严重
+1. FileSystemWatcher
+  - 貌似是对ReadDirectoryChangesW的封装
+1. NTFS的Change Journal（更改日志）
+  - Change Journal是标卷上一个特殊的文件，系统将其隐藏，所以用资源管理器或者CMD Shell都看不到，当文件系统中的文件或者目录发生改变时，就会向日志中追加记录。[参考](https://blog.csdn.net/arrowzz/article/details/75304091)
+  - 通过读取和监控USN（后面会讲）而不是扫描文件来构建索引，所以搜索速度飞快
+
+
+Everything采用了第四种方式，即利用了NTFS系统的Change Journal特性。
+
+### Linux
+
+- inotify 命令
+  - 是Linux自带的监控inode变动的函数
+  - 文档 man 7 inotify）
 -
 
 # 其它疑问
@@ -48,11 +83,12 @@ Everything搜索文件很快，是利用的NTFS分区的USN功能.
 ## linux下有没有类似的工具
 比linux下的find命令快，比locate命令实时性好。
 
-
-[参考](https://unix.stackexchange.com/questions/31063/is-there-a-file-search-engine-like-everything-in-linux)
+[见stackexchange](https://unix.stackexchange.com/questions/31063/is-there-a-file-search-engine-like-everything-in-linux)
 
 # 参考 & 待看
 
-- [轮子哥推荐的用C#写的everythingSZ](https://github.com/BitMindLab/everything)
-- [探索Everything背后的技术（USN和MFT）](https://github.com/yuzhengyang/Everything)
-- [密切关注你的NTFS驱动器](https://blog.csdn.net/xexiyong/article/details/17200827)
+- [EverythingSZ源码 - 轮子哥推荐 | Github C#](https://github.com/BitMindLab/everything)
+- [探索Everything背后的技术（USN和MFT）| Github](https://github.com/yuzhengyang/Everything)
+-  [NTFS系列](https://blog.csdn.net/column/details/16576.html)
+- [密切关注你的NTFS驱动器 | CSDN](https://blog.csdn.net/xexiyong/article/details/17200827)
+-

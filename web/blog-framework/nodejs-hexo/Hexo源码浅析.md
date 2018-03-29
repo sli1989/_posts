@@ -1,7 +1,8 @@
 ---
-title: Hexo源码浅析
+title: Hexo原理 & 源码浅析
 date: 2018-01-25 03:08:53
-tag: ["hexo","源码"]
+keywords: ["hexo","源码"]
+tags: ["hexo","源码"]
 categories:
 - web
 - blog-framework
@@ -9,7 +10,13 @@ categories:
 
 # 首先
 
-看到源码俩字，别慌，看懂很简单。(看个大概还是很简单的)
+为什么要看源码呢？因为想自己更便捷高效的管理博客，比如
+- 如何更新Hexo。(需要看`hexo init`的源码，因为该命令隐藏了`hexo-starter`项目)
+- 如何更新theme。某些bug-fix&新功能。(需要借助git的submodule来高效管理)
+- 如何自己实现一个新功能(比如添加edit button，添加URL哈希。需要了解模板原理)
+
+
+源码不用细看，看个大概能满足自己的需求就够了。
 
 # 查看Hexo和Plugin版本
 
@@ -41,11 +48,20 @@ $ npm ls --depth 0
 
 > 更新各个模块，命令 npm update
 
-
+- hexo-cli，
+  - 提供hexo init、hexo help、hexo version命令
+- hexo
+  - hexo new
+  - hexo generate
+- hexo plugin，即node依赖
+  - hexo server
+  - hexo deploy
+  - 其他命令
 
 # 回顾Hexo搭建流程
 
 以下来自[官方文档](https://github.com/hexojs/hexo/blob/master/README.md)
+
 
 ```sh
 # 1. Installation
@@ -162,13 +178,30 @@ spawn(npmCommand, ['install', '--production']);
 
 放个链接 https://github.com/hexojs/hexo-generator-index ，貌似主要先看这个。
 
-先直接引用其他博客吧。后面有空再看。
+
+### generator
+
+generates static files
+
+### render 模板引擎
+
+模板引擎的作用，就是将界面与数据分离。最简单的原理是将模板内容中指定的地方替换成数据，实现业务代码与逻辑代码分离。
+
 
 生成静态文件。将我们的数据和界面相结合生成静态文件的过程。会遍历主题文件中的 source 文件夹（js、css、img 等静态资源），然后建立索引，然后根据索引生成 pubild 文件夹中，此时的 publid 文件是由 html、 js、css、img 建立的纯静态文件可以通过 index.html 作为入口访问你的博客。
 
 
+其中 _layout.swig 是通用模板，里面引入了 head、footer 等公共组件，然后在其他的模板中会引入这个 _layout.swig 通用模板，比如 post.swig 模板
+
+
 - .md解析成html
 - .swig渲染为html
+
+### 数据的填充
+
+数据的填充主要是 hexo -g 的时候将数据传递给 swig 模板，然后再由 swig 模板填充到 HTML 中。
+
+
 
 ## 6. hexo deploy
 deploy到底干了什么？执行了git push？
@@ -217,6 +250,7 @@ $ git push -u origin HEAD:master --force
 - [hexo deploy官方文档](https://hexo.io/docs/deployment.html)
 - [hexo deploy.js源码](https://github.com/hexojs/hexo-deployer-git/blob/master/lib/deployer.js)
 - http://cherryblog.site/hexo-4.html
-
+- [深入理解 Hexo](http://cherryblog.site/hexo-4.html)
+- [hexo是怎么工作的](http://coderunthings.com/2017/08/20/howhexoworks/)
 ## 7. Hexo 的模板引擎
 这个`render`讲道理应该是在`hexo g`的时候调用的。 待看

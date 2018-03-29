@@ -47,6 +47,13 @@ Merging an upstream repository into your fork
 
 https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/
 
+## 如何 merge本地分支到master
+
+git checkout master
+git pull origin master
+git merge test
+git push origin master
+
 
 ## 有冲突怎么办？
 老简单了

@@ -1,14 +1,17 @@
 ---
-title: Angular快速入门教程 - Hello Angular
+title: Angular typescript快速入门教程 - Hello Angular
 date: 2018-03-26
 keywords: ["angular","front-end","前端架构"]
 tags: ["angular","front-end","前端架构"]
 ---
 
 
+
 # 简介
 
-AngularJS是一个全面的客户端侧框架。其模板基于双向UI数据绑定。数据绑定是一种自动方法，在模型改变时更新视图，以及在视图改变时更新模型。
+Angular 是由谷歌开发与维护一个开发跨平台应用程序的框架，同时适用于手机与桌面。
+
+其模板基于双向UI数据绑定。数据绑定是一种自动方法，在模型改变时更新视图，以及在视图改变时更新模型。
 
 
 
@@ -36,12 +39,12 @@ https://angular.io/guide/quickstart
 <html>
   <head>
     <title>Angular QuickStart</title>
-    <base href="/">
+    <base href="/">   <!-- 如果想双击运行html的话，需要去掉这行，并加入angular依赖 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Polyfill(s) for older browsers -->
+    <!-- IE 需要 polyfill -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
 
     <script src="node_modules/zone.js/dist/zone.js"></script>
@@ -87,6 +90,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 
+// NgModule指令实现数据的双向绑定
 @NgModule({
   imports:      [ BrowserModule ],
   declarations: [ AppComponent ],
@@ -98,13 +102,18 @@ export class AppModule { }
 ### AppComponent 组件
 
 `AppComponent` 组件会对html中的`my-app`标签进行渲染，返回`template`中指定的元素。
+
+以下是`AppComponent`组件的声明
+
+
 ```js
 // src/app/app.component.ts
 import { Component } from '@angular/core';
 // 通过 Component 装饰器和自定义组件类来创建自定义组件
 @Component({ // 定义组件的元信息
   selector: 'my-app', // 用于定义组件在HTML代码中匹配的标签
-  template: `<h1>Hello {{name}}</h1>`, // 定义组件内嵌视图。使用 {{}} 插值语法实现数据绑定(插值表达式)
+  template: `<h1>Hello {{name}}</h1>`, // 定义组件内嵌视图。利用 {{}} 插值表达式实现数据绑定。这是单向绑定吧？
+  // 双向绑定：<input [(ngModel)]="todo.text">
 })
 // 定义组件类
 export class AppComponent  { name = 'Angular'; }  
@@ -192,3 +201,9 @@ Angular模板基于双向UI数据绑定。在模型改变时自动更新视图�
 
 1. 这个project，如何不依赖node，直接双击在浏览器运行？
 1. 这里的{{name}}是绑定的js中写死的静态变量。如何绑定后台的一个动态变量？
+
+
+# 其他angular入门教程
+
+- 首推教程 Angular 2 教程 http://www.runoob.com/angularjs2/angularjs2-tutorial.html  可直接双击html执行
+- Angular 4 教程 https://www.w3cschool.cn/angular/
