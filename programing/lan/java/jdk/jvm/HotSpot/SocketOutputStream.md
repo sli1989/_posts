@@ -1,7 +1,9 @@
 ---
 title: java hotspot虚拟机 - SocketOutputStream
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 5eb3e0be
+date: 2017-02-02 00:00:00
 ---
 
 ## SocketOutputStream.java

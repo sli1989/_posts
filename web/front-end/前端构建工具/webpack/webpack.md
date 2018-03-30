@@ -1,7 +1,10 @@
 ---
 title: Webpack简介
-date: 2018-03-25
-tags: ["webpack","构建工具"]
+tags:
+  - webpack
+  - 构建工具
+abbrlink: 53ff0523
+date: 2018-03-25 00:00:00
 ---
 
 # 简介

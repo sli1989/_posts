@@ -1,6 +1,7 @@
 ---
 title: Angular 2 JavaScript 入门
-date: 2018-03-28
+abbrlink: 5a499450
+date: 2018-03-28 00:00:00
 ---
 
 

@@ -1,11 +1,23 @@
 ---
 title: 如何解决百度爬虫无法爬取搭建在Github上的个人博客的问题
-date: 2018-02-27
-keywords: ["爬虫","spider","robots协议","搜索引擎","屏蔽","禁止","block","github"]
-tags: ["爬虫","搜索引擎","robots协议"]
+keywords:
+  - 爬虫
+  - spider
+  - robots协议
+  - 搜索引擎
+  - 屏蔽
+  - 禁止
+  - block
+  - github
+tags:
+  - 爬虫
+  - 搜索引擎
+  - robots协议
 categories:
-- web
-- site-dev
+  - web
+  - site-dev
+abbrlink: 51a8c99e
+date: 2018-02-27 00:00:00
 ---
 
 

@@ -1,8 +1,15 @@
 ---
 title: Angular2中的一些概念
-date: 2018-03-26
-keywords: ["angular","front-end","前端架构"]
-tags: ["angular","front-end","前端架构"]
+keywords:
+  - angular
+  - front-end
+  - 前端架构
+tags:
+  - angular
+  - front-end
+  - 前端架构
+abbrlink: 84fd5459
+date: 2018-03-26 00:00:00
 ---
 
 ## 运行环境

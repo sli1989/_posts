@@ -1,6 +1,9 @@
 ---
 title: 关于Monkey Patch猴子补丁
-keywords: ["mokey patch","猴子补丁"]
+keywords:
+  - mokey patch
+  - 猴子补丁
+abbrlink: 7b5bc9fe
 ---
 
 # 简介

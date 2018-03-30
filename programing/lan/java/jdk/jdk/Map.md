@@ -1,7 +1,9 @@
 ---
 title: java系列 - Map
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 8748fd7b
+date: 2017-02-02 00:00:00
 ---
 
 ## dd

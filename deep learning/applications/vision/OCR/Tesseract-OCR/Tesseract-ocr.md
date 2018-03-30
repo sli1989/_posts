@@ -1,9 +1,15 @@
 ---
 title: OCR引擎-Tesseract-OCR简介
-date: 2018-03-17
-keywords: ["Tesseract","OCR"]
-tags: ["Tesseract","OCR"]
-category: ["OCR"]
+keywords:
+  - Tesseract
+  - OCR
+tags:
+  - Tesseract
+  - OCR
+category:
+  - OCR
+abbrlink: 1ff2cbf2
+date: 2018-03-17 00:00:00
 ---
 
 

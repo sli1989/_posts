@@ -1,7 +1,9 @@
 ---
 title: java系列 - Atomic
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 89c32f49
+date: 2017-02-02 00:00:00
 ---
 
 ## 简介

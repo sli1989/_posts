@@ -1,7 +1,9 @@
 ---
 title: java系列 - System
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 7d785abb
+date: 2017-02-02 00:00:00
 ---
 
 ## 简介

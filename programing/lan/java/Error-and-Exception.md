@@ -1,7 +1,8 @@
 ---
 title: java系列 - Error & Exception
-date: 2017-02-02
 keywords: []
+abbrlink: e2072a3f
+date: 2017-02-02 00:00:00
 ---
 ## definition
 

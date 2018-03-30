@@ -1,11 +1,23 @@
 ---
 title: 利用Github Pages搭建独立域名的个人博客
-date: 2018-01-26 03:08:53
-keywords: ["建站","domain","blog","pages","域名"]
-tags: ["建站","domain","blog","DNS","pages","github"]
+keywords:
+  - 建站
+  - domain
+  - blog
+  - pages
+  - 域名
+tags:
+  - 建站
+  - domain
+  - blog
+  - DNS
+  - pages
+  - github
 categories:
-- web
-- host
+  - web
+  - host
+abbrlink: 6c2187f
+date: 2018-01-26 03:08:53
 ---
 
 

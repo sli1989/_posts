@@ -1,7 +1,11 @@
 ---
 title: Github Pages示例网站
-date: 2018-03-22
-keywords: ["Github Pages", "example","网站"]
+keywords:
+  - Github Pages
+  - example
+  - 网站
+abbrlink: 30663d8e
+date: 2018-03-22 00:00:00
 ---
 
 示例网站

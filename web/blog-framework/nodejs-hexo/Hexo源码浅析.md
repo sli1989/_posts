@@ -1,11 +1,16 @@
 ---
 title: Hexo源码系列 之 综述
-date: 2018-01-25 03:08:53
-keywords: ["hexo","源码"]
-tags: ["hexo","源码"]
+keywords:
+  - hexo
+  - 源码
+tags:
+  - hexo
+  - 源码
 categories:
-- web
-- blog-framework
+  - web
+  - blog-framework
+abbrlink: 70d0eddc
+date: 2018-01-25 03:08:53
 ---
 
 # 首先

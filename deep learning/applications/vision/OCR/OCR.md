@@ -1,6 +1,7 @@
 ---
 title: OCR
-date: 2018-03-27
+abbrlink: dab63ff1
+date: 2018-03-27 00:00:00
 ---
 
 

@@ -1,5 +1,6 @@
 ---
 title: GRU的源码实现
+abbrlink: c79f2f90
 date: 2018-02-06 19:08:53
 ---
 

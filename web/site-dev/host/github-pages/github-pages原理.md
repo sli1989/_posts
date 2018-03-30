@@ -1,11 +1,25 @@
 ---
 title: Github Pages托管静态博客-原理浅析
-date: 2018-01-26
-keywords: ["github","pages","pages服务","blog","博客","静态网页","网页托管","免费","自定义域名","Jekyll"]
-tags: ["github","pages","blog"]
+keywords:
+  - github
+  - pages
+  - pages服务
+  - blog
+  - 博客
+  - 静态网页
+  - 网页托管
+  - 免费
+  - 自定义域名
+  - Jekyll
+tags:
+  - github
+  - pages
+  - blog
 categories:
-- web
-- host
+  - web
+  - host
+abbrlink: bfc2ae40
+date: 2018-01-26 00:00:00
 ---
 
 ## 关于github提供的http server

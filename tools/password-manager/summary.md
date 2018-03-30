@@ -1,6 +1,7 @@
 ---
 title: 开源密码管理工具对比
-date: 2018-03-20
+abbrlink: 74ac13e4
+date: 2018-03-20 00:00:00
 ---
 
 |                    | KeepPass                                                                                                           | KeepPassX                                  | LessPass                                                                      | clipperz | Encryptr | 备注                                     |

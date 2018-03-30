@@ -1,8 +1,15 @@
 ---
 title: Angular typescript快速入门教程 - Hello Angular
-date: 2018-03-26
-keywords: ["angular","front-end","前端架构"]
-tags: ["angular","front-end","前端架构"]
+keywords:
+  - angular
+  - front-end
+  - 前端架构
+tags:
+  - angular
+  - front-end
+  - 前端架构
+abbrlink: 40a5132a
+date: 2018-03-26 00:00:00
 ---
 
 

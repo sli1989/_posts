@@ -1,9 +1,12 @@
 ---
 title: 关于websocket
-date: 2018-02-05 19:08:53
-tags: ["html5","websocket"]
+tags:
+  - html5
+  - websocket
 categories:
-- html5
+  - html5
+abbrlink: 5f589e78
+date: 2018-02-05 19:08:53
 ---
 
 websocket属于服务器推送技术的一种。

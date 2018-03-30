@@ -1,8 +1,13 @@
 ---
 title: 文件管理工具 - Everthing原理 之 还没看懂
-date: 2018-03-26
-keywords: ["Everthing","文件管理"]
-tags: ["Everthing","文件管理"]
+keywords:
+  - Everthing
+  - 文件管理
+tags:
+  - Everthing
+  - 文件管理
+abbrlink: 9299c162
+date: 2018-03-26 00:00:00
 ---
 
 # 简介

@@ -1,11 +1,24 @@
 ---
 title: 关于域名
-date: 2018-01-25
-keywords: ["domain","域名","web","网站","建站","备案","注册量","排名","发展史"]
-tags: ["domain","web","建站"]
+keywords:
+  - domain
+  - 域名
+  - web
+  - 网站
+  - 建站
+  - 备案
+  - 注册量
+  - 排名
+  - 发展史
+tags:
+  - domain
+  - web
+  - 建站
 categories:
-- web
-- site-dev
+  - web
+  - site-dev
+abbrlink: 8dcc3c99
+date: 2018-01-25 00:00:00
 ---
 
 

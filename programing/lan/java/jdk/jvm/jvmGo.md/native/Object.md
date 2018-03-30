@@ -1,7 +1,9 @@
 ---
 title: java系列 - object
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 1b34e5ea
+date: 2017-02-02 00:00:00
 ---
 
 ## Object.java

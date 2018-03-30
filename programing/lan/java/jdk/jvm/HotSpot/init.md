@@ -1,7 +1,9 @@
 ---
 title: java hotspot虚拟机 - init方法
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: e4c70599
+date: 2017-02-02 00:00:00
 ---
 
 ## 初始化方法

@@ -1,11 +1,23 @@
 ---
 title: DNS解析之“记录类型”
-date: 2018-01-26 03:08:53
-keywords: ["建站","domain","blog","pages","域名"]
-tags: ["建站","domain","blog","DNS","pages","github"]
+keywords:
+  - 建站
+  - domain
+  - blog
+  - pages
+  - 域名
+tags:
+  - 建站
+  - domain
+  - blog
+  - DNS
+  - pages
+  - github
 categories:
-- web
-- host
+  - web
+  - host
+abbrlink: 87420f16
+date: 2018-01-26 03:08:53
 ---
 
 

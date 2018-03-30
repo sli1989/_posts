@@ -1,8 +1,14 @@
 ---
 title: javascript的正则表达式
-date: 2018-03-21
-keywords: ["javascript","正则表达式","regular expression"]
-tags: ["javascript","正则表达式"]
+keywords:
+  - javascript
+  - 正则表达式
+  - regular expression
+tags:
+  - javascript
+  - 正则表达式
+abbrlink: 5e28078b
+date: 2018-03-21 00:00:00
 ---
 
 

@@ -1,10 +1,13 @@
 ---
 title: 反演 百度DNS解析规则
-date: 2018-02-09
-tags: ["network","dns"]
+tags:
+  - network
+  - dns
 categories:
-- network
-- dns
+  - network
+  - dns
+abbrlink: b7c755c3
+date: 2018-02-09 00:00:00
 ---
 
 <!--

@@ -1,11 +1,25 @@
 ---
 title: 如何托管你的网站
-date: 2018-03-08
-keywords: ["托管","网站","几种方式","host","website","github","pages","coding.net","绑定域名","GAE","云主机"]
-tags: ["github","blog"]
+keywords:
+  - 托管
+  - 网站
+  - 几种方式
+  - host
+  - website
+  - github
+  - pages
+  - coding.net
+  - 绑定域名
+  - GAE
+  - 云主机
+tags:
+  - github
+  - blog
 categories:
-- web
-- host
+  - web
+  - host
+abbrlink: 65131a14
+date: 2018-03-08 00:00:00
 ---
 
 

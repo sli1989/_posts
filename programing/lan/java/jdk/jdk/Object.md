@@ -1,7 +1,9 @@
 ---
 title: java系列 - Object
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 1c98e0dc
+date: 2017-02-02 00:00:00
 ---
 
 ## 架构

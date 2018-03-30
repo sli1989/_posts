@@ -1,11 +1,21 @@
 ---
 title: 关于SEO
-date: 2018-01-25
-keywords: ["domain","SEO","域名","搜索引擎","站长","sitemap","爬虫"]
-tags: ["domain","SEO"]
+keywords:
+  - domain
+  - SEO
+  - 域名
+  - 搜索引擎
+  - 站长
+  - sitemap
+  - 爬虫
+tags:
+  - domain
+  - SEO
 categories:
-- web
-- site-dev
+  - web
+  - site-dev
+abbrlink: 435df108
+date: 2018-01-25 00:00:00
 ---
 
 # 简介

@@ -1,10 +1,14 @@
 ---
 title: Hexo中的SEO技巧
-date: 2018-03-04
-tags: ["domain","SEO","hexo"]
+tags:
+  - domain
+  - SEO
+  - hexo
 categories:
-- web
-- site-dev
+  - web
+  - site-dev
+abbrlink: 8b29356c
+date: 2018-03-04 00:00:00
 ---
 
 

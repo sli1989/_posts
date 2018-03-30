@@ -1,10 +1,12 @@
 ---
 title: hexo的推荐使用方式
-date: 2018-01-25 03:08:53
-tag: ["hexo"]
+tag:
+  - hexo
 categories:
-- web
-- blog-framework
+  - web
+  - blog-framework
+abbrlink: d3c1b8ca
+date: 2018-01-25 03:08:53
 ---
 
 

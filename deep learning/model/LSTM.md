@@ -1,11 +1,17 @@
 ---
 title: LSTM的源码浅析
-date: 2018-02-06 19:08:53
-keywords: ["lstm","rnn","源码","深度学习","deep learning"]
+keywords:
+  - lstm
+  - rnn
+  - 源码
+  - 深度学习
+  - deep learning
 tags: lstm
 categories:
-- deep learing
-- RNN
+  - deep learing
+  - RNN
+abbrlink: a6941437
+date: 2018-02-06 19:08:53
 ---
 
 <!-- the implementation of LSTM -->

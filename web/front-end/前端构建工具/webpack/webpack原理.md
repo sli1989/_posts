@@ -1,7 +1,10 @@
 ---
 title: webpack原理
-date: 2018-03-25
-tags: ["webpack","构建工具"]
+tags:
+  - webpack
+  - 构建工具
+abbrlink: 6e75b89d
+date: 2018-03-25 00:00:00
 ---
 
 webpack是一个js打包工具，不是一个完整的前端构建工具。它的流行得益于模块化和单页应用的流行。webpack提供扩展机制，在庞大的社区支持下各种场景基本它都可找到解决方案。

@@ -1,11 +1,18 @@
 ---
 title: DNS解析实例之 Coding Pages
-date: 2018-03-06
-keywords: ["dns","解析","coding.net","pages"]
-tags: ["network","dns"]
+keywords:
+  - dns
+  - 解析
+  - coding.net
+  - pages
+tags:
+  - network
+  - dns
 categories:
-- network
-- dns
+  - network
+  - dns
+abbrlink: 2902c89e
+date: 2018-03-06 00:00:00
 ---
 
 

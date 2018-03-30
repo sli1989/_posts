@@ -1,10 +1,11 @@
 ---
 title: Gist 从入门到精通到放弃
-date: 2018-01-26 03:08:53
 tags: git
 categories:
-- tools
-- git
+  - tools
+  - git
+abbrlink: d051a027
+date: 2018-01-26 03:08:53
 ---
 
 ## gist简介

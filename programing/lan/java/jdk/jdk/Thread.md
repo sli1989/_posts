@@ -1,7 +1,9 @@
 ---
 title: java系列 - Thread
-date: 2017-02-02
-keywords: ["java"]
+keywords:
+  - java
+abbrlink: 851507b3
+date: 2017-02-02 00:00:00
 ---
 
 ## 疑问

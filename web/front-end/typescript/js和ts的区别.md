@@ -1,6 +1,7 @@
 ---
 title: javascript与typescript的对比
-date: 2018-03-25
+abbrlink: ad7baabf
+date: 2018-03-25 00:00:00
 ---
 
 https://www.zhihu.com/question/25421196

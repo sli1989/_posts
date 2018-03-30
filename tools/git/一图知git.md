@@ -1,10 +1,11 @@
 ---
 title: 一图知git
-date: 2018-01-26 03:08:53
 tags: git
 categories:
-- tools
-- git
+  - tools
+  - git
+abbrlink: cd67fa63
+date: 2018-01-26 03:08:53
 ---
 
 

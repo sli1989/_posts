@@ -1,8 +1,13 @@
 ---
 title: java系列 - String
-date: 2017-02-02
-keywords: ["java","string"]
-tags: ["java","string"]
+keywords:
+  - java
+  - string
+tags:
+  - java
+  - string
+abbrlink: 2a8bf999
+date: 2017-02-02 00:00:00
 ---
 
 ## ss

@@ -1,7 +1,12 @@
 ---
 title: Gitbook自动化部署到Github Pages的方案汇总
-date: 2018-03-20
-tags: ["travis-ci","自动化部署","持续集成","gitbook"]
+tags:
+  - travis-ci
+  - 自动化部署
+  - 持续集成
+  - gitbook
+abbrlink: 941b4609
+date: 2018-03-20 00:00:00
 ---
 
 

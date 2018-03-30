@@ -1,10 +1,11 @@
 ---
 title: 经典的web编辑器--CKEditor
-date: 2018-02-23
-tags:
 categories:
-- web
-- tools
+  - web
+  - tools
+abbrlink: fae97115
+date: 2018-02-23 00:00:00
+tags:
 ---
 
 

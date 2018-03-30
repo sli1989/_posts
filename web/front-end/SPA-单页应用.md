@@ -1,8 +1,14 @@
 ---
 title: 单页应用
-date: 2018-03-27
-keywords: ["单页应用"]
-tags: ["单页应用","angular","react","ajax"]
+keywords:
+  - 单页应用
+tags:
+  - 单页应用
+  - angular
+  - react
+  - ajax
+abbrlink: fd7a7791
+date: 2018-03-27 00:00:00
 ---
 
 

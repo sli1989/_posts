@@ -1,9 +1,14 @@
 ---
 title: google云主机---GCE
-date: 2018-01-25 03:08:53
-tags: ["cloud","google","GPU","computer engine"]
+tags:
+  - cloud
+  - google
+  - GPU
+  - computer engine
 categories:
-- cloud
+  - cloud
+abbrlink: 3329d7fc
+date: 2018-01-25 03:08:53
 ---
 
 ### 简介
