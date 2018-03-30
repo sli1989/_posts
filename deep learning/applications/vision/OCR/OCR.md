@@ -13,12 +13,11 @@ date: 2018-03-27 00:00:00
 
 # 流程
 
-General OCR一般包含两步:
+General OCR一般包含:
+
 1. detection-->找到包含文字的区域(proposal);
-1. 接着利用radon hough变换 等方法 进行文本校正。
-1. 通过投影直方图分割出单行的文本的图片。
-
-
+  1. 接着利用radon hough变换 等方法 进行文本校正。
+  1. 通过投影直方图分割出单行的文本的图片。
 1. classification-->识别区域中的文字。
 
 
