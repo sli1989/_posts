@@ -1,12 +1,12 @@
 ---
 title: permalink 永久链接 - hexo链接持久化终极解决之道
+date: 2018-03-28
 ---
 
 
 
-
-
-hexo默认的链接是http://xxx.yy.com/2013/07/14/path/hello-world这种类型的，这源于站点目录下的配置_config.yml里的配置:permalink: :year/:month/:day/:title/.
+hexo默认的链接是http://xxx.yy.com/2013/07/14/path/hello-world 这种类型的，
+这源于站点目录下的配置_config.yml里的配置: `permalink: :year/:month/:day/:title/`.
 
 这种默认配置的缺点
 - 文件名是中文，导致url链接里有中文出现，
@@ -107,6 +107,14 @@ module.exports = postPermalinkFilter; // 重点是这个exports
 - 否则就生成连接
 - 新链接写入post源文件。
 
+
+入口
+
+```js
+var hexo = hexo || {};
+// 注册before_post_render钩子
+hexo.extend.filter.register('before_post_render', require('./lib/logic'), 15);
+```
 
 
 https://github.com/rozbo/hexo-abbrlink/blob/master/lib/logic.js
