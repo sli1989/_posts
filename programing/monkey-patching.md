@@ -4,8 +4,9 @@ keywords:
   - mokey patch
   - 猴子补丁
 abbrlink: 7b5bc9fe
+categories:
+  - programing
 ---
-
 # 简介
 
 ## 定义

@@ -18,15 +18,12 @@ tags:
   - blog
 categories:
   - web
+  - site-dev
   - host
+  - coding-pages
 abbrlink: d2f02b9b
 date: 2018-03-02 00:00:00
 ---
-
-
-
-
-
 参考 DNS解析实例-ESON
 
 

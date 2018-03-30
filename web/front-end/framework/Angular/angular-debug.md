@@ -1,9 +1,13 @@
 ---
 title: 如何debug typescript
 abbrlink: 848e312f
+categories:
+  - web
+  - front-end
+  - framework
+  - Angular
 date: 2018-03-26 00:00:00
 ---
-
 # Debugging TypeScript in Visual Studio
 
 

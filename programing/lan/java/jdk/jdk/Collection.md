@@ -3,6 +3,12 @@ title: java系列 - Collection Framework
 keywords:
   - java
 abbrlink: aca7a464
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jdk
 date: 2017-02-02 00:00:00
 ---
 ## Hierarchy

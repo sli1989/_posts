@@ -5,11 +5,12 @@ tags:
   - dns
 categories:
   - network
-  - dns
+  - 网络协议-OSI七层模型
+  - 1. 第七层 应用层
+  - DNS
 abbrlink: b7c755c3
 date: 2018-02-09 00:00:00
 ---
-
 <!--
 反函数：inverse function (or anti-function[1]) is a function that "reverses" another function
 反编译：

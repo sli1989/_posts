@@ -1,10 +1,13 @@
 ---
 title: OCR
 abbrlink: dab63ff1
+categories:
+  - deep learning
+  - applications
+  - vision
+  - OCR
 date: 2018-03-27 00:00:00
 ---
-
-
 [OCR文字识别用的是什么算法？--知乎](https://www.zhihu.com/question/20191727)
 
 

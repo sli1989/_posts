@@ -15,12 +15,12 @@ tags:
   - github
 categories:
   - web
+  - site-dev
   - host
+  - github-pages
 abbrlink: 6c2187f
 date: 2018-01-26 03:08:53
 ---
-
-
 # 1. 购买域名
 
 [阿里云-万网](https://wanwang.aliyun.com/) 或其他供应商

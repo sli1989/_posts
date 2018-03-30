@@ -2,12 +2,11 @@
 title: 关于RNN
 tags: rnn
 categories:
-  - deep learing
-  - RNN
+  - deep learning
+  - model
 abbrlink: d66c7262
 date: 2018-02-06 19:08:53
 ---
-
 ##
 
 

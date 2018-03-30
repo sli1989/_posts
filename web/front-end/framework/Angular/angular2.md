@@ -9,9 +9,13 @@ tags:
   - front-end
   - 前端架构
 abbrlink: 84fd5459
+categories:
+  - web
+  - front-end
+  - framework
+  - Angular
 date: 2018-03-26 00:00:00
 ---
-
 ## 运行环境
 
 由于目前各种环境（浏览器或 Node）暂不支持ES6的代码，所以需要一些shim和polyfill（IE需要）让ES6写的代码能够转化为ES5形式并可以正常运行在浏览器中。

@@ -3,9 +3,14 @@ title: java系列 - Atomic
 keywords:
   - java
 abbrlink: 89c32f49
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jdk
 date: 2017-02-02 00:00:00
 ---
-
 ## 简介
 
 - 原子量和普通变量相比，主要体现在读写的线程安全上。对原子量的是原子的(比如多线程下的共享变量i++就不是原子的)，由CAS操作保证原子性。对原子量的读可以读到最新值，由volatile关键字来保证可见性。

@@ -9,10 +9,10 @@ tags:
 categories:
   - web
   - blog-framework
+  - nodejs-hexo
 abbrlink: 70d0eddc
 date: 2018-01-25 03:08:53
 ---
-
 # 首先
 
 为什么要看源码呢？因为想自己更便捷高效的管理博客，比如

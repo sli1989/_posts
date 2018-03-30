@@ -8,10 +8,10 @@ tags:
 categories:
   - web
   - site-dev
+  - seo
 abbrlink: c429c70d
 date: 2018-02-27 00:00:00
 ---
-
 # 什么是robots协议
 
 Robots协议（也称为爬虫协议、机器人协议等）的全称是“网络爬虫排除标准”（Robots Exclusion Protocol），网站通过Robots协议告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取。搜索引擎抓取网站内容前会先抓取robots.txt，据此“自觉地”抓取或者不抓取该网页内容，其目的是保护网站数据和敏感信息、确保用户个人信息和隐私不被侵犯。

@@ -3,9 +3,14 @@ title: java系列 - Map
 keywords:
   - java
 abbrlink: 8748fd7b
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jdk
 date: 2017-02-02 00:00:00
 ---
-
 ## dd
 
 | 类            | 同步(线程安全) | order            | key可为null | implementation |  复杂度：增删改查，containsValue |  其他语言 |

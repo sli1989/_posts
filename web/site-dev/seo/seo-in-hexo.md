@@ -7,11 +7,10 @@ tags:
 categories:
   - web
   - site-dev
+  - seo
 abbrlink: 8b29356c
 date: 2018-03-04 00:00:00
 ---
-
-
 ## 关于keywords
 
 为每个post添加tag，因为tag会被放入页面的`keywords`

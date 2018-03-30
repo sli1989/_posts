@@ -2,6 +2,10 @@
 title: java系列 - Error & Exception
 keywords: []
 abbrlink: e2072a3f
+categories:
+  - programing
+  - lan
+  - java
 date: 2017-02-02 00:00:00
 ---
 ## definition

@@ -1,14 +1,13 @@
 ---
 title: 经典的web编辑器--CKEditor
 categories:
-  - web
   - tools
+  - formatting
+  - html-富文本编辑器
 abbrlink: fae97115
 date: 2018-02-23 00:00:00
 tags:
 ---
-
-
 # 快速搭建CKEditor
 
 [CKEditor CDN](https://cdn.ckeditor.com/)

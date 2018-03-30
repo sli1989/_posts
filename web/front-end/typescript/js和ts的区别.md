@@ -1,9 +1,12 @@
 ---
 title: javascript与typescript的对比
 abbrlink: ad7baabf
+categories:
+  - web
+  - front-end
+  - typescript
 date: 2018-03-25 00:00:00
 ---
-
 https://www.zhihu.com/question/25421196
 
 

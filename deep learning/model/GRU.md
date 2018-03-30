@@ -1,10 +1,11 @@
 ---
 title: GRU的源码实现
 abbrlink: c79f2f90
+categories:
+  - deep learning
+  - model
 date: 2018-02-06 19:08:53
 ---
-
-
 # GRU的实现源码
 
 ## GRU-tensorflow

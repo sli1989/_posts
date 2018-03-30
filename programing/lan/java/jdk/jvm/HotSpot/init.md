@@ -3,9 +3,15 @@ title: java hotspot虚拟机 - init方法
 keywords:
   - java
 abbrlink: e4c70599
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jvm
+  - HotSpot
 date: 2017-02-02 00:00:00
 ---
-
 ## 初始化方法
 在编译生成class文件时，会自动产生两个方法，一个是类的初始化方法<clinit>, 另一个是实例的初始化方法<init>
 <clinit>：在jvm第一次加载class文件时调用，包括静态变量初始化语句和静态块的执行

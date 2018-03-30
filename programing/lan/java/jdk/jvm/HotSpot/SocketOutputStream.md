@@ -3,9 +3,15 @@ title: java hotspot虚拟机 - SocketOutputStream
 keywords:
   - java
 abbrlink: 5eb3e0be
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jvm
+  - HotSpot
 date: 2017-02-02 00:00:00
 ---
-
 ## SocketOutputStream.java
 
 就只有这一个native方法

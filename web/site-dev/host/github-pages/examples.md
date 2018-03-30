@@ -5,9 +5,13 @@ keywords:
   - example
   - 网站
 abbrlink: 30663d8e
+categories:
+  - web
+  - site-dev
+  - host
+  - github-pages
 date: 2018-03-22 00:00:00
 ---
-
 示例网站
 
 ## pytorch

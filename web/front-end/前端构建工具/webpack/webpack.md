@@ -4,9 +4,13 @@ tags:
   - webpack
   - 构建工具
 abbrlink: 53ff0523
+categories:
+  - web
+  - front-end
+  - 前端构建工具
+  - webpack
 date: 2018-03-25 00:00:00
 ---
-
 # 简介
 
 Webpack这个工具可以将你的所有代码和可选择地将依赖捆绑成一个单独

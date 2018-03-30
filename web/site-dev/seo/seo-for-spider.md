@@ -14,10 +14,10 @@ tags:
 categories:
   - web
   - site-dev
+  - seo
 abbrlink: 435df108
 date: 2018-01-25 00:00:00
 ---
-
 # 简介
 
 ## 如何检查自己网站是否被baidu google检索

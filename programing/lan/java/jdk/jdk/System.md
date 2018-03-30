@@ -3,9 +3,14 @@ title: java系列 - System
 keywords:
   - java
 abbrlink: 7d785abb
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jdk
 date: 2017-02-02 00:00:00
 ---
-
 ## 简介
 java.lang.System.java
 

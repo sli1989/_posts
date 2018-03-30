@@ -6,11 +6,12 @@ tags:
   - 持续集成
   - gitbook
 abbrlink: 941b4609
+categories:
+  - tools
+  - formatting
+  - gitbook
 date: 2018-03-20 00:00:00
 ---
-
-
-
 ## 采用shell命令
 
 - 参考一：

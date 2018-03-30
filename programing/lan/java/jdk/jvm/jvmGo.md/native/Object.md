@@ -3,9 +3,16 @@ title: java系列 - object
 keywords:
   - java
 abbrlink: 1b34e5ea
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jvm
+  - jvmGo.md
+  - native
 date: 2017-02-02 00:00:00
 ---
-
 ## Object.java
 
 ### 有7个native方法。

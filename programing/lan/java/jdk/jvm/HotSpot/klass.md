@@ -3,9 +3,15 @@ title: java hotspot虚拟机 - class文件
 keywords:
   - java
 abbrlink: 3a5d7b99
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jvm
+  - HotSpot
 date: 2017-02-02 00:00:00
 ---
-
 ## oop-klass model概述
 
 HotSpot JVM并没有根据Java实例对象直接通过虚拟机映射到新建的C++对象，而是设计了一个oop-klass model。

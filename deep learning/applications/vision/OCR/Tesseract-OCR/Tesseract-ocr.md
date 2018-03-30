@@ -9,10 +9,14 @@ tags:
 category:
   - OCR
 abbrlink: 1ff2cbf2
+categories:
+  - deep learning
+  - applications
+  - vision
+  - OCR
+  - Tesseract-OCR
 date: 2018-03-17 00:00:00
 ---
-
-
 # Tesseract简介&历史
 
 Tesseract(/'tesərækt/) 意思是四维超正方体（英语：tesseract）或正八胞体。下图来自维基百科，是一个正八胞体绕着两个四维空间中互相正交的平面进行双旋转时的透视投影。

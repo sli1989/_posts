@@ -1,10 +1,13 @@
 ---
 title: permalink 永久链接 - hexo链接持久化终极解决之道
-date: 2018-03-28
+abbrlink: 2cc9ead
+categories:
+  - web
+  - blog-framework
+  - nodejs-hexo
+  - plugin
+date: 2018-03-28 00:00:00
 ---
-
-
-
 hexo默认的链接是http://xxx.yy.com/2013/07/14/path/hello-world 这种类型的，
 这源于站点目录下的配置_config.yml里的配置: `permalink: :year/:month/:day/:title/`.
 

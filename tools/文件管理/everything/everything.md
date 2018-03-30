@@ -7,9 +7,12 @@ tags:
   - Everthing
   - 文件管理
 abbrlink: 9299c162
+categories:
+  - tools
+  - 文件管理
+  - everything
 date: 2018-03-26 00:00:00
 ---
-
 # 简介
 
 Everything is an Awesome Utility that Locates Files and Folders Instantly in Windows

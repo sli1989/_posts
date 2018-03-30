@@ -1,9 +1,12 @@
 ---
 title: 计算机视觉--常用数据库
 abbrlink: 84080d8a
+categories:
+  - deep learning
+  - applications
+  - vision
 date: 2017-12-12 00:00:00
 ---
-
 ## summary
 
 

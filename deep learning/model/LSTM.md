@@ -8,12 +8,11 @@ keywords:
   - deep learning
 tags: lstm
 categories:
-  - deep learing
-  - RNN
+  - deep learning
+  - model
 abbrlink: a6941437
 date: 2018-02-06 19:08:53
 ---
-
 <!-- the implementation of LSTM -->
 
 # Overview

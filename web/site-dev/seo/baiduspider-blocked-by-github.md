@@ -16,13 +16,10 @@ tags:
 categories:
   - web
   - site-dev
+  - seo
 abbrlink: 51a8c99e
 date: 2018-02-27 00:00:00
 ---
-
-
-
-
 ## 现状 & 原因
 
 ### github做了什么。

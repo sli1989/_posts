@@ -7,9 +7,13 @@ tags:
   - java
   - string
 abbrlink: 2a8bf999
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
 date: 2017-02-02 00:00:00
 ---
-
 ## ss
 
 String s = “abc”,并没有在堆上生成对象

@@ -4,11 +4,11 @@ tags:
   - html5
   - websocket
 categories:
-  - html5
+  - web
+  - 服务器推送
 abbrlink: 5f589e78
 date: 2018-02-05 19:08:53
 ---
-
 websocket属于服务器推送技术的一种。
 HTML5定义了 WebSocket 协议，以及相关的编程API，能更好的实现双向通信且节省服务器资源和带宽。
 >  WebSocket 实际上指的是一种协议，与我们熟知的 Http 协议是同等的一个网络协议。用网络模型结构来解释的话， WebSocket 和 Http 协议都属于 应用层协议，两者都基于传输层协议 TCP。

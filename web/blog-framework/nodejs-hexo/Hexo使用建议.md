@@ -5,14 +5,10 @@ tag:
 categories:
   - web
   - blog-framework
+  - nodejs-hexo
 abbrlink: d3c1b8ca
 date: 2018-01-25 03:08:53
 ---
-
-
-
-
-
 ## 核心思想
 
 

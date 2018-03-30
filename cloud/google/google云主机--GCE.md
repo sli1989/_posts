@@ -7,10 +7,10 @@ tags:
   - computer engine
 categories:
   - cloud
+  - google
 abbrlink: 3329d7fc
 date: 2018-01-25 03:08:53
 ---
-
 ### 简介
 
 [GCP 免费方案](https://cloud.google.com/free/?hl=zh-cn)

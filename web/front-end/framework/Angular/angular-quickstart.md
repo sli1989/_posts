@@ -9,11 +9,13 @@ tags:
   - front-end
   - 前端架构
 abbrlink: 40a5132a
+categories:
+  - web
+  - front-end
+  - framework
+  - Angular
 date: 2018-03-26 00:00:00
 ---
-
-
-
 # 简介
 
 Angular 是由谷歌开发与维护一个开发跨平台应用程序的框架，同时适用于手机与桌面。

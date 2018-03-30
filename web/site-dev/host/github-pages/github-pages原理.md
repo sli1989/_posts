@@ -17,11 +17,12 @@ tags:
   - blog
 categories:
   - web
+  - site-dev
   - host
+  - github-pages
 abbrlink: bfc2ae40
 date: 2018-01-26 00:00:00
 ---
-
 ## 关于github提供的http server
 
 #### ping 几个不同账号的gitpage(比如`colah.github.io`,`xu-song.github.io`)，发现对应的是同一个ip。为什么返回的页面不同呢？

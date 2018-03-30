@@ -3,9 +3,14 @@ title: java系列 - Thread
 keywords:
   - java
 abbrlink: 851507b3
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jdk
 date: 2017-02-02 00:00:00
 ---
-
 ## 疑问
 
 ### Java的线程是如何创建的，是直接调用OS的API，还是有自己的“抽象线程”？

@@ -8,10 +8,12 @@ tags:
   - javascript
   - 正则表达式
 abbrlink: 5e28078b
+categories:
+  - web
+  - front-end
+  - js
 date: 2018-03-21 00:00:00
 ---
-
-
 # 简介
 
 

@@ -1,14 +1,13 @@
 ---
 title: Angular 2 JavaScript 入门
 abbrlink: 5a499450
+categories:
+  - web
+  - front-end
+  - framework
+  - Angular
 date: 2018-03-28 00:00:00
 ---
-
-
-
-
-
-
 [教程链接](http://www.runoob.com/angularjs2/angularjs2-javascript-setup.html)
 
 

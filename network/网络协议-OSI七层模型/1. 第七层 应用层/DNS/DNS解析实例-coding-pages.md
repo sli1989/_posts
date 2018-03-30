@@ -10,16 +10,12 @@ tags:
   - dns
 categories:
   - network
-  - dns
+  - 网络协议-OSI七层模型
+  - 1. 第七层 应用层
+  - DNS
 abbrlink: 2902c89e
 date: 2018-03-06 00:00:00
 ---
-
-
-
-
-
-
 ## coding page跳转至首页
 
 DNS配置

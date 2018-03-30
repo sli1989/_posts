@@ -5,10 +5,10 @@ tag:
 categories:
   - web
   - blog-framework
+  - nodejs-hexo
 abbrlink: 9ff21bc3
 date: 2018-01-25 03:08:53
 ---
-
 ## 垃圾中的垃圾 之 DaoVoice
 
 特点：高延迟

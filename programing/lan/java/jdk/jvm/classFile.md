@@ -3,9 +3,14 @@ title: java系列 - class文件
 keywords:
   - java
 abbrlink: 718175b8
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jvm
 date: 2017-02-02 00:00:00
 ---
-
 ## introduction
 
 目的：完整分析class文件。

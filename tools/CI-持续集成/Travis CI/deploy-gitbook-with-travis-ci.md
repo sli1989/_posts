@@ -13,9 +13,12 @@ keywords:
   - github pages
   - personal access token
 abbrlink: a8e526f0
+categories:
+  - tools
+  - CI-持续集成
+  - Travis CI
 date: 2018-03-20 00:00:00
 ---
-
 # 目的
 
 实现 Gitbook - Github仓库 - Github Pages 三方同步。

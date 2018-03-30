@@ -3,9 +3,14 @@ title: java系列 - Object
 keywords:
   - java
 abbrlink: 1c98e0dc
+categories:
+  - programing
+  - lan
+  - java
+  - jdk
+  - jdk
 date: 2017-02-02 00:00:00
 ---
-
 ## 架构
 
 - Object.java(rt.jar) 调用 jdk的native方法(Object.c)。

@@ -14,15 +14,13 @@ tags:
   - pages
   - github
 categories:
-  - web
-  - host
+  - network
+  - 网络协议-OSI七层模型
+  - 1. 第七层 应用层
+  - DNS
 abbrlink: 87420f16
 date: 2018-01-26 03:08:53
 ---
-
-
-
-
 # 简介
 
 域名与IP之间的对应关系，称为"记录"（record）。根据使用场景，"记录"可以分成不同的类型（type）。
