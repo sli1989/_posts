@@ -58,6 +58,7 @@ Everything搜索文件很快，是利用的NTFS分区的USN功能.
 即利用windows api。
 
 以下几种方式：
+
 1. FindFirstChangeNotification
   - 无法获取是哪一个文件发生了改变。
 1. ReadDirectoryChangesW

@@ -1,5 +1,5 @@
 ---
-title: Hexo原理 & 源码浅析
+title: Hexo源码系列 之 综述
 date: 2018-01-25 03:08:53
 keywords: ["hexo","源码"]
 tags: ["hexo","源码"]
@@ -174,6 +174,8 @@ spawn(npmCommand, ['install', '--production']);
 
 ## 5. hexo generate
 
+生成器（Generator）[官方文档](https://hexo.io/zh-cn/api/generator.html)
+
 这个好麻烦，看不动了。这么多`generator`和`render`。
 
 放个链接 https://github.com/hexojs/hexo-generator-index ，貌似主要先看这个。
@@ -184,6 +186,10 @@ spawn(npmCommand, ['install', '--production']);
 generates static files
 
 ### render 模板引擎
+
+[官方文档](https://hexo.io/zh-cn/api/renderer.html)
+
+https://hexo.io/zh-cn/api/rendering.html
 
 模板引擎的作用，就是将界面与数据分离。最简单的原理是将模板内容中指定的地方替换成数据，实现业务代码与逻辑代码分离。
 
