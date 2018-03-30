@@ -99,11 +99,19 @@ module.exports = postPermalinkFilter; // 重点是这个exports
 
 ```
 
-
-
 # hexo-abbrlink插件 源码
 
+原理：
+- 注册before_post_render钩子，
+- 取出来abbrlink这个属性看是否存在，存在的就不管了，
+- 否则就生成连接
+- 新链接写入post源文件。
+
+
+
 https://github.com/rozbo/hexo-abbrlink/blob/master/lib/logic.js
+
+
 
 ```js
 var crc16 = require('./crc16');
@@ -153,7 +161,7 @@ let logic = function(data) {
             var tmpPost = front.parse(data.raw);
             //add new generated link
             tmpPost.abbrlink = abbrlink;
-            //process post
+            //process post  这里要重写post，不建议这样做。有误改原文件的风险。
                 postStr = front.stringify(tmpPost);
             postStr = '---\n' + postStr;
             fs.writeFileSync(data.full_source, postStr, 'utf-8');
@@ -180,4 +188,9 @@ TODO:
 - 提供hash配置。比如采用date、path做hash
   - 一般用不到，我觉得
 - 不局限hex，可以采用所有数字+字母。容量更大。
-- 该模块与原Hexo，结合的有点不够优雅
+- link写入到了.md文件中
+  - 优势：1. hexo读取方便  2. link复用，减少link的变动，利于SEO  3. 加速，不用每次重新hash
+  - 缺陷：需要重写md文件，强行插入abbrlink属性。
+  - 建议：与hexo动态交互，而不是把link写入到md静态文件。link的复用可以采用独立的数据文件
+
+# 参考
