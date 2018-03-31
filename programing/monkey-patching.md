@@ -160,7 +160,7 @@ def foo():
 
 def bar():
     print('Explicit context to bar')
-    gevent.sleep(0)
+    gevent.sleep(0)  #
     print('Implicit context switch back to bar')
 
 gevent.joinall([
@@ -176,11 +176,15 @@ Explicit context switch to foo again
 Implicit context switch back to bar
 [<Greenlet at 0x7fb8a72c3eb0>, <Greenlet at 0x7fb8a72c3a50>]
 ```
+上述例子能看到，执行顺序是  `foo-->bar--foo--bar`，来回切换。即gevent.sleep()并不会真正的阻塞整个线程，而是将cpu的控制权显式的交给未被gevent.sleep()阻塞的协程使用。
+
+协程是单线程程序（从上述例子来讲），如果我们使用time.sleep()，那么整个线程都会被阻塞。
+
 
 ### `gevent.sleep`与`time.sleep`的区别
 - gevent is a cooperative analog to the threading module. When using gevent.sleep it you would never use time.sleep.  So no example is needed.
 
-- time.sleep would suspend the entire process, blocking all greenlet threads.
+- time.sleep would suspend the entire process, blocking all greenlet threads. [来源](https://mail.python.org/pipermail/python-list/2014-July/675726.html)。 以上说法针对的是协程(单线程程序)。而对于多线程，time.sleep仅仅阻塞当前线程，不阻塞其他线程，[来源](https://stackoverflow.com/questions/92928/time-sleep-sleeps-thread-or-process)。
 
 ## 猴子补丁 与 SocketIO
 
@@ -197,6 +201,18 @@ Implicit context switch back to bar
 没看懂的部分，后面再看。
 >  That is really the only way to make this work when you use gevent, threading is cooperative so you have to release the CPU so that other tasks associated with the server get a chance to run and flush the messages. Any chance you haven't monkey patched the standard library?
 > --- Flask-SocketIO的作者miguelgrinberg link
+
+这里说的意思是，`socketio.emit(message)` 默认会加缓存(buffer)。需要主动flush才能立即发送。而`gevent.sleep(`是flush的一种方式，因为它会  将cpu的控制权显式的交给未被gevent.sleep()阻塞的协程使用，切换之前会先flush一下。
+
+
+socketio.emit默认会有个buffer（为了高效），为什么gevent.sleep会flush这个buffer？让我们重新梳理一下思路：
+
+1. `gevent.sleep`会`释放cpu控制权`，即`切换协程`，从而不阻塞其他协程运行。 [gevent切换协程的源码](https://github.com/gevent/gevent/search?utf8=%E2%9C%93&q=switch&type=)
+1. gevent进行`协程切换`前，需要`flush当前协程`。 [gevent进行flush的源码](https://github.com/gevent/gevent/search?utf8=%E2%9C%93&q=flush&type=)
+1. `flush当前协程`导致socket.emit中的缓存立即发送
+
+
+
 
 ## 猴子补丁与 import json,
 

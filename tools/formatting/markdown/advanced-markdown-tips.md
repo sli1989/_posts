@@ -49,10 +49,10 @@ markdown的语法不支持图片大小，位置等样式。
 所以可采用`<img>`标签
 
 ```html
-<img title="hover" alt=="alternate_text" align="middle" width="50" height="50" src="http://www.fillmurray.com/100/100">
+<img title="hover" alt=="alternate_text" align="middle" width="50" height="50" src="http://img5.2345.com/duoteimg/zixunImg/local/2016/03/18/14582940693488.gif">
 ```
 
-<img title="hover" alt=="alternate_text" align="middle" width="50" height="50" src="http://www.fillmurray.com/100/100">
+<img title="hover" alt=="alternate_text" align="middle" width="50" height="50" src="http://img5.2345.com/duoteimg/zixunImg/local/2016/03/18/14582940693488.gif">
 
 
 ## 文本对齐

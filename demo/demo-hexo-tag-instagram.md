@@ -26,7 +26,3 @@ date: 2011-01-01 00:00:00
 ```
 
 {% instagram captioned:false url:https://www.instagram.com/p/Bg71nq4HuAU/ width:60% %}
-
-
-
-
