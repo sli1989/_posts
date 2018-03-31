@@ -2,6 +2,7 @@
 title: Demo for hexo-tag-instagram
 categories:
   - demo
+abbrlink: fc959554
 date: 2011-01-01 00:00:00
 ---
 # Instagram
