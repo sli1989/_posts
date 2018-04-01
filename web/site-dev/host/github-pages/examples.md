@@ -27,3 +27,11 @@ https://discuss.pytorch.org/ 则需要必须要借助后台服务器，因此是
 百度收录2个网页
 
 http://tool.chinaz.com/dns/ dns测速，都不通  测速有毛病吧，我手机都能连上
+
+## hexo.io
+
+hexo.io 采用的美国 CloudFlare公司CDN节点，外加CloudFlare的SSL证书
+
+
+
+百度仅收录了 https://hexo.io/zh-cn/ 目录。如何做到的
