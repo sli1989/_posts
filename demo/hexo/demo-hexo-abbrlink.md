@@ -2,6 +2,7 @@
 categories:
   - demo
   - hexo
+abbrlink: '0'
 date: 2011-01-01 00:00:00
 ---
 

@@ -12,6 +12,7 @@ categories:
   - blog-framework
   - nodejs-hexo
   - plugin
+abbrlink: 70564e
 date: 2018-04-02 00:00:00
 ---
 
