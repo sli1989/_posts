@@ -6,6 +6,7 @@ categories:
   - web
   - blog-framework
   - nodejs-hexo
+  - plugin
 abbrlink: 9ff21bc3
 date: 2018-01-25 03:08:53
 ---
