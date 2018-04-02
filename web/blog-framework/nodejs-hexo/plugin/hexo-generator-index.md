@@ -12,6 +12,10 @@ categories:
   - blog-framework
   - nodejs-hexo
   - plugin
+tags:
+  - hexo
+  - plugin
+  - hexo-generator-index
 date: 2018-04-02 00:00:00
 ---
 

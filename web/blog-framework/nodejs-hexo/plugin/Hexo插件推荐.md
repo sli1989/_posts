@@ -1,5 +1,5 @@
 ---
-title: Hexo 插件推荐
+title: 【Hexo插件系列】Hexo 插件推荐
 categories:
   - web
   - blog-framework
@@ -7,6 +7,10 @@ categories:
   - plugin
 abbrlink: 92bb368
 date: 2018-03-31 00:00:00
+tags:
+  - hexo
+  - plugin
+  - hexo-auto-category
 ---
 
 # 综述

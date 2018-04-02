@@ -1,7 +1,9 @@
 ---
 title: 渣渣中的渣渣 之 DaoVoice
-tag:
+tags:
   - hexo
+  - plugin
+  - instant-message
 categories:
   - web
   - blog-framework
