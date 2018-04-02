@@ -1,5 +1,5 @@
 ---
-title: permalink 永久链接 - hexo链接持久化终极解决之道
+title: permalink 永久链接 - hexo链接持久化解决方案
 abbrlink: 2cc9ead
 categories:
   - web
@@ -8,12 +8,15 @@ categories:
   - plugin
 date: 2018-03-28 00:00:00
 ---
-hexo默认的链接是http://xxx.yy.com/2013/07/14/path/hello-world 这种类型的，
-这源于站点目录下的配置_config.yml里的配置: `permalink: :year/:month/:day/:title/`.
+
+
+# 背景
+
+hexo默认的链接是`http://example.com/2013/07/14/path/hello-world/` 这种类型的，这源于站点目录下的配置`_config.yml`里的配置: `permalink: :year/:month/:day/:title/`.
 
 这种默认配置的缺点
-- 文件名是中文，导致url链接里有中文出现，
-- 年月日都会有分隔符
+- 文件名是中文，导致url链接里有中文出现
+- 年月日都会有分隔符，目录层次较深
 - 后台路径`path`变化，会导致链接批量变化。非常影响SEO
 
 # 配置
@@ -111,7 +114,7 @@ module.exports = postPermalinkFilter; // 重点是这个exports
 - 新链接写入post源文件。
 
 
-入口
+入口：
 
 ```js
 var hexo = hexo || {};

@@ -1,5 +1,5 @@
 ---
-title: hexo 插件推荐
+title: Hexo 插件推荐
 categories:
   - web
   - blog-framework
@@ -10,7 +10,7 @@ date: 2018-03-31 00:00:00
 ---
 
 # 综述
-官方收录插件：https://hexo.io/plugins/
+官方收录插件：[hexo.io/plugins/](https://hexo.io/plugins/)
 
 
 我现在的博客，采用的是`hexo-abbrlink` + `hexo-auto-category`插件。  前者生成`路径无关`的hash作为URL，比较鲁棒。后者提供`依赖路径`的category，既自动生成category，又能方便在浏览器端`定位到日志的文件路径`。
@@ -171,13 +171,21 @@ gist提供内嵌脚本
 
 # 无聊 鸡肋 插件 (纯属个人意见)
 
-前端加密类：hexo-encrypt
+前端加密类：hexo-encrypt.  
+
+hexo-blog-encrypt  [原理见博客](http://edolphin.site/2016/05/31/encrypt-post/)
+
+
+````
+ var content = CryptoJS.AES.decrypt(document.getElementById("encrypt-blog").innerHTML.trim(), pass);
+```
+
 
 插件无关类(功能独立，无须作为hexo插件)：hexo-beautify
 
 # Hexo博客推荐
 
-<--
+<!--
 - https://photo-tea.com  很赞，虽然看不懂写的是什么。[Github](https://github.com/tea3/)
 - https://blog.zthxxx.me/
 -->
