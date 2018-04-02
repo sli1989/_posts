@@ -1,13 +1,18 @@
 ---
 title: 【Hexo插件系列】hexo-generator-index
-date: 2018-04-02
 keywords:
-- hexo
-- 博客
-- 插件
-- 置顶
-- top
-- 排序
+  - hexo
+  - 博客
+  - 插件
+  - 置顶
+  - top
+  - 排序
+categories:
+  - web
+  - blog-framework
+  - nodejs-hexo
+  - plugin
+date: 2018-04-02 00:00:00
 ---
 
 
