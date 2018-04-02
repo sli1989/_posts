@@ -3,7 +3,11 @@ categories:
   - demo
   - hexo
 abbrlink: '0'
-date: 2011-01-01 00:00:00
+date: 2000-01-01 00:00:00
+tags:
+  - hexo
+  - plugin
+  - hexo-auto-category
 ---
 
 
@@ -21,8 +25,9 @@ permalink: :year/:month/:day/:title/
 
 e.g. URL is as follows:
 ```
-https://blog.eson.org/2018/03/08/demo/hexo/no-title/
+https://blog.eson.org/2000/01/01/demo/hexo/no-title/
 ```
+It shows the full path of this post `_post/demo/hexo/no-title.md`.
 
 # Trouble in hexo-abbrlink
 
@@ -33,8 +38,7 @@ In this case, url becomes
 https://blog.eson.org/pub/0/
 ```
 
-God, I want to locate this file and add a title.
-But it is not easy to do so.
+God, I want to locate this post and add a title. But, how can I locate my error-post?
 
 # Solution
 
@@ -48,3 +52,8 @@ In this post, you may notice that the category is `demo`, `hexo`.
 Actually, the full path of this post is `_post/demo/hexo/no-title.md`. It really helps.
 
 `hexo-auto-category` binds folder structure to category. It is also a good way to locate your post.
+
+
+# Summary
+
+`hexo-abbrlink` and `hexo-auto-category`
