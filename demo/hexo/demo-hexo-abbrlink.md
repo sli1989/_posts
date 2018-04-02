@@ -29,7 +29,7 @@ https://blog.eson.org/2018/03/08/demo/hexo/no-title/
 
 In this case, url becomes
 ```
-https://blog.eson.org/0/
+https://blog.eson.org/pub/0/
 ```
 
 God, I want to locate this file and add a title.
@@ -44,4 +44,6 @@ It would be better if `hexo-abbrlink` log the post with no title. Give me a warn
 ## with hexo-auto-category
 
 In this post, you may notice that the category is `demo`, `hexo`.
+Actually, the full path of this post is `_post/demo/hexo/no-title.md`. It really helps.
+
 `hexo-auto-category` binds folder structure to category. It is also a good way to locate your post.
