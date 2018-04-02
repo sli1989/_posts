@@ -1,6 +1,12 @@
 ---
-title: permalink 永久链接 - hexo链接持久化解决方案
+title: title: 【Hexo插件系列】permalink 永久链接 - hexo链接持久化解决方案
 abbrlink: 2cc9ead
+tags:
+  - 永久链接
+  - permalink
+  - hexo
+  - 插件
+  - plugin
 categories:
   - web
   - blog-framework
