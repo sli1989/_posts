@@ -31,20 +31,28 @@ date: 2018-01-25 03:08:53
 
 首先看一下自己的Hexo和Plugin版本，因为不同的版本是不同的实现。版本号是次要的，主要看是不是同一种包。比如`hexo-deployer-git`和`hexo-deployer-rsync`在执行`hexo d`命令时方式就不同。详见[官方文档](https://hexo.io/docs/deployment.html)
 
+
+```yml
+"dependencies": {
+  "hexo": "^3.7.0", # https://github.com/hexojs/hexo/  hexo仅仅是一个module而已，用于...
+  "hexo-generator-archive": "^0.1.5",  # generator最复杂
+  "hexo-generator-category": "^0.1.3",
+  "hexo-generator-index": "^0.2.1",
+  "hexo-generator-tag": "^0.2.0", # nodejs的模板引擎，有EJS、Jade、Swig、Haml。theme-next采用的swig
+  "hexo-renderer-ejs": "^0.3.1",
+  "hexo-renderer-stylus": "^0.3.3",
+  "hexo-renderer-marked": "^0.3.2",  # markdown的render engine，即`.md`转`html`
+  "hexo-server": "^0.3.1"
+}
+```
+也可用以下命令查看版本：
 ```sh
 $ npm ls --depth 0
-├── hexo@3.5.0  # https://github.com/hexojs/hexo/  hexo仅仅是一个module而已，用于...
-├── hexo-deployer-git@0.3.1       # 多数采用git部署吧，其他我也不会用
-├── hexo-generator-archive@0.1.5  # generator最复杂
-├── hexo-generator-baidu-sitemap@0.1.2  # Hexo自动生成sitemap.xml，收录
-├── hexo-generator-category@0.1.3 #
-├── hexo-generator-index@0.2.1
-├── hexo-generator-search@2.1.1   #
-├── hexo-generator-searchdb@1.0.8
-├── hexo-generator-sitemap@1.2.0
-├── hexo-generator-tag@0.2.0
-├── hexo-renderer-ejs@0.3.1       # nodejs的模板引擎，有EJS、Jade、Swig、Haml。theme-next采用的swig
-├── hexo-renderer-marked@0.3.2    # markdown的render engine，即`.md`转`html`
+```
+
+
+├── hexo-renderer-ejs@0.3.1       
+├── hexo-renderer-marked@0.3.2    
 ├── hexo-renderer-stylus@0.3.3
 ├── hexo-server@0.2.2
 ├── hexo-symbols-count-time@0.3.2  # 博客阅读时长、站点总阅读时长

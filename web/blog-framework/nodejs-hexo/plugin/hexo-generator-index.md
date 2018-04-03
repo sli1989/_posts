@@ -16,12 +16,14 @@ abbrlink: 70564e
 tags:
   - hexo
   - plugin
+  - generator
   - hexo-generator-index
 date: 2018-04-02 00:00:00
 ---
 
+# 简介
 
-Hexo默认提供了按发布日期的排序
+Hexo默认提供了按发布日期的排序，即hexo-generator-index
 
 核心逻辑：
 
@@ -43,7 +45,7 @@ var pagination = require('hexo-pagination');
 
 module.exports = function(locals) {
   var config = this.config;
-  var posts = locals.posts.sort(config.index_generator.order_by);
+  var posts = locals.posts.sort(config.index_generator.order_by); // 默认 sort by date
   var paginationDir = config.pagination_dir || 'page';
   var path = config.index_generator.path || '';
 
@@ -59,9 +61,9 @@ module.exports = function(locals) {
 ```
 
 
-## Hexo文章置顶的最优解决方案
+# Hexo文章置顶的最优解决方案
 
-### 被pass的方案 - 加top属性
+## 被pass的方案 - 加top属性
 
 github issue
 
@@ -71,7 +73,7 @@ github issue
 这两个PR并未被merge，很有道理。
 
 
-### 最优方案
+## 最优方案
 
 通过date置顶。比如
 
@@ -80,3 +82,5 @@ date: 2020-01-01
 ```
 
 这样就很容易置顶了
+
+Hexo文章置底也是同样的道理，比如设置日期为2000年，或者1000年来实现文章置底。

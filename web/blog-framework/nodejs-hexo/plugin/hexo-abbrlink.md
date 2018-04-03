@@ -24,7 +24,7 @@ hexo默认的链接是`http://example.com/2013/07/14/path/hello-world/` 这种�
 - 年月日都会有分隔符，目录层次较深
 - 后台路径`path`变化，会导致链接批量变化。非常影响SEO
 
-# 配置
+# Hexo 默认配置
 
 https://hexo.io/zh-cn/docs/permalinks.html
 
@@ -33,7 +33,7 @@ https://hexo.io/zh-cn/docs/permalinks.html
 `permalink: :year/:month/:day/:title/`
 
 
-## 源码
+## Hexo实现permalink的源码
 
 https://github.com/hexojs/hexo/search?utf8=%E2%9C%93&q=permalink&type=
 
