@@ -111,7 +111,7 @@ $ npm install --production
 
 ### 追寻答案的旅程 - optional
 
-首先看一下hexo。
+**首先看一下hexo**
 
 ```sh
 $ which hexo
@@ -134,9 +134,15 @@ $ ls -l /usr/bin/hexo
 原来`/usr/bin/hexo`是个符号链接，链接到nodejs的modules目录里。
 
 ```sh
-$ cd /usr/lib/node_modules/hexo-cli/bin/hexo
-
+$ cat /usr/lib/node_modules/hexo-cli/bin/hexo
+#!/usr/bin/env node
+'use strict';
+require('../lib/hexo')();
 ```
+
+hexo找到了，init命令呢？讲道理应该是个package.json下的script。
+
+**hexo init**
 
 
 **`init.js`核心代码**
@@ -171,6 +177,7 @@ spawn(npmCommand, ['install', '--production']);
 
 - 额外的逻辑是，如果没generate，先调一下 hexo g
 
+但是偶尔出现的bug来源于`hexo s`，这里的逻辑还需要看一下。
 
 
 ## 4. hexo new
