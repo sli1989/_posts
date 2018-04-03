@@ -31,7 +31,7 @@ date: 2018-01-25 03:08:53
 
 首先看一下自己的Hexo和Plugin版本，因为不同的版本是不同的实现。版本号是次要的，主要看是不是同一种包。比如`hexo-deployer-git`和`hexo-deployer-rsync`在执行`hexo d`命令时方式就不同。详见[官方文档](https://hexo.io/docs/deployment.html)
 
-
+查看`package.json`文件的依赖项。
 ```yml
 "dependencies": {
   "hexo": "^3.7.0", # https://github.com/hexojs/hexo/  hexo仅仅是一个module而已，用于...
@@ -49,18 +49,6 @@ date: 2018-01-25 03:08:53
 ```sh
 $ npm ls --depth 0
 ```
-
-
-├── hexo-renderer-ejs@0.3.1       
-├── hexo-renderer-marked@0.3.2    
-├── hexo-renderer-stylus@0.3.3
-├── hexo-server@0.2.2
-├── hexo-symbols-count-time@0.3.2  # 博客阅读时长、站点总阅读时长
-└── hexo-wordcount@3.0.2           # 博客字数统计、站点总字数统计
-
-```
-
-另外，也可以通过查看`package.json`文件来查看版本。
 
 > 更新各个模块，命令 npm update
 
@@ -169,7 +157,8 @@ spawn(npmCommand, ['install', '--production']);
 
 
 **参考**
-- [hexo-stater项目](https://github.com/hexojs/hexo-starter)
+
+- [hexo-starter项目](https://github.com/hexojs/hexo-starter)
 - [hexo.js源码 | hexo-cli 项目](https://github.com/hexojs/hexo-cli/blob/master/lib/hexo.js)
 - [hexo init 命令源码 | hexo-cli 项目](https://github.com/hexojs/hexo-cli/blob/master/lib/console/init.js)
 
