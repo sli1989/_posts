@@ -1,5 +1,5 @@
 ---
-title: Hexo源码系列 之 综述
+title: Hexo源码系列 之 入门
 keywords:
   - hexo
   - 源码
@@ -13,6 +13,7 @@ categories:
 abbrlink: 70d0eddc
 date: 2018-01-25 03:08:53
 ---
+
 # 首先
 
 为什么要看源码呢？因为想自己更便捷高效的管理博客，比如
@@ -22,6 +23,8 @@ date: 2018-01-25 03:08:53
 
 
 源码不用细看，看个大概能满足自己的需求就够了。
+
+本文仅介绍[Hexo基础包](https://github.com/hexojs/hexo-starter)，[扩展包](hexo.io/plugins)可参考【Hexo插件系列】博客。
 
 # 查看Hexo和Plugin版本
 
@@ -97,18 +100,17 @@ hexo-cli是nodejs的一个包，用于运行hexo命令。(有cli难道还有serv
 npm list -g 能够看到安装路径。一般在/usr/lib/node_modules/ 或者/usr/local/lib/node_modules/
 
 ## 2. hexo init
-`hexo init`命令做了什么？下面直接放答案
+`hexo init`命令做了什么？
 ### 答案
-以下是`hexo init`的log。`hexo init`做了两个事情，git-clone & install-dependency，分别对应以下两行shell命令。
+`hexo init`等价于以下两行shell命令。
 ```sh
 # 1. Cloning hexo-starter to blog
 $ git clone --recursive https://github.com/hexojs/hexo-starter.git blog
-
 # 2. Install dependencies
 $ npm install --production
 ```
 
-看到这里就应该解开谜团了。
+看到这里，就够用。如果自己的hexo项目是老版本的，可以在这个仓库pull更新(虽然更新很少)。
 如果对追寻答案的过程感兴趣，可以继续往下看。
 
 ### 追寻答案的旅程 - optional
@@ -159,8 +161,9 @@ spawn(npmCommand, ['install', '--production']);
 
 
 **参考**
-- [hexo.js源码](https://github.com/hexojs/hexo-cli/blob/master/lib/hexo.js)
-- [hexo init.js源码](https://github.com/hexojs/hexo-cli/blob/master/lib/console/init.js)
+- [hexo-stater项目](https://github.com/hexojs/hexo-starter)
+- [hexo.js源码 | hexo-cli 项目](https://github.com/hexojs/hexo-cli/blob/master/lib/hexo.js)
+- [hexo init 命令源码 | hexo-cli 项目](https://github.com/hexojs/hexo-cli/blob/master/lib/console/init.js)
 
 ## 3. hexo server
 

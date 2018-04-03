@@ -1,5 +1,5 @@
 ---
-title: hexo的推荐使用方式
+title: 【hexo的正确打开方式】使用方式推荐
 tag:
   - hexo
 categories:
