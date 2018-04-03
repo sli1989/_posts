@@ -17,8 +17,9 @@ date: 2011-01-01 00:00:00
 {% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %}
 ```
 
+default, width=50%
 
-{% instagram https://www.instagram.com/p/Bg71nq4HuAU/ 40% %}
+{% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %}
 
 
 <br> <br>
