@@ -3,11 +3,11 @@ categories:
   - demo
   - hexo
 abbrlink: '0'
-date: 2000-01-01 00:00:00
 tags:
   - hexo
   - plugin
   - hexo-auto-category
+date: 2000-01-01 00:00:00
 ---
 
 
