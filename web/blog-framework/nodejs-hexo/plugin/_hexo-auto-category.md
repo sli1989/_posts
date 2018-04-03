@@ -5,20 +5,16 @@ tags:
 - hexo
 - category
 - 自动分类
+- hexo-auto-category
 ---
 
 
-# 改名：
+# hexo-auto-category
 
-hexo-auto-category (参考hexo-auto-canonical)
 
-hexo-category-generator
+hexo-generator-category  这个插件是生成tag文件的。
 
-hexo-generator-category  我这个确实也是generator，因为产生了文件，起码重写了文件。
-
-#
-
-自动生成分类(category)
+# 自动生成分类(category)
 
 
 用hexo写博客，通常我们都需要自己管理category，
