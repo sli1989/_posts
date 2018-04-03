@@ -12,14 +12,11 @@ categories:
   - blog-framework
   - nodejs-hexo
   - plugin
-<<<<<<< HEAD
 abbrlink: 70564e
-=======
 tags:
   - hexo
   - plugin
   - hexo-generator-index
->>>>>>> f6f5ef73c0af337f6d7d8da28b4ed2fb07e38946
 date: 2018-04-02 00:00:00
 ---
 
