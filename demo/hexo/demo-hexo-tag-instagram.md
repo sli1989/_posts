@@ -14,10 +14,11 @@ date: 2011-01-01 00:00:00
 ## demo1
 
 ```
-{% instagram url:https://www.instagram.com/p/Bg71nq4HuAU/ width:40% %}
+{% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %}
 ```
 
-{% instagram url:https://www.instagram.com/p/Bg71nq4HuAU/ width:40% %}
+
+{% instagram https://www.instagram.com/p/Bg71nq4HuAU/ 40% %}
 
 
 <br> <br>
@@ -25,10 +26,10 @@ date: 2011-01-01 00:00:00
 ## demo2
 
 ```
-{% instagram captioned:false id:Bg71nq4HuAU width:60% %}
+{% instagram false Bg71nq4HuAU 60% %}
 ```
 
-{% instagram width:60% captioned:false id:Bg71nq4HuAU %}
+{% instagram false Bg71nq4HuAU 60% %}
 
 # link to github issue
 
