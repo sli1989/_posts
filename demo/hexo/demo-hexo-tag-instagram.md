@@ -13,24 +13,39 @@ date: 2011-01-01 00:00:00
 
 ## demo1
 
+by default, width:50%, captioned:true
+
 ```
 {% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %}
 ```
 
-default, width=50%
-
 {% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %}
 
+The above setting is equal to
 
-<br> <br>
+```
+{% instagram url:https://www.instagram.com/p/Bg71nq4HuAU/ %}
+```
+
+{% instagram url:https://www.instagram.com/p/Bg71nq4HuAU/ %}
+
 
 ## demo2
+customization:
 
 ```
 {% instagram false Bg71nq4HuAU 60% %}
 ```
 
 {% instagram false Bg71nq4HuAU 60% %}
+
+The above setting is equal to
+
+```
+{% instagram captioned:false id:Bg71nq4HuAU width:60% %}
+```
+
+{% instagram captioned:false id:Bg71nq4HuAU width:60% %}
 
 # link to github issue
 
