@@ -24,7 +24,7 @@ date: 2018-01-25 03:08:53
 
 源码不用细看，看个大概能满足自己的需求就够了。
 
-本文仅介绍[Hexo基础包](https://github.com/hexojs/hexo-starter)，[扩展包](hexo.io/plugins)可参考【Hexo插件系列】博客。
+本文仅介绍[Hexo基础包](https://github.com/hexojs/hexo-starter)，[扩展包](https://hexo.io/plugins/)可参考【Hexo插件系列】博客。
 
 # 查看Hexo和Plugin版本
 
