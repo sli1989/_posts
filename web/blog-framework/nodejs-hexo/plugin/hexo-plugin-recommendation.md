@@ -63,15 +63,15 @@ Please load another markdown file with the following code.
 
 ## 永久链接(permalink)插件 - hexo-abbrlink
 
- -
+
 
 URL的设计尽量做到以下几点：
 
 - 不变性/鲁棒性：`date>title>path>content`，即内容更新最频繁，标题和日期变动较少。
-  - ~~path~~，~~content~~ 这俩被pass了
+    - ~~path~~，~~content~~ 这俩被pass了
 - 唯一性：`content path title date` 唯一性都挺好
 - 长度要短 & 容量要大：
-  - ~~content~~
+    - ~~content~~
 
 
 

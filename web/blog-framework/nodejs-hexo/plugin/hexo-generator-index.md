@@ -25,6 +25,8 @@ date: 2018-04-02 00:00:00
 
 Hexo默认提供了按发布日期的排序，即hexo-generator-index
 
+# 源码解读
+
 核心逻辑：
 
 [index.js](https://github.com/hexojs/hexo-generator-index/blob/master/index.js)

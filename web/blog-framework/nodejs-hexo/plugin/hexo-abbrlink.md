@@ -205,11 +205,11 @@ module.exports = logic;
 TODO:
 
 - 提供hash配置。比如采用date、path做hash
-  - 一般用不到，我觉得
+    - 一般用不到，我觉得
 - 不局限hex，可以采用所有数字+字母。容量更大。
 - link写入到了.md文件中
-  - 优势：1. hexo读取方便  2. link复用，减少link的变动，利于SEO  3. 加速，不用每次重新hash
-  - 缺陷：需要重写md文件，强行插入abbrlink属性。
-  - 建议：与hexo动态交互，而不是把link写入到md静态文件。link的复用可以采用独立的数据文件
+    - 优势：1. hexo读取方便  2. link复用，减少link的变动，利于SEO  3. 加速，不用每次重新hash
+    - 缺陷：需要重写md文件，强行插入abbrlink属性。
+    - 建议：与hexo动态交互，而不是把link写入到md静态文件。link的复用可以采用独立的数据文件
 
 # 参考
