@@ -140,12 +140,29 @@ $ cat /usr/lib/node_modules/hexo-cli/bin/hexo
 require('../lib/hexo')();
 ```
 
+即`hexo`命令对应的是`/usr/lib/node_modules/hexo-cli/lib/hexo.js`文件。
+
+
 hexo找到了，init命令呢？讲道理应该是个package.json下的script。
 
-**hexo init**
+原生`hexo-cli`提供了4个命令，都在`hexo-cli/lib/console`路径下。
+
+```
+$ hexo help
+$ hexo init
+$ hexo version
+$ hexo index
+```
+
+扩展命令通过`hexo-cli/lib/extends.console.js`实现。
+
+
+**hexo init 命令**
 
 
 **`init.js`核心代码**
+
+路径`hexo-cli/lib/console/init.js`
 
 ```js
 var GIT_REPO_URL = 'https://github.com/hexojs/hexo-starter.git';
