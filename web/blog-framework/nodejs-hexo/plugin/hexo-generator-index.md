@@ -1,5 +1,5 @@
 ---
-title: 【Hexo插件系列】hexo-generator-index
+title: 【Hexo插件系列】日志排序 hexo-generator-index
 keywords:
   - hexo
   - 博客

@@ -27,8 +27,11 @@ Changing a method at runtime instead of updating the object definition is one ex
 
 ## 名字来源
 
-1，这个词原来为Guerrilla Patch，杂牌军、游击队，说明这部分不是原装的，在英文里guerilla发音和gorllia(猩猩)相似，再后来就写了monkey(猴子)。
-2，还有一种解释是说由于这种方式将原来的代码弄乱了(messing with it)，在英文里叫monkeying about(顽皮的)，所以叫做Monkey Patch。
+
+
+1. 这个词原来为Guerrilla Patch，杂牌军、游击队，说明这部分不是原装的，在英文里guerilla发音和gorllia(猩猩)相似，再后来就写了monkey(猴子)。
+1. 还有一种解释是说由于这种方式将原来的代码弄乱了(messing with it)，在英文里叫monkeying about(顽皮的)，所以叫做Monkey Patch。
+
 
 
 <!-- Applications -->
@@ -78,22 +81,22 @@ Foo().bar()
 
 ## 实际应用案例
 
-## socket的热补丁
+### socket的热补丁
 
 用过gevent就会知道,会在最开头的地方gevent.monkey.patch_all();把标准库中的thread/socket等给替换掉.这样我们在后面使用socket的时候可以跟平常一样使用,无需修改任何代码,但是它变成非阻塞的了.
 
-## SQL注入攻击
+### SQL注入攻击
 
 网页和数据库
 
-## Zope、Plone中的安全补丁
+### Zope、Plone中的安全补丁
 
 > In Zope and Plone, security patches are often delivered using dynamic class modification, but they are called hot fixes.
 > -- wikipedia
 
 很多安全补丁也是一种猴子补丁，只不过叫法不同而已。
 
-## Eventlet Patcher
+### Eventlet Patcher
 
 现在我们先来看一下eventlet中的Patcher的调用代码吧，这段代码对标准的ftplib做monkey patch，将eventlet的GreenSocket替换标准的socket。
 
@@ -110,7 +113,7 @@ Eventlet中大量使用了该技巧，以替换标准库中的组件，比如soc
 
 未完待续，参考 https://blog.csdn.net/seizef/article/details/5732657
 
-## 从Gevent学习猴子补丁的设计
+### 从Gevent学习猴子补丁的设计
 
 异步协程工具Gevent是python上面最有名也支持面最广通用性最好的协程工具,它底层基于greenlet,而且可以通过使用猴子补丁将标准库中的同步模块自动的转换成异步.同时他也提供了方便的并发模型和常用的web服务器工具.
 
@@ -186,7 +189,7 @@ Implicit context switch back to bar
 
 - time.sleep would suspend the entire process, blocking all greenlet threads. [来源](https://mail.python.org/pipermail/python-list/2014-July/675726.html)。 以上说法针对的是协程(单线程程序)。而对于多线程，time.sleep仅仅阻塞当前线程，不阻塞其他线程，[来源](https://stackoverflow.com/questions/92928/time-sleep-sleeps-thread-or-process)。
 
-## 猴子补丁 与 SocketIO
+### 猴子补丁 与 SocketIO
 
 用过gevent就会知道,会在最开头的地方gevent.monkey.patch_all();把标准库中的thread/socket等给替换掉.这样我们在后面使用socket的时候可以跟平常一样使用,无需修改任何代码,但是它变成非阻塞的了.
 
@@ -214,7 +217,7 @@ socketio.emit默认会有个buffer（为了高效），为什么gevent.sleep会f
 
 
 
-## 猴子补丁与 import json,
+### 猴子补丁与 import json,
 
 之前做的一个游戏服务器,很多地方用的import json,后来发现ujson比自带json快了N倍,于是问题来了,难道几十个文件要一个个把import json改成import ujson as json吗?
 其实只需要在进程startup的地方monkey patch就行了.是影响整个进程空间的.
@@ -252,5 +255,5 @@ java强大的反射，即使`属性`或`方法`被设置为了`private final`也
 - [Monkey patch | wikipedia](https://en.wikipedia.org/wiki/Monkey_patch)
 - [what-is-monkey-patching | StackOverflow](https://stackoverflow.com/questions/5626193/what-is-monkey-patching)
 - 待看 《松本行弘的程序世界》专门有一章讲了猴子补丁的设计
-- [猴子补丁是动态语言的专利么？](https://ruby-china.org/topics/17619)
-- [猴子补丁和热更新](http://blog.hszofficial.site/TutorialForPython/%E5%85%83%E7%BC%96%E7%A8%8B/%E7%8C%B4%E5%AD%90%E8%A1%A5%E4%B8%81%E5%92%8C%E7%83%AD%E6%9B%B4%E6%96%B0.html)
+- [猴子补丁是动态语言的专利么？ | ruby-china](https://ruby-china.org/topics/17619)
+- [猴子补丁和热更新 | 网络博客](http://blog.hszofficial.site/TutorialForPython/%E5%85%83%E7%BC%96%E7%A8%8B/%E7%8C%B4%E5%AD%90%E8%A1%A5%E4%B8%81%E5%92%8C%E7%83%AD%E6%9B%B4%E6%96%B0.html)

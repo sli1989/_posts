@@ -53,14 +53,14 @@ $ npm ls --depth 0
 > 更新各个模块，命令 npm update
 
 - hexo-cli，
-  - 提供hexo init、hexo help、hexo version命令
+    - 提供hexo init、hexo help、hexo version命令
 - hexo
-  - hexo new
-  - hexo generate
+    - hexo new
+    - hexo generate
 - hexo plugin，即node依赖
-  - hexo server
-  - hexo deploy
-  - 其他命令
+    - hexo server
+    - hexo deploy
+    - 其他命令
 
 # 回顾Hexo搭建流程
 
